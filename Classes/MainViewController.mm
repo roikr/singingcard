@@ -10,21 +10,22 @@
 
 
 
-
+#import "MainViewController.h"
+#import "EAGLView.h"
+#import "SingingCardAppDelegate.h"
 
 #include "Constants.h"
 #include "testApp.h"
 
-#import "MainViewController.h"
 #import "EAGLView.h"
+#import "glu.h"
 #import "ShareManager.h"
-#import "SingingCardAppDelegate.h"
+
 #import "MilgromMacros.h"
 
 #import "CustomImageView.h"
 #import "ShareManager.h"
 #import "OpenGLTOMovie.h"
-#import "glu.h"
 #import "ExportManager.h"
 
 
@@ -44,6 +45,8 @@
 
 @synthesize animating, context, displayLink;
 
+@synthesize buttonsView;
+
 @synthesize renderView;
 @synthesize renderLabel;
 @synthesize renderTextView;
@@ -53,7 +56,7 @@
 @synthesize exportManager;
 @synthesize renderManager;
 
-@synthesize eaglView;
+@synthesize eAGLView;
 
 - (void)viewDidLoad	// need to be called after the EAGL awaked from nib
 //- (void)awakeFromNib
@@ -72,8 +75,8 @@
 	
 	
 	
-	[eaglView setContext:context];
-    [eaglView setFramebuffer];
+	[eAGLView setContext:context];
+    [eAGLView setFramebuffer];
     
     
     
@@ -104,8 +107,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self startAnimation];
-    
     [super viewWillAppear:animated];
+	
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -171,47 +174,26 @@
     }
 }
 
-- (void)drawFrame
+- (void)drawFrame // NORMAL_PLAY
 {
-    [eaglView setFramebuffer];
+    [self.eAGLView setFramebuffer];
     
-    // Replace the implementation of this method to do your own custom drawing.
-    static const GLfloat squareVertices[] = {
-        -0.5f, -0.33f,
-        0.5f, -0.33f,
-        -0.5f,  0.33f,
-        0.5f,  0.33f,
-    };
-    
-    static const GLubyte squareColors[] = {
-        255, 255,   0, 255,
-        0,   255, 255, 255,
-        0,     0,   0,   0,
-        255,   0, 255, 255,
-    };
-    
-    static float transY = 0.0f;
-    
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    
-        glMatrixMode(GL_PROJECTION);
-        glLoadIdentity();
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-        glTranslatef(0.0f, (GLfloat)(sinf(transY)/2.0f), 0.0f);
-        transY += 0.075f;
-        
-        glVertexPointer(2, GL_FLOAT, 0, squareVertices);
-        glEnableClientState(GL_VERTEX_ARRAY);
-        glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
-        glEnableClientState(GL_COLOR_ARRAY);
-    
-    
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-    [eaglView presentFramebuffer];
+	
+	
+	//	int frame = (int)(([displayLink timestamp]-startTime) * 1000 / 40);
+	//	if (frame>currentFrame) {
+	//		currentFrame = frame;
+	//		appDelegate.OFSAptr->nextFrame();
+	//	}
+	
+	glLoadIdentity();
+	glScalef(1.0, -1.0,1.0);
+	glTranslatef(0, -self.eAGLView.framebufferHeight, 0);
+	
+	self.OFSAptr->draw();
+	
+	[self.eAGLView presentFramebuffer];
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -232,15 +214,44 @@
 	if (self.navigationController.topViewController != self) {
 		return;
 	}
+	
+	
+	buttonsView.hidden = YES;
+	renderView.hidden = YES;
+	
+	switch (self.OFSAptr->getSongState()) {
+		case SONG_IDLE:
+		case SONG_PLAY:
+			buttonsView.hidden = NO;
+			break;
+		case SONG_RENDER_AUDIO:
+		case SONG_RENDER_VIDEO:
+		case SONG_RENDER_AUDIO_FINISHED:
+		case SONG_CANCEL_RENDER_AUDIO:
+			renderView.hidden = NO;
+		default:
+			break;
+	}
+		
+	
 }
 
-#pragma mark Render && Share
 
-- (void) setShareProgress:(float) progress {
-	[shareProgressView setRect:CGRectMake(0, 1.0-progress, 1.0f,progress)];
+- (void) shoot:(id)sender {
+	self.OFSAptr->record();
 }
 
-- (void)share:(id)sender {
+- (void) preview:(id)sender {
+	self.OFSAptr->preview();
+}
+- (void) play:(id)sender {
+	self.OFSAptr->setSongState(SONG_PLAY);
+}
+- (void) stop:(id)sender {
+	self.OFSAptr->setSongState(SONG_IDLE);
+}
+
+- (void) share:(id)sender {
 	
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	
@@ -261,8 +272,17 @@
 }
 
 
+
+#pragma mark Render && Share
+
+- (void) setShareProgress:(float) progress {
+	[shareProgressView setRect:CGRectMake(0, 1.0-progress, 1.0f,progress)];
+}
+
+
 - (void) setRenderProgress:(float) progress {
-	[renderProgressView setRect:CGRectMake(0.0f, 0.0f,progress,1.0f)];
+	[renderProgressView setProgress:progress];
+	//[renderProgressView setRect:CGRectMake(0.0f, 0.0f,progress,1.0f)];
 }
 
 - (void)updateRenderProgress
@@ -280,7 +300,6 @@
 
 - (void)renderAudio {
 	self.renderLabel.text = @"Creating audio";
-	self.renderTextView.text = @"";// @"(it can take some time, depends on your song length...)";
 	[self setRenderProgress:0.0f];
 	
 	dispatch_queue_t myCustomQueue;
@@ -325,7 +344,6 @@
 	//[(TouchView*)self.view  setRenderTouch:NO];
 	
 	self.renderLabel.text = @"Creating video";
-	self.renderTextView.text = @"pinch and drag screen to create camera movements.\n\ndouble tap screen to zoom.";
 	[self setRenderProgress:0.0f];
 	
 	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
@@ -347,8 +365,8 @@
 		//OFSAptr->renderAudio();
 		
 		
-		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		[renderManager writeToVideoURL:[NSURL fileURLWithPath:[[shareManager getVideoPath]  stringByAppendingPathExtension:@"mov"]] withAudioURL:[NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"temp.wav"]] 
+		[renderManager writeToVideoURL:[NSURL fileURLWithPath:[[shareManager getVideoPath]  stringByAppendingPathExtension:@"mov"]] 
+						  withAudioURL:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"wav"]] 
 		 
 						   withContext:context
 							  withSize:CGSizeMake(480, 320) 
@@ -368,7 +386,7 @@
 							 glMatrixMode(GL_MODELVIEW);
 							 glLoadIdentity();
 							 
-							 self.OFSAptr->render();
+							 self.OFSAptr->draw();
 							 
 						 }
 		 
@@ -405,7 +423,6 @@
 
 - (void)exportRingtone {
 	self.renderLabel.text = @"Exporting ringtone";
-	self.renderTextView.text = @"(it can take some time, depends on your song length...)";
 	//renderingView.hidden = NO;
 	[self setRenderProgress:0.0f];
 	
@@ -414,11 +431,8 @@
 	
 	self.OFSAptr->soundStreamStop();
 	
-	//ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	
-	self.exportManager = [ExportManager  exportAudio:[NSURL fileURLWithPath:[[paths objectAtIndex:0] stringByAppendingPathComponent:@"temp.wav"]]
+	self.exportManager = [ExportManager  exportAudio:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"wav"]]
 						  
 											   toURL:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"m4r"]]
 						  

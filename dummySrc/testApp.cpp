@@ -139,35 +139,4 @@ float testApp::getRenderProgress(){
 
 void testApp::renderAudio() {
 	
-	setSongState(SONG_RENDER_AUDIO);
-	
-//	cout << "renderAudio started" << endl;
-	
-//	song.open(ofToDocumentsPath("temp.wav"));
-	
-	
-	currentBlock = 0;
-	
-//	while (getSongState()==SONG_RENDER_AUDIO || getSongState()==SONG_CANCEL_RENDER_AUDIO) {
-//		
-//		
-//		memset(lBlock, 0, blockLength*sizeof(float));
-//		memset(rBlock, 0, blockLength*sizeof(float));
-//		
-//		for (int i=0;i<3;i++) {
-//			player[i].processWithBlocks(lBlock, rBlock);
-//		}
-//		
-//		song.saveWithBlocks(lBlock, rBlock);
-//		currentBlock++;
-//	}
-	
-//	song.close();	
-	
-//	cout << "renderAudio finished" << endl;
-	
-	setSongState(SONG_RENDER_AUDIO_FINISHED);
-	
-	totalBlocks = currentBlock;
-	
 }

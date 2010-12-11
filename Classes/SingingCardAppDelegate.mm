@@ -32,6 +32,26 @@
     self.OFSAptr = new testApp;
 	self.shareManager = [ShareManager shareManager];
 	
+		
+	OFSAptr->setup();
+	[mainViewController updateViews];
+	
+	
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+		while (1) {
+			OFSAptr->update(); // also update bNeedDisplay
+			if (OFSAptr->bNeedDisplay) {
+				if (mainViewController) {
+					dispatch_async(dispatch_get_main_queue(), ^{
+						[mainViewController updateViews];
+					});
+					OFSAptr->bNeedDisplay = false;
+				}
+			}
+		}
+	});
+	
+	
 	//[self.window addSubview:self.navigationController.view];
 	[self.window makeKeyWindow];
     return YES;

@@ -17,6 +17,7 @@
 #import "testApp.h"
 #import "Reachability.h"
 
+
 enum {
 	STATE_IDLE,
 	STATE_RENDER_AUDIO,
@@ -91,55 +92,23 @@ static NSString* kMilgromURL = @"www.milgrom.com";
 
 
 - (void)setVideoRendered {
-	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-	renderedVideoVersion = appDelegate.OFSAptr->getSongVersion();
-	if (appDelegate.lastSavedVersion == appDelegate.OFSAptr->getSongVersion()) {
-//		Song * song = [appDelegate currentSong];
-//		[song setBVideoRendered:[NSNumber numberWithBool:YES]];
-//		[appDelegate saveContext];
-	}
-	
+	renderedVideoVersion = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->getSongVersion();
 }
 
 
 - (BOOL)videoRendered {
-	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-	if (appDelegate.lastSavedVersion == appDelegate.OFSAptr->getSongVersion()) {
-//		Song * song = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] currentSong];
-//		return [song.bVideoRendered boolValue];
-		return NO;
-	} else {
-		return renderedVideoVersion == appDelegate.OFSAptr->getSongVersion();
-	}
+	return renderedVideoVersion == ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->getSongVersion();
 }
 
 
 - (void)setRingtoneExported {
-	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-	exportedRingtoneVersion = appDelegate.OFSAptr->getSongVersion();
-	if (appDelegate.lastSavedVersion == appDelegate.OFSAptr->getSongVersion()) {
-//		Song * song = [appDelegate currentSong];
-//		[song setBRingtoneExprted:[NSNumber numberWithBool:YES]];
-//		[appDelegate saveContext];
-	}
-	
+	exportedRingtoneVersion = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->getSongVersion();
 }
 
 
 - (BOOL)ringtoneExported {
-	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-	if (appDelegate.lastSavedVersion == appDelegate.OFSAptr->getSongVersion()) {
-//		Song * song = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] currentSong];
-//		return [song.bRingtoneExprted boolValue];
-		return NO;
-	} else {
-		return exportedRingtoneVersion == appDelegate.OFSAptr->getSongVersion();
-	}
+	return exportedRingtoneVersion == ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->getSongVersion();
 }
-
-
-
-
 
 
 - (NSString *)getVideoName {
@@ -161,12 +130,7 @@ static NSString* kMilgromURL = @"www.milgrom.com";
 		return @"";
 	}
 	
-	SingingCardAppDelegate * appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-	
-	
-	return appDelegate.lastSavedVersion == appDelegate.OFSAptr->getSongVersion() ? 
-		[[paths objectAtIndex:0] stringByAppendingPathComponent:@"santa"] :
-	[[paths objectAtIndex:0] stringByAppendingPathComponent:@"temp"];
+	return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"santa"];
 }
 
 - (NSString *)getVideoTitle {

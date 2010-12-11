@@ -30,6 +30,8 @@ class testApp;
     NSInteger animationFrameInterval;
     CADisplayLink *displayLink;
 	
+	UIView *buttonsView;
+	
 	UIView *renderView;
 	UILabel *renderLabel;
 	UITextView *renderTextView;
@@ -37,33 +39,43 @@ class testApp;
 	BOOL bAnimatingRecord;
 	
 	CustomImageView *shareProgressView;
-	CustomImageView *renderProgressView;
+	UIProgressView *renderProgressView;
 	
 	ExportManager *exportManager;
 	OpenGLTOMovie *renderManager;
 	
-	EAGLView *eaglView;
+	EAGLView *eAGLView;
 }
 
-@property (readonly, nonatomic, getter=isAnimating) BOOL animating;
-@property (nonatomic) NSInteger animationFrameInterval;
+
+
+@property (nonatomic, retain) IBOutlet EAGLView *eAGLView;
+
+@property (nonatomic, retain) IBOutlet UIView *buttonsView;
 
 @property (nonatomic, retain) IBOutlet UIView *renderView;
 @property (nonatomic, retain) IBOutlet UILabel *renderLabel;
 @property (nonatomic, retain) IBOutlet UITextView *renderTextView;
 
 @property (nonatomic,retain ) IBOutlet CustomImageView *shareProgressView;
-@property (nonatomic,retain ) IBOutlet CustomImageView *renderProgressView;
+@property (nonatomic,retain ) IBOutlet UIProgressView *renderProgressView;
 
 @property (nonatomic, retain) ExportManager *exportManager;
 @property (nonatomic, retain) OpenGLTOMovie *renderManager;
 
-@property (nonatomic, retain) IBOutlet EAGLView *eaglView;
+@property (readonly, nonatomic, getter=isAnimating) BOOL animating;
+@property (nonatomic) NSInteger animationFrameInterval;
+
+
 @property (readonly) testApp *OFSAptr;
 
 - (void)startAnimation;
 - (void)stopAnimation;
 
+- (void) shoot:(id)sender;
+- (void) preview:(id)sender;
+- (void) play:(id)sender;
+- (void) stop:(id)sender;
 - (void) share:(id)sender;
 
 - (void)updateViews;
