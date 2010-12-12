@@ -353,7 +353,7 @@ static NSString* kMilgromURL = @"www.milgrom.com";
 			break;
 			
 		case 6:
-			
+			action = ACTION_RENDER;
 			break;
 			
 		case 7:
@@ -384,6 +384,7 @@ static NSString* kMilgromURL = @"www.milgrom.com";
 				case ACTION_UPLOAD_TO_FACEBOOK:
 				case ACTION_ADD_TO_LIBRARY:
 				case ACTION_SEND_VIA_MAIL:
+				case ACTION_RENDER:
 				case ACTION_PLAY:
 					if (!self.videoRendered ) {
 						state = STATE_RENDER_AUDIO;
@@ -411,6 +412,7 @@ static NSString* kMilgromURL = @"www.milgrom.com";
 				case ACTION_UPLOAD_TO_FACEBOOK:
 				case ACTION_ADD_TO_LIBRARY:
 				case ACTION_SEND_VIA_MAIL:
+				case ACTION_RENDER:
 				case ACTION_PLAY:
 					state = STATE_RENDER_VIDEO;
 					[[appDelegate mainViewController] renderVideo];
