@@ -13,6 +13,11 @@
 		28EC4C5911D54ECE0027AA9F /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EC4C5711D54ECE0027AA9F /* MainViewController.mm */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		E417549C12B4B8DA00DCF45E /* ofxDynamicCompressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E417549A12B4B8DA00DCF45E /* ofxDynamicCompressor.cpp */; };
+		E4895D2312B637CC00314C97 /* camera-toggle-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E4895D1F12B637CC00314C97 /* camera-toggle-pressed.png */; };
+		E4895D2412B637CC00314C97 /* camera-toggle.png in Resources */ = {isa = PBXBuildFile; fileRef = E4895D2012B637CC00314C97 /* camera-toggle.png */; };
+		E48F733012B5792C0053ACCB /* ofxAudioSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E48F732A12B5792C0053ACCB /* ofxAudioSampler.cpp */; };
+		E48F733112B5792C0053ACCB /* ofxAudioTrigger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E48F732E12B5792C0053ACCB /* ofxAudioTrigger.cpp */; };
 		E4AF012F12B0EF5700457BC7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4AF012D12B0EF5700457BC7 /* MainViewController.xib */; };
 		E4AF013012B0EF5700457BC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4AF012E12B0EF5700457BC7 /* MainWindow.xib */; };
 		E4AF014512B0F06000457BC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF014412B0F06000457BC7 /* main.m */; };
@@ -185,7 +190,6 @@
 		E4D5394512B393FD00B9EFD8 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5393F12B393FD00B9EFD8 /* ofxXmlSettings.cpp */; };
 		E4D5396812B3941100B9EFD8 /* MyVideoBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D5394912B3941100B9EFD8 /* MyVideoBuffer.mm */; };
 		E4D5396912B3941100B9EFD8 /* ofxAudioCompressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5394A12B3941100B9EFD8 /* ofxAudioCompressor.cpp */; };
-		E4D5396A12B3941100B9EFD8 /* ofxAudioTrigger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5394C12B3941100B9EFD8 /* ofxAudioTrigger.cpp */; };
 		E4D5396B12B3941100B9EFD8 /* ofxiVideoGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395012B3941100B9EFD8 /* ofxiVideoGrabber.mm */; };
 		E4D5396C12B3941100B9EFD8 /* ofxiVideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395112B3941100B9EFD8 /* ofxiVideoPlayer.cpp */; };
 		E4D5396D12B3941100B9EFD8 /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395512B3941100B9EFD8 /* ofxMidi.cpp */; };
@@ -212,6 +216,14 @@
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* SingingCard-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SingingCard-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E417549A12B4B8DA00DCF45E /* ofxDynamicCompressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxDynamicCompressor.cpp; sourceTree = "<group>"; };
+		E417549B12B4B8DA00DCF45E /* ofxDynamicCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxDynamicCompressor.h; sourceTree = "<group>"; };
+		E4895D1F12B637CC00314C97 /* camera-toggle-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-toggle-pressed.png"; path = "Resources/camera-toggle-pressed.png"; sourceTree = "<group>"; };
+		E4895D2012B637CC00314C97 /* camera-toggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-toggle.png"; path = "Resources/camera-toggle.png"; sourceTree = "<group>"; };
+		E48F732A12B5792C0053ACCB /* ofxAudioSampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioSampler.cpp; sourceTree = "<group>"; };
+		E48F732B12B5792C0053ACCB /* ofxAudioSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSampler.h; sourceTree = "<group>"; };
+		E48F732E12B5792C0053ACCB /* ofxAudioTrigger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioTrigger.cpp; sourceTree = "<group>"; };
+		E48F732F12B5792C0053ACCB /* ofxAudioTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioTrigger.h; sourceTree = "<group>"; };
 		E4AF012D12B0EF5700457BC7 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainViewController.xib; path = Resources/MainViewController.xib; sourceTree = "<group>"; };
 		E4AF012E12B0EF5700457BC7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = "<group>"; };
 		E4AF014312B0F05400457BC7 /* SingingCard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCard_Prefix.pch; sourceTree = "<group>"; };
@@ -545,8 +557,6 @@
 		E4D5394912B3941100B9EFD8 /* MyVideoBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyVideoBuffer.mm; sourceTree = "<group>"; };
 		E4D5394A12B3941100B9EFD8 /* ofxAudioCompressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioCompressor.cpp; sourceTree = "<group>"; };
 		E4D5394B12B3941100B9EFD8 /* ofxAudioCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioCompressor.h; sourceTree = "<group>"; };
-		E4D5394C12B3941100B9EFD8 /* ofxAudioTrigger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioTrigger.cpp; sourceTree = "<group>"; };
-		E4D5394D12B3941100B9EFD8 /* ofxAudioTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioTrigger.h; sourceTree = "<group>"; };
 		E4D5394E12B3941100B9EFD8 /* ofxiPhoneVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneVideo.h; sourceTree = "<group>"; };
 		E4D5394F12B3941100B9EFD8 /* ofxiVideoGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiVideoGrabber.h; sourceTree = "<group>"; };
 		E4D5395012B3941100B9EFD8 /* ofxiVideoGrabber.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiVideoGrabber.mm; sourceTree = "<group>"; };
@@ -656,6 +666,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4895D1F12B637CC00314C97 /* camera-toggle-pressed.png */,
+				E4895D2012B637CC00314C97 /* camera-toggle.png */,
 				E4AF012D12B0EF5700457BC7 /* MainViewController.xib */,
 				E4AF012E12B0EF5700457BC7 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* SingingCard-Info.plist */,
@@ -682,6 +694,60 @@
 				E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E417549812B4B8DA00DCF45E /* ofxDynamicCompressor */ = {
+			isa = PBXGroup;
+			children = (
+				E417549912B4B8DA00DCF45E /* src */,
+			);
+			name = ofxDynamicCompressor;
+			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/ofxDynamicCompressor";
+			sourceTree = SOURCE_ROOT;
+		};
+		E417549912B4B8DA00DCF45E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E417549A12B4B8DA00DCF45E /* ofxDynamicCompressor.cpp */,
+				E417549B12B4B8DA00DCF45E /* ofxDynamicCompressor.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E48F732812B5792C0053ACCB /* ofxAudioSampler */ = {
+			isa = PBXGroup;
+			children = (
+				E48F732912B5792C0053ACCB /* src */,
+			);
+			name = ofxAudioSampler;
+			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/ofxAudioSampler";
+			sourceTree = SOURCE_ROOT;
+		};
+		E48F732912B5792C0053ACCB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E48F732A12B5792C0053ACCB /* ofxAudioSampler.cpp */,
+				E48F732B12B5792C0053ACCB /* ofxAudioSampler.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E48F732C12B5792C0053ACCB /* ofxAudioTrigger */ = {
+			isa = PBXGroup;
+			children = (
+				E48F732D12B5792C0053ACCB /* src */,
+			);
+			name = ofxAudioTrigger;
+			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/ofxAudioTrigger";
+			sourceTree = SOURCE_ROOT;
+		};
+		E48F732D12B5792C0053ACCB /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E48F732E12B5792C0053ACCB /* ofxAudioTrigger.cpp */,
+				E48F732F12B5792C0053ACCB /* ofxAudioTrigger.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		E4AFFC4B12B0B95F00457BC7 /* YouTube */ = {
@@ -1125,14 +1191,14 @@
 		E4AFFE1112B0BDA800457BC7 /* myOF */ = {
 			isa = PBXGroup;
 			children = (
+				E4AFFE1412B0BDA800457BC7 /* ofMain.h */,
+				E4AFFE1512B0BDA800457BC7 /* ofMain.mm */,
 				E4D53A1812B39E6200B9EFD8 /* ofxRKTexture.h */,
 				E4D53A1912B39E6200B9EFD8 /* ofxRKTexture.mm */,
 				E4D53A1A12B39E6200B9EFD8 /* PVRTexture.m */,
 				E4D53A1B12B39E6200B9EFD8 /* PVRTexture.h */,
 				E4AFFE1212B0BDA800457BC7 /* ofxiPhoneSoundStream.mm */,
 				E4AFFE1312B0BDA800457BC7 /* ofSoundStream.h */,
-				E4AFFE1412B0BDA800457BC7 /* ofMain.h */,
-				E4AFFE1512B0BDA800457BC7 /* ofMain.mm */,
 			);
 			name = myOF;
 			sourceTree = "<group>";
@@ -1181,6 +1247,9 @@
 		E4D5392012B393C200B9EFD8 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				E48F732812B5792C0053ACCB /* ofxAudioSampler */,
+				E48F732C12B5792C0053ACCB /* ofxAudioTrigger */,
+				E417549812B4B8DA00DCF45E /* ofxDynamicCompressor */,
 				E4D5394612B3941100B9EFD8 /* ofxiPhoneVideo */,
 				E4D5395312B3941100B9EFD8 /* ofxMidi */,
 				E4D5396412B3941100B9EFD8 /* ofxSndFile */,
@@ -1236,8 +1305,6 @@
 				E4D5394912B3941100B9EFD8 /* MyVideoBuffer.mm */,
 				E4D5394A12B3941100B9EFD8 /* ofxAudioCompressor.cpp */,
 				E4D5394B12B3941100B9EFD8 /* ofxAudioCompressor.h */,
-				E4D5394C12B3941100B9EFD8 /* ofxAudioTrigger.cpp */,
-				E4D5394D12B3941100B9EFD8 /* ofxAudioTrigger.h */,
 				E4D5394E12B3941100B9EFD8 /* ofxiPhoneVideo.h */,
 				E4D5394F12B3941100B9EFD8 /* ofxiVideoGrabber.h */,
 				E4D5395012B3941100B9EFD8 /* ofxiVideoGrabber.mm */,
@@ -1355,6 +1422,8 @@
 				E4AF013012B0EF5700457BC7 /* MainWindow.xib in Resources */,
 				E4D5394112B393FD00B9EFD8 /* install.xml in Resources */,
 				E4D53AD412B3AA9300B9EFD8 /* data in Resources */,
+				E4895D2312B637CC00314C97 /* camera-toggle-pressed.png in Resources */,
+				E4895D2412B637CC00314C97 /* camera-toggle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1517,7 +1586,6 @@
 				E4D5394512B393FD00B9EFD8 /* ofxXmlSettings.cpp in Sources */,
 				E4D5396812B3941100B9EFD8 /* MyVideoBuffer.mm in Sources */,
 				E4D5396912B3941100B9EFD8 /* ofxAudioCompressor.cpp in Sources */,
-				E4D5396A12B3941100B9EFD8 /* ofxAudioTrigger.cpp in Sources */,
 				E4D5396B12B3941100B9EFD8 /* ofxiVideoGrabber.mm in Sources */,
 				E4D5396C12B3941100B9EFD8 /* ofxiVideoPlayer.cpp in Sources */,
 				E4D5396D12B3941100B9EFD8 /* ofxMidi.cpp in Sources */,
@@ -1530,6 +1598,9 @@
 				E4D53A1C12B39E6200B9EFD8 /* ofxRKTexture.mm in Sources */,
 				E4D53A1D12B39E6200B9EFD8 /* PVRTexture.m in Sources */,
 				E4D53A9712B3A42000B9EFD8 /* EAGLView.mm in Sources */,
+				E417549C12B4B8DA00DCF45E /* ofxDynamicCompressor.cpp in Sources */,
+				E48F733012B5792C0053ACCB /* ofxAudioSampler.cpp in Sources */,
+				E48F733112B5792C0053ACCB /* ofxAudioTrigger.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1554,6 +1625,7 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "SingingCard-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				LIBRARY_SEARCH_PATHS = (
 					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
 					"/Users/roikr/Developer/OpenSource/libsndfile-1.0.21/Xcode/build/Debug-iphoneos",

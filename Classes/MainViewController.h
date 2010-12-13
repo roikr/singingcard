@@ -45,6 +45,9 @@ class testApp;
 	OpenGLTOMovie *renderManager;
 	
 	EAGLView *eAGLView;
+	
+	UIButton *_cameraToggleButton;
+	
 }
 
 
@@ -66,17 +69,19 @@ class testApp;
 @property (readonly, nonatomic, getter=isAnimating) BOOL animating;
 @property (nonatomic) NSInteger animationFrameInterval;
 
+@property (nonatomic,retain) IBOutlet UIButton *cameraToggleButton;
 
 @property (readonly) testApp *OFSAptr;
 
 - (void)startAnimation;
 - (void)stopAnimation;
 
-- (void) shoot:(id)sender;
-- (void) preview:(id)sender;
-- (void) play:(id)sender;
-- (void) stop:(id)sender;
-- (void) share:(id)sender;
+- (IBAction) shoot:(id)sender;
+- (IBAction) preview:(id)sender;
+- (IBAction) play:(id)sender;
+- (IBAction) stop:(id)sender;
+- (IBAction) share:(id)sender;
+- (IBAction)cameraToggle:(id)sender;
 
 - (void)updateViews;
 - (void) setShareProgress:(float) progress;
@@ -85,5 +90,6 @@ class testApp;
 - (void)renderVideo;
 - (void)exportRingtone;
 - (void)cancelRendering:(id)sender;
+
 
 @end

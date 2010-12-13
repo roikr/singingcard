@@ -7,8 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-
-
+#import <AVFoundation/AVFoundation.h> // only for camera count
 
 #import "MainViewController.h"
 #import "EAGLView.h"
@@ -37,6 +36,7 @@
 - (void)updateRenderProgress;
 - (void)renderAudioDidFinish;
 - (void)updateExportProgress:(ExportManager*)manager;
+- (NSUInteger) cameraCount;
 
 
 @end
@@ -57,6 +57,8 @@
 @synthesize renderManager;
 
 @synthesize eAGLView;
+
+@synthesize cameraToggleButton = _cameraToggleButton;
 
 - (void)viewDidLoad	// need to be called after the EAGL awaked from nib
 //- (void)awakeFromNib
@@ -83,6 +85,9 @@
     animating = FALSE;
     animationFrameInterval = 1;
     self.displayLink = nil;
+	
+	[[self cameraToggleButton] setEnabled:[self cameraCount] > 1];
+	
 	
 }
 
@@ -237,21 +242,21 @@
 }
 
 
-- (void) shoot:(id)sender {
+- (IBAction) shoot:(id)sender {
 	self.OFSAptr->record();
 }
 
-- (void) preview:(id)sender {
+- (IBAction) preview:(id)sender {
 	self.OFSAptr->preview();
 }
-- (void) play:(id)sender {
+- (IBAction) play:(id)sender {
 	self.OFSAptr->setSongState(SONG_PLAY);
 }
-- (void) stop:(id)sender {
+- (IBAction) stop:(id)sender {
 	self.OFSAptr->setSongState(SONG_IDLE);
 }
 
-- (void) share:(id)sender {
+- (IBAction) share:(id)sender {
 	
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	
@@ -271,6 +276,10 @@
 	
 }
 
+- (IBAction)cameraToggle:(id)sender
+{
+    self.OFSAptr->cameraToggle();
+}
 
 
 #pragma mark Render && Share
@@ -510,6 +519,9 @@
 	
 }
 
-
+- (NSUInteger) cameraCount
+{
+    return [[AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo] count];
+}
 
 @end
