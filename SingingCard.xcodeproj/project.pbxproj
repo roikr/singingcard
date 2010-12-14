@@ -189,7 +189,6 @@
 		E4D5394412B393FD00B9EFD8 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5393D12B393FD00B9EFD8 /* tinyxmlparser.cpp */; };
 		E4D5394512B393FD00B9EFD8 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5393F12B393FD00B9EFD8 /* ofxXmlSettings.cpp */; };
 		E4D5396812B3941100B9EFD8 /* MyVideoBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D5394912B3941100B9EFD8 /* MyVideoBuffer.mm */; };
-		E4D5396912B3941100B9EFD8 /* ofxAudioCompressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5394A12B3941100B9EFD8 /* ofxAudioCompressor.cpp */; };
 		E4D5396B12B3941100B9EFD8 /* ofxiVideoGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395012B3941100B9EFD8 /* ofxiVideoGrabber.mm */; };
 		E4D5396C12B3941100B9EFD8 /* ofxiVideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395112B3941100B9EFD8 /* ofxiVideoPlayer.cpp */; };
 		E4D5396D12B3941100B9EFD8 /* ofxMidi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395512B3941100B9EFD8 /* ofxMidi.cpp */; };
@@ -555,8 +554,6 @@
 		E4D5394012B393FD00B9EFD8 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		E4D5394812B3941100B9EFD8 /* MyVideoBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVideoBuffer.h; sourceTree = "<group>"; };
 		E4D5394912B3941100B9EFD8 /* MyVideoBuffer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyVideoBuffer.mm; sourceTree = "<group>"; };
-		E4D5394A12B3941100B9EFD8 /* ofxAudioCompressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioCompressor.cpp; sourceTree = "<group>"; };
-		E4D5394B12B3941100B9EFD8 /* ofxAudioCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioCompressor.h; sourceTree = "<group>"; };
 		E4D5394E12B3941100B9EFD8 /* ofxiPhoneVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiPhoneVideo.h; sourceTree = "<group>"; };
 		E4D5394F12B3941100B9EFD8 /* ofxiVideoGrabber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiVideoGrabber.h; sourceTree = "<group>"; };
 		E4D5395012B3941100B9EFD8 /* ofxiVideoGrabber.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiVideoGrabber.mm; sourceTree = "<group>"; };
@@ -1303,8 +1300,6 @@
 			children = (
 				E4D5394812B3941100B9EFD8 /* MyVideoBuffer.h */,
 				E4D5394912B3941100B9EFD8 /* MyVideoBuffer.mm */,
-				E4D5394A12B3941100B9EFD8 /* ofxAudioCompressor.cpp */,
-				E4D5394B12B3941100B9EFD8 /* ofxAudioCompressor.h */,
 				E4D5394E12B3941100B9EFD8 /* ofxiPhoneVideo.h */,
 				E4D5394F12B3941100B9EFD8 /* ofxiVideoGrabber.h */,
 				E4D5395012B3941100B9EFD8 /* ofxiVideoGrabber.mm */,
@@ -1585,7 +1580,6 @@
 				E4D5394412B393FD00B9EFD8 /* tinyxmlparser.cpp in Sources */,
 				E4D5394512B393FD00B9EFD8 /* ofxXmlSettings.cpp in Sources */,
 				E4D5396812B3941100B9EFD8 /* MyVideoBuffer.mm in Sources */,
-				E4D5396912B3941100B9EFD8 /* ofxAudioCompressor.cpp in Sources */,
 				E4D5396B12B3941100B9EFD8 /* ofxiVideoGrabber.mm in Sources */,
 				E4D5396C12B3941100B9EFD8 /* ofxiVideoPlayer.cpp in Sources */,
 				E4D5396D12B3941100B9EFD8 /* ofxMidi.cpp in Sources */,
@@ -1637,7 +1631,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = SingingCard;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "09506734-48DB-4056-813C-4386BC164AB6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "809FA590-A5D0-4BA9-9757-3FD36DDFDEB4";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 			};
 			name = Debug;

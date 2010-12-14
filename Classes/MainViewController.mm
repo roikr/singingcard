@@ -379,6 +379,8 @@
 		 
 						   withContext:context
 							  withSize:CGSizeMake(480, 320) 
+			   withAudioAverageBitRate:[NSNumber numberWithInt: 192000 ]
+			   withVideoAverageBitRate:[NSNumber numberWithDouble:128.0*1024.0]
 		 
 		 
 			 withInitializationHandler:^ {
