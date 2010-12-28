@@ -179,17 +179,21 @@
     }
 }
 
-- (void)drawFrame // NORMAL_PLAY
+- (void)drawFrame 
 {
-    [self.eAGLView setFramebuffer];
+    if (self.OFSAptr->getIsFboNeeded()) {
+		[self.eAGLView setContext:context];
+		
+		self.OFSAptr->fboDraw();
+	}
+	
+	
+	[self.eAGLView setFramebuffer];
     
-	
-	
-	//	int frame = (int)(([displayLink timestamp]-startTime) * 1000 / 40);
-	//	if (frame>currentFrame) {
-	//		currentFrame = frame;
-	//		appDelegate.OFSAptr->nextFrame();
-	//	}
+	glMatrixMode (GL_PROJECTION);
+	glLoadIdentity ();
+	gluOrtho2D (0, self.eAGLView.framebufferWidth, 0, self.eAGLView.framebufferHeight);
+	glMatrixMode(GL_MODELVIEW);
 	
 	glLoadIdentity();
 	glScalef(1.0, -1.0,1.0);
