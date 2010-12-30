@@ -181,11 +181,11 @@
 
 - (void)drawFrame 
 {
-    if (self.OFSAptr->getIsFboNeeded()) {
-		[self.eAGLView setContext:context];
-		
-		self.OFSAptr->fboDraw();
-	}
+ //   if (self.OFSAptr->getIsFboNeeded()) {
+//		[self.eAGLView setContext:context];
+//		
+//		self.OFSAptr->fboDraw();
+//	}
 	
 	
 	[self.eAGLView setFramebuffer];
