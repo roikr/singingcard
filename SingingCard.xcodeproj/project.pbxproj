@@ -23,6 +23,10 @@
 		E4895D2412B637CC00314C97 /* camera-toggle.png in Resources */ = {isa = PBXBuildFile; fileRef = E4895D2012B637CC00314C97 /* camera-toggle.png */; };
 		E48F733012B5792C0053ACCB /* ofxAudioSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E48F732A12B5792C0053ACCB /* ofxAudioSampler.cpp */; };
 		E48F733112B5792C0053ACCB /* ofxAudioTrigger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E48F732E12B5792C0053ACCB /* ofxAudioTrigger.cpp */; };
+		E49B42C7139673A30091199D /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E49B42BF139673A30091199D /* CAStreamBasicDescription.cpp */; };
+		E49B42C8139673A30091199D /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E49B42C1139673A30091199D /* CAXException.cpp */; };
+		E49B42C9139673A30091199D /* README in Resources */ = {isa = PBXBuildFile; fileRef = E49B42C3139673A30091199D /* README */; };
+		E49B42CA139673A30091199D /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E49B42C6139673A30091199D /* ofxAudioFile.mm */; };
 		E4AF012F12B0EF5700457BC7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4AF012D12B0EF5700457BC7 /* MainViewController.xib */; };
 		E4AF013012B0EF5700457BC7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4AF012E12B0EF5700457BC7 /* MainWindow.xib */; };
 		E4AF014512B0F06000457BC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF014412B0F06000457BC7 /* main.m */; };
@@ -201,7 +205,6 @@
 		E4D5397012B3941100B9EFD8 /* ofxMidiPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395B12B3941100B9EFD8 /* ofxMidiPlayer.cpp */; };
 		E4D5397112B3941100B9EFD8 /* ofxMidiSample.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395D12B3941100B9EFD8 /* ofxMidiSample.cpp */; };
 		E4D5397212B3941100B9EFD8 /* ofxMidiTrack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5395F12B3941100B9EFD8 /* ofxMidiTrack.cpp */; };
-		E4D5397412B3941100B9EFD8 /* ofxSndFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4D5396612B3941100B9EFD8 /* ofxSndFile.cpp */; };
 		E4D53A1C12B39E6200B9EFD8 /* ofxRKTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D53A1912B39E6200B9EFD8 /* ofxRKTexture.mm */; };
 		E4D53A1D12B39E6200B9EFD8 /* PVRTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D53A1A12B39E6200B9EFD8 /* PVRTexture.m */; };
 		E4D53AD412B3AA9300B9EFD8 /* data in Resources */ = {isa = PBXBuildFile; fileRef = E4D53ACD12B3AA9300B9EFD8 /* data */; };
@@ -240,6 +243,15 @@
 		E48F732B12B5792C0053ACCB /* ofxAudioSampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSampler.h; sourceTree = "<group>"; };
 		E48F732E12B5792C0053ACCB /* ofxAudioTrigger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioTrigger.cpp; sourceTree = "<group>"; };
 		E48F732F12B5792C0053ACCB /* ofxAudioTrigger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioTrigger.h; sourceTree = "<group>"; };
+		E49B42BD139673A30091199D /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		E49B42BE139673A30091199D /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		E49B42BF139673A30091199D /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		E49B42C0139673A30091199D /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		E49B42C1139673A30091199D /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		E49B42C2139673A30091199D /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		E49B42C3139673A30091199D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		E49B42C5139673A30091199D /* ofxAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioFile.h; sourceTree = "<group>"; };
+		E49B42C6139673A30091199D /* ofxAudioFile.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxAudioFile.mm; sourceTree = "<group>"; };
 		E4AF012D12B0EF5700457BC7 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainViewController.xib; path = Resources/MainViewController.xib; sourceTree = "<group>"; };
 		E4AF012E12B0EF5700457BC7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = "<group>"; };
 		E4AF014312B0F05400457BC7 /* SingingCard_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingingCard_Prefix.pch; sourceTree = "<group>"; };
@@ -584,8 +596,6 @@
 		E4D5395E12B3941100B9EFD8 /* ofxMidiSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMidiSample.h; sourceTree = "<group>"; };
 		E4D5395F12B3941100B9EFD8 /* ofxMidiTrack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMidiTrack.cpp; sourceTree = "<group>"; };
 		E4D5396012B3941100B9EFD8 /* ofxMidiTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMidiTrack.h; sourceTree = "<group>"; };
-		E4D5396612B3941100B9EFD8 /* ofxSndFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSndFile.cpp; sourceTree = "<group>"; };
-		E4D5396712B3941100B9EFD8 /* ofxSndFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSndFile.h; sourceTree = "<group>"; };
 		E4D539B712B39A6500B9EFD8 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E4D53A1812B39E6200B9EFD8 /* ofxRKTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxRKTexture.h; path = ../YesPlastic/src/ofxRKTexture.h; sourceTree = SOURCE_ROOT; };
 		E4D53A1912B39E6200B9EFD8 /* ofxRKTexture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofxRKTexture.mm; path = ../YesPlastic/src/ofxRKTexture.mm; sourceTree = SOURCE_ROOT; };
@@ -796,6 +806,39 @@
 			children = (
 				E48F732E12B5792C0053ACCB /* ofxAudioTrigger.cpp */,
 				E48F732F12B5792C0053ACCB /* ofxAudioTrigger.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E49B42BB139673A30091199D /* ofxAudioFile */ = {
+			isa = PBXGroup;
+			children = (
+				E49B42BC139673A30091199D /* iPublicUtility */,
+				E49B42C3139673A30091199D /* README */,
+				E49B42C4139673A30091199D /* src */,
+			);
+			name = ofxAudioFile;
+			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/ofxAudioFile";
+			sourceTree = SOURCE_ROOT;
+		};
+		E49B42BC139673A30091199D /* iPublicUtility */ = {
+			isa = PBXGroup;
+			children = (
+				E49B42BD139673A30091199D /* CADebugMacros.h */,
+				E49B42BE139673A30091199D /* CAMath.h */,
+				E49B42BF139673A30091199D /* CAStreamBasicDescription.cpp */,
+				E49B42C0139673A30091199D /* CAStreamBasicDescription.h */,
+				E49B42C1139673A30091199D /* CAXException.cpp */,
+				E49B42C2139673A30091199D /* CAXException.h */,
+			);
+			path = iPublicUtility;
+			sourceTree = "<group>";
+		};
+		E49B42C4139673A30091199D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E49B42C5139673A30091199D /* ofxAudioFile.h */,
+				E49B42C6139673A30091199D /* ofxAudioFile.mm */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1283,6 +1326,7 @@
 		E4D5392012B393C200B9EFD8 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				E49B42BB139673A30091199D /* ofxAudioFile */,
 				E4F7D6A712CCF54300D3119E /* common */,
 				E4F7D6AE12CCF54300D3119E /* myOF */,
 				E435B8AF12C7EF2F009C799A /* ofxSlider */,
@@ -1291,7 +1335,6 @@
 				E417549812B4B8DA00DCF45E /* ofxDynamicCompressor */,
 				E4D5394612B3941100B9EFD8 /* ofxiPhoneVideo */,
 				E4D5395312B3941100B9EFD8 /* ofxMidi */,
-				E4D5396412B3941100B9EFD8 /* ofxSndFile */,
 				E4D5393712B393FD00B9EFD8 /* ofxXmlSettings */,
 			);
 			name = addons;
@@ -1378,24 +1421,6 @@
 				E4D5395E12B3941100B9EFD8 /* ofxMidiSample.h */,
 				E4D5395F12B3941100B9EFD8 /* ofxMidiTrack.cpp */,
 				E4D5396012B3941100B9EFD8 /* ofxMidiTrack.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		E4D5396412B3941100B9EFD8 /* ofxSndFile */ = {
-			isa = PBXGroup;
-			children = (
-				E4D5396512B3941100B9EFD8 /* src */,
-			);
-			name = ofxSndFile;
-			path = "../of_preRelease_v0061_osxSL_FAT/My Addons/ofxSndFile";
-			sourceTree = SOURCE_ROOT;
-		};
-		E4D5396512B3941100B9EFD8 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				E4D5396612B3941100B9EFD8 /* ofxSndFile.cpp */,
-				E4D5396712B3941100B9EFD8 /* ofxSndFile.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1489,6 +1514,7 @@
 				E4D53AD412B3AA9300B9EFD8 /* data in Resources */,
 				E4895D2312B637CC00314C97 /* camera-toggle-pressed.png in Resources */,
 				E4895D2412B637CC00314C97 /* camera-toggle.png in Resources */,
+				E49B42C9139673A30091199D /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1657,7 +1683,6 @@
 				E4D5397012B3941100B9EFD8 /* ofxMidiPlayer.cpp in Sources */,
 				E4D5397112B3941100B9EFD8 /* ofxMidiSample.cpp in Sources */,
 				E4D5397212B3941100B9EFD8 /* ofxMidiTrack.cpp in Sources */,
-				E4D5397412B3941100B9EFD8 /* ofxSndFile.cpp in Sources */,
 				E4D53A1C12B39E6200B9EFD8 /* ofxRKTexture.mm in Sources */,
 				E4D53A1D12B39E6200B9EFD8 /* PVRTexture.m in Sources */,
 				E417549C12B4B8DA00DCF45E /* ofxDynamicCompressor.cpp in Sources */,
@@ -1673,6 +1698,9 @@
 				E4F7D6B512CCF54300D3119E /* ofMainExt.mm in Sources */,
 				E4F7D6B712CCF54300D3119E /* ofMain.mm in Sources */,
 				E4F7D6B812CCF54300D3119E /* ofxiPhoneExtras.mm in Sources */,
+				E49B42C7139673A30091199D /* CAStreamBasicDescription.cpp in Sources */,
+				E49B42C8139673A30091199D /* CAXException.cpp in Sources */,
+				E49B42CA139673A30091199D /* ofxAudioFile.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1683,12 +1711,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (G22F3GL4MN)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = _Debug;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				HEADER_SEARCH_PATHS = (
@@ -1697,19 +1727,16 @@
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = "SingingCard-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
-				LIBRARY_SEARCH_PATHS = (
-					"/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib",
-					"/Users/roikr/Developer/OpenSource/libsndfile-1.0.21/Xcode/build/Debug-iphoneos",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = "/Users/roikr/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(IPHONEOS_DEPLOYMENT_TARGET).sdk/lib";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
-					"-lsndfile",
 					"-lGLU",
 					"-ObjC",
 					"-lxml2",
 				);
 				PRODUCT_NAME = SingingCard;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "809FA590-A5D0-4BA9-9757-3FD36DDFDEB4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "652B8C8A-B39F-4204-9460-125C661028E4";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 			};
 			name = Debug;
@@ -1718,11 +1745,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = "SingingCard-Info.plist";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = SingingCard;
 				VALIDATE_PRODUCT = YES;
 			};

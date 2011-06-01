@@ -379,7 +379,7 @@
 		
 		
 		[renderManager writeToVideoURL:[NSURL fileURLWithPath:[[shareManager getVideoPath]  stringByAppendingPathExtension:@"mov"]] 
-						  withAudioURL:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"wav"]] 
+						  withAudioURL:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"caf"]] 
 		 
 						   withContext:context
 							  withSize:CGSizeMake(480, 320) 
@@ -424,6 +424,19 @@
 					 
 				 }
 		 
+				withCancelationHandler:^ {
+					NSLog(@"videoRender canceled");
+					self.OFSAptr->setSongState(SONG_IDLE);
+					self.OFSAptr->soundStreamStart();
+					//[delegate RenderViewControllerDelegateCanceled:self];
+					self.renderManager = nil;
+				}
+		 
+				   withAbortionHandler:^ {
+					   NSLog(@"videoRender aborted");
+					   self.renderManager = nil;  
+				   }
+		 
 		 ];
 	});
 	
@@ -447,7 +460,7 @@
 	self.OFSAptr->soundStreamStop();
 	
 	
-	self.exportManager = [ExportManager  exportAudio:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"wav"]]
+	self.exportManager = [ExportManager  exportAudio:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"caf"]]
 						  
 											   toURL:[NSURL fileURLWithPath:[[shareManager getVideoPath] stringByAppendingPathExtension:@"m4r"]]
 						  
