@@ -77,13 +77,18 @@
 		
 		CGPoint touchPoint = [touch locationInView:self];
 		
+		ofTouchEventArgs t;
+		t.x = touchPoint.x;
+		t.y = touchPoint.y;
+		t.id = touchIndex;
+		
 		if([touch tapCount] == 2) {
-			appDelegate.OFSAptr->touchDoubleTap(touchPoint.x, touchPoint.y, touchIndex);// send doubletap
+			appDelegate.OFSAptr->touchDoubleTap(t);// send doubletap
 		}
 		
 		//if([touch tapCount] >= 1) {
 			
-		appDelegate.OFSAptr->touchDown(touchPoint.x, touchPoint.y, touchIndex);
+		appDelegate.OFSAptr->touchDown(t);
 		//}
 		
 		/*
@@ -118,7 +123,12 @@
 		
 		CGPoint touchPoint = [touch locationInView:self];
 		
-		appDelegate.OFSAptr->touchMoved(touchPoint.x, touchPoint.y, touchIndex);
+		ofTouchEventArgs t;
+		t.x = touchPoint.x;
+		t.y = touchPoint.y;
+		t.id = touchIndex;
+		
+		appDelegate.OFSAptr->touchMoved(t);
 	}
 }
 
@@ -148,9 +158,14 @@
 		activeTouches[touchIndex] = 0;
 		
 		CGPoint touchPoint = [touch locationInView:self];
+		
+		ofTouchEventArgs t;
+		t.x = touchPoint.x;
+		t.y = touchPoint.y;
+		t.id = touchIndex;
 	
 //		int mode = appDelegate.OFSAptr->getMode(appDelegate.OFSAptr->controller);
-		appDelegate.OFSAptr->touchUp(touchPoint.x, touchPoint.y, touchIndex);
+		appDelegate.OFSAptr->touchUp(t);
 		
 //		if (mode!=appDelegate.OFSAptr->getMode(appDelegate.OFSAptr->controller)) {
 //			[viewController updateViews];
@@ -169,7 +184,12 @@
 			CGPoint touchPoint = [activeTouches[i] locationInView:self];
 			activeTouches[i] = 0;
 			
-			((SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr->touchUp(touchPoint.x, touchPoint.y, i);
+			ofTouchEventArgs t;
+			t.x = touchPoint.x;
+			t.y = touchPoint.y;
+			t.id = i;
+			
+			((SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr->touchUp(t);
 			
 		}
 	}

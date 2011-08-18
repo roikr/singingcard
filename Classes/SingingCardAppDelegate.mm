@@ -29,7 +29,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.OFSAptr = new testApp;
+    
+	//----- DAMIAN
+	// set data path root for ofToDataPath()
+	// path on iPhone will be ~/Applications/{application GUID}/openFrameworks.app/data
+	// get the resource path for the bundle (ie '~/Applications/{application GUID}/openFrameworks.app')
+	NSString *bundle_path_ns = [[NSBundle mainBundle] resourcePath];
+	// convert to UTF8 STL string
+	string path = [bundle_path_ns UTF8String];
+	// append data
+	//path.append( "/data/" ); // ZACH
+	path.append( "/" ); // ZACH
+	ofLog(OF_LOG_VERBOSE, "setting data path root to " + path);
+	ofSetDataPathRoot( path );
+	//-----
+	
+	
+	
+	self.OFSAptr = new testApp;
 	self.shareManager = [ShareManager shareManager];
 	
 		
