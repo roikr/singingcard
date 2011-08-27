@@ -11,33 +11,36 @@
 
 @class MainViewController;
 @class ShareManager;
+@class EAGLView;
 class testApp;
 
 @interface SingingCardAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+	EAGLView *eAGLView;
     MainViewController *mainViewController;
-	UINavigationController *navigationController;
-	
+	\
+		
 	testApp *OFSAptr;
 	
 	ShareManager *shareManager;
 	NSInteger lastSavedVersion;
+	
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic,retain)  IBOutlet EAGLView *eAGLView;
 @property (nonatomic, retain) IBOutlet MainViewController *mainViewController;
-@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+
 
 @property testApp *OFSAptr;
 
 @property (nonatomic, retain) ShareManager *shareManager;
 @property NSInteger lastSavedVersion;
 
-- (void)presentModalViewController:(UIViewController *)modalViewController animated:(BOOL)animated;
-- (void)dismissModalViewControllerAnimated:(BOOL)animated;
-- (void)pushViewController:(UIViewController *)controller;
-- (void)popViewController;
-- (void)playURL:(NSURL *)url;
+
+
+
 
 @end
 

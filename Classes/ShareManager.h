@@ -9,9 +9,26 @@
 #import <Foundation/Foundation.h>
 #import <MessageUI/MFMailComposeViewController.h>
 #import "FacebookUploader.h"
+#import "FacebookUploadViewController.h"
 #import "YouTubeUploader.h"
+#import "YouTubeUploadViewController.h"
+#import "RenderViewController.h"
 
-@interface ShareManager : NSObject<FacebookUploaderDelegate,YouTubeUploaderDelegate,MFMailComposeViewControllerDelegate,UIActionSheetDelegate> {
+
+enum {
+	ACTION_UPLOAD_TO_FACEBOOK,
+	ACTION_UPLOAD_TO_YOUTUBE,
+	ACTION_ADD_TO_LIBRARY,
+	ACTION_SEND_VIA_MAIL,
+	ACTION_SEND_RINGTONE,
+	ACTION_CANCEL,
+	ACTION_RENDER,
+	ACTION_PLAY
+};
+
+@class RenderViewController;
+
+@interface ShareManager : NSObject<UIActionSheetDelegate,FacebookUploaderDelegate,FacebookUploadViewControllerDelegate,YouTubeUploaderDelegate,YouTubeUploadViewControllerDelegate,MFMailComposeViewControllerDelegate,RenderViewControllerDelegate> {
 	FacebookUploader *facebookUploader;
 	YouTubeUploader *youTubeUploader;
 	
@@ -19,7 +36,10 @@
 	NSInteger exportedRingtoneVersion;
 	BOOL canSendMail;
 	NSInteger action;
-	NSInteger state;
+	
+	UIViewController *parentViewController;
+	
+	RenderViewController *renderViewController;
 }
 
 
@@ -30,16 +50,18 @@
 @property (readonly) BOOL videoRendered;
 @property (readonly) BOOL ringtoneExported;
 
+@property (nonatomic,retain) UIViewController *parentViewController;
+@property (nonatomic,retain) RenderViewController *renderViewController;
 
 + (ShareManager*) shareManager;
-- (NSString *)getVideoName;
-- (NSString *)getVideoPath;
-- (NSString *)getVideoTitle;
-- (void)menuWithView:(UIView *)view;
-- (void)action;
-- (void)cancel;
-- (void)resetVersions;
-//- (void)prepare;
 
+- (void)menuWithView:(UIView *)view;
+- (NSString *)getSongName;
+- (NSString *)getDisplayName;
+- (NSString *)getVideoPath;
+
+
+- (void)resetVersions;
+- (void)applicationDidEnterBackground;
 
 @end
