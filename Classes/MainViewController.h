@@ -16,41 +16,42 @@
 @interface MainViewController : UIViewController
 {
        
-    BOOL animating;
-    NSInteger animationFrameInterval;
-    CADisplayLink *displayLink;
-	
 	UIView *buttonsView;
 	
-	BOOL bAnimatingRecord;
+	
+	UIView *liveView;
+	UIView *recordView;
+	UIView *playView;
+	UIButton *playButton;
 	
 //	CustomImageView *shareProgressView;
 
-	UIButton *_cameraToggleButton;
+//	UIButton *_cameraToggleButton;
 	
 }
 
 
 
 
-@property (nonatomic, retain) IBOutlet UIView *buttonsView;
+@property (nonatomic, retain) IBOutlet UIView *liveView;
+@property (nonatomic, retain) IBOutlet UIView *recordView;
+@property (nonatomic, retain) IBOutlet UIView *playView;
+@property (nonatomic, retain) IBOutlet UIButton *playButton;
+
 //@property (nonatomic,retain ) IBOutlet CustomImageView *shareProgressView;
 
-
-@property (readonly, nonatomic, getter=isAnimating) BOOL animating;
-@property (nonatomic,retain) IBOutlet UIButton *cameraToggleButton;
+//@property (nonatomic,retain) IBOutlet UIButton *cameraToggleButton;
 
 
 
-
-
-- (IBAction) shoot:(id)sender;
+- (IBAction) live:(id)sender;
+- (IBAction) record:(id)sender;
 - (IBAction) stop:(id)sender;
 - (IBAction) preview:(id)sender;
 - (IBAction) play:(id)sender;
 - (IBAction) stop:(id)sender;
 - (IBAction) share:(id)sender;
-- (IBAction)cameraToggle:(id)sender;
+//- (IBAction)cameraToggle:(id)sender;
 
 - (void)updateViews;
 - (void) setShareProgress:(float) progress;

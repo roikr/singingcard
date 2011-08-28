@@ -35,8 +35,10 @@
 
 @implementation MainViewController
 
-
-@synthesize buttonsView;
+@synthesize liveView;
+@synthesize recordView;
+@synthesize playView;
+@synthesize playButton;
 
 
 //@synthesize shareProgressView;
@@ -44,7 +46,7 @@
 
 
 
-@synthesize cameraToggleButton = _cameraToggleButton;
+//@synthesize cameraToggleButton = _cameraToggleButton;
 
 - (void)viewDidLoad	// need to be called after the EAGL awaked from nib
 //- (void)awakeFromNib
@@ -72,8 +74,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-        [super viewWillAppear:animated];
-	
+	[super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -112,19 +113,41 @@
 
 - (void)updateViews {
 	
-	if (self.navigationController.topViewController != self) {
-		return;
-	}
+//	if (self.navigationController.topViewController != self) {
+//		return;
+//	}
 	
+
+	liveView.hidden = YES;
+	recordView.hidden = YES;
+	playView.hidden = YES;
+	playButton.selected = NO;
 	
-	buttonsView.hidden = YES;
 	
 	
 	switch (self.OFSAptr->getSongState()) {
 		case SONG_IDLE:
-		case SONG_PLAY:
+		case SONG_PLAY: {
 			buttonsView.hidden = NO;
-			break;
+			switch (self.OFSAptr->getState()) {
+				case STATE_LIVE:
+					liveView.hidden = NO;
+
+					break;
+				case STATE_RECORD:
+					recordView.hidden = NO;
+					
+					break;
+				case STATE_PLAY:
+					playView.hidden = NO;
+					playButton.selected = self.OFSAptr->getSongState() == SONG_PLAY;
+				default:
+					break;
+			}
+			
+			
+	
+		}	break;
 		case SONG_RENDER_AUDIO:
 		case SONG_RENDER_VIDEO:
 		case SONG_RENDER_AUDIO_FINISHED:
@@ -133,21 +156,25 @@
 		default:
 			break;
 	}
-		
-	
 }
 
 
-- (IBAction) shoot:(id)sender {
+- (IBAction) live:(id)sender {
+	self.OFSAptr->live();
+}
+
+- (IBAction) record:(id)sender {
 	self.OFSAptr->record();
 }
 
 - (IBAction) preview:(id)sender {
 	self.OFSAptr->preview();
 }
+
 - (IBAction) play:(id)sender {
-	self.OFSAptr->setSongState(SONG_PLAY);
+		self.OFSAptr->setSongState(self.OFSAptr->getSongState() == SONG_PLAY ? SONG_IDLE : SONG_PLAY);
 }
+
 - (IBAction) stop:(id)sender {
 	self.OFSAptr->setSongState(SONG_IDLE);
 }
@@ -171,11 +198,11 @@
 	// BUG FIX: this is very important: don't present from milgromViewController as it will result in crash when returning to BandView after share
 	
 }
-
-- (IBAction)cameraToggle:(id)sender
-{
-    self.OFSAptr->cameraToggle();
-}
+//
+//- (IBAction)cameraToggle:(id)sender
+//{
+//    self.OFSAptr->cameraToggle();
+//}
 
 
 #pragma mark Render && Share

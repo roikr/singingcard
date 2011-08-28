@@ -61,14 +61,14 @@
      */
 	
 	[self.eAGLView startAnimation];
-/*
+
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 		RKLog(@"update loop started");
 		
 		while ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
 			if (OFSAptr) {
 				
-				OFSAptr->update(); // also update bNeedDisplay
+				//OFSAptr->update(); // also update bNeedDisplay
 				
 				if (OFSAptr->bNeedDisplay) {
 					dispatch_async(dispatch_get_main_queue(), ^{
@@ -87,7 +87,7 @@
 		}
 		RKLog(@"update loop exited");		
 	});
-*/
+
 	
 	if (OFSAptr) {
 		OFSAptr->soundStreamStart();
@@ -98,6 +98,7 @@
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     RKLog(@"applicationWillResignActive");
+	[self.eAGLView stopAnimation];
 }
 
 
@@ -105,7 +106,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
      RKLog(@"applicationWillTerminate");
-	[eAGLView stopAnimation];
+	[self.eAGLView stopAnimation]; 
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
