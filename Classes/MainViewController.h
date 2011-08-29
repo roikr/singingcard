@@ -11,7 +11,7 @@
 
 //@class CustomFontTextField;
 //@class CustomImageView;
-
+@class RenderProgressView;
 
 @interface MainViewController : UIViewController
 {
@@ -23,6 +23,8 @@
 	UIView *recordView;
 	UIView *playView;
 	UIButton *playButton;
+	
+	RenderProgressView *renderProgressView;
 	
 //	CustomImageView *shareProgressView;
 
@@ -37,6 +39,7 @@
 @property (nonatomic, retain) IBOutlet UIView *recordView;
 @property (nonatomic, retain) IBOutlet UIView *playView;
 @property (nonatomic, retain) IBOutlet UIButton *playButton;
+@property (nonatomic, retain) IBOutlet RenderProgressView *renderProgressView;
 
 //@property (nonatomic,retain ) IBOutlet CustomImageView *shareProgressView;
 

@@ -26,7 +26,10 @@ enum {
 	GDataServiceTicket *mUploadTicket;
 	NSMutableArray * delegates;
 	
-		
+	NSString *videoTitle;
+	NSString *videoDescription;
+	NSString *videoPath;	
+	
 	NSString *username;
 	NSString *password;
 	
@@ -40,6 +43,9 @@ enum {
 }
 
 @property (nonatomic, retain) NSMutableArray * delegates;
+@property (nonatomic,retain) NSString *videoTitle;
+@property (nonatomic,retain) NSString *videoDescription;
+@property (nonatomic,retain) NSString *videoPath;
 @property (nonatomic,retain) NSString *username;
 @property (nonatomic,retain) NSString *password;
 @property (readonly) float progress;
@@ -52,6 +58,7 @@ enum {
 + (YouTubeUploader *) youTubeUploader; 
 -(void)addDelegate:(id<YouTubeUploaderDelegate>)delegate;
 - (void) uploadVideoWithTitle:(NSString *)title withDescription:(NSString *)description andPath:(NSString *)path;
+- (void) upload;
 @end
 
 @protocol YouTubeUploaderDelegate<NSObject>

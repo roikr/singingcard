@@ -23,6 +23,7 @@
 @synthesize scrollView;
 @synthesize additionalText;
 @synthesize keyboardButton;
+@synthesize bDelayedUpload;
 
 
 /*
@@ -148,7 +149,16 @@
 - (void) upload:(id)sender {
 	if (uploader!=nil) {
 		if ([uploader isConnected]) {
-			[uploader uploadVideoWithTitle:titleField.text withDescription:[descriptionView.text stringByAppendingString:additionalText] andPath:videoPath];
+			[uploader setVideoTitle:titleField.text];
+			[uploader setVideoDescription:[descriptionView.text stringByAppendingString:additionalText]];
+			[uploader setVideoPath:videoPath];
+			if (bDelayedUpload) {
+				[delegate FacebookUploadViewControllerUpload:self];
+			} else {
+				[uploader upload];
+			}
+
+//			[uploader uploadVideoWithTitle:titleField.text withDescription:[descriptionView.text stringByAppendingString:additionalText] andPath:videoPath];
 		} else {
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Upload" message:@"You are not logged in. Please login to upload" delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles:nil];
 			[alert show];
@@ -171,7 +181,7 @@
 }
 
 - (void) cancel:(id)sender {
-	[delegate FacebookUploadViewControllerDone:self];
+	[delegate FacebookUploadViewControllerCancel:self];
 }
 
 - (void) logout:(id)sender {
@@ -197,7 +207,9 @@
 	switch ([theUploader state]) {
 		case FACEBOOK_UPLOADER_STATE_UPLOADING:
 		case FACEBOOK_UPLOADER_STATE_UPLOAD_CANCELED:
-			[delegate FacebookUploadViewControllerDone:self];
+			if (!bDelayedUpload) {
+				[delegate FacebookUploadViewControllerUpload:self];
+			}
 			break;
 		case FACEBOOK_UPLOADER_STATE_DID_NOT_LOGIN: {
 			UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Login" message:@"Logged in failed. Please login to upload" delegate:nil  cancelButtonTitle:@"OK"  otherButtonTitles:nil];

@@ -103,7 +103,7 @@ static NSString* const AVPlayerDemoPlaybackViewControllerDurationObservationCont
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    return interfaceOrientation == UIInterfaceOrientationLandscapeRight;
 }
 
 - (NSURL*)URL
@@ -171,6 +171,13 @@ static NSString* const AVPlayerDemoPlaybackViewControllerDurationObservationCont
 	
 	[self syncButtons];
 	[self syncScrubber];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[mPlayer play];
+	
+	[super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

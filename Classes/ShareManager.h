@@ -12,7 +12,7 @@
 #import "FacebookUploadViewController.h"
 #import "YouTubeUploader.h"
 #import "YouTubeUploadViewController.h"
-#import "RenderViewController.h"
+#import "RenderManager.h"
 
 
 enum {
@@ -26,9 +26,10 @@ enum {
 	ACTION_PLAY
 };
 
-@class RenderViewController;
 
-@interface ShareManager : NSObject<UIActionSheetDelegate,FacebookUploaderDelegate,FacebookUploadViewControllerDelegate,YouTubeUploaderDelegate,YouTubeUploadViewControllerDelegate,MFMailComposeViewControllerDelegate,RenderViewControllerDelegate> {
+
+
+@interface ShareManager : NSObject<UIActionSheetDelegate,FacebookUploaderDelegate,FacebookUploadViewControllerDelegate,YouTubeUploaderDelegate,YouTubeUploadViewControllerDelegate,MFMailComposeViewControllerDelegate,RenderManagerDelegate> {
 	FacebookUploader *facebookUploader;
 	YouTubeUploader *youTubeUploader;
 	
@@ -36,10 +37,12 @@ enum {
 	NSInteger exportedRingtoneVersion;
 	BOOL canSendMail;
 	NSInteger action;
+	NSInteger state;
+	BOOL bAudioRendered;
 	
 	UIViewController *parentViewController;
 	
-	RenderViewController *renderViewController;
+	RenderManager *renderManager;
 }
 
 
@@ -51,7 +54,7 @@ enum {
 @property (readonly) BOOL ringtoneExported;
 
 @property (nonatomic,retain) UIViewController *parentViewController;
-@property (nonatomic,retain) RenderViewController *renderViewController;
+@property (nonatomic,retain) RenderManager *renderManager;
 
 + (ShareManager*) shareManager;
 

@@ -136,6 +136,35 @@ static NSString* kAppId = @"142588289117470";
 //	}
 }
 
+- (void) upload {
+	
+	if ([self isConnected] && self.state == FACEBOOK_UPLOADER_STATE_DID_LOGIN) {
+		NSData *data = [NSData dataWithContentsOfFile:videoPath]; 
+		
+		//		FBRequest *uploadRequest = [FBRequest requestWithSession: session delegate: self];
+		//		
+		//		NSMutableDictionary* Parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: @"video.upload", @"method", 
+		//										   videoTitle, @"title", videoDescription,@"description",nil];
+		//		[uploadRequest call: @"facebook.video.upload" params: Parameters dataParam: data];
+		//		
+		NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys: 
+									   videoTitle, @"title",
+									   videoDescription, @"description",
+									   data, @"video.mov",
+									   @"video/quicktime", @"contentType",
+									   nil];
+		[facebook openUrl:@"https://graph-video.facebook.com/me/videos" params:params httpMethod:@"POST" delegate:self];
+		
+		
+		//if ([self isConnected]) {
+		//		[self logout];
+		//	} else {
+		//		[self login];
+		//	}
+	}
+	
+}
+
 
 - (void) uploadVideoWithTitle:(NSString *)title withDescription:(NSString *)description andPath:(NSString *)path {
 	
@@ -143,31 +172,7 @@ static NSString* kAppId = @"142588289117470";
 	self.videoDescription = description;
 	self.videoPath = path;
 	
-	if ([self isConnected] && self.state == FACEBOOK_UPLOADER_STATE_DID_LOGIN) {
-		NSData *data = [NSData dataWithContentsOfFile:videoPath]; 
-		
-//		FBRequest *uploadRequest = [FBRequest requestWithSession: session delegate: self];
-//		
-//		NSMutableDictionary* Parameters = [NSMutableDictionary dictionaryWithObjectsAndKeys: @"video.upload", @"method", 
-//										   videoTitle, @"title", videoDescription,@"description",nil];
-//		[uploadRequest call: @"facebook.video.upload" params: Parameters dataParam: data];
-//		
-		NSMutableDictionary* params = [NSMutableDictionary dictionaryWithObjectsAndKeys: 
-										   videoTitle, @"title",
-										   videoDescription, @"description",
-										   data, @"video.mov",
-										   @"video/quicktime", @"contentType",
-										   nil];
-		[facebook openUrl:@"https://graph-video.facebook.com/me/videos" params:params httpMethod:@"POST" delegate:self];
-		
-	
-//if ([self isConnected]) {
-//		[self logout];
-//	} else {
-//		[self login];
-//	}
-	}
-	
+	[self upload];	
 }
 
 - (void) logout {

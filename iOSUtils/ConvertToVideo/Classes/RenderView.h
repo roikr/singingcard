@@ -10,11 +10,10 @@
 
 
 @interface RenderView : UIView {
-	UIView *slideView;
 }
 
 @property (nonatomic,retain) IBOutlet UIView *slideView;
 
 +(RenderView *) renderViewWithFrame:(CGRect)frame;
--(void) closeSlide:(id)sender;
+
 @end

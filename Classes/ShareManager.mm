@@ -17,15 +17,13 @@
 #import "testApp.h"
 #import "Reachability.h"
 
-
-
 enum {
 	STATE_IDLE,
-	STATE_RENDER_AUDIO,
-	STATE_EXPORT_AUDIO,
-	STATE_RENDER_VIDEO,
-	STATE_CANCEL
+	STATE_SELECTED,
+	STATE_DONE,
+	STATE_CANCELED
 };
+
 
 
 void ShareAlert(NSString *title,NSString *message) {
@@ -36,7 +34,7 @@ void ShareAlert(NSString *title,NSString *message) {
 }
 
 
-static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
+static NSString* kURL = @"http://www.lofipeople.com";
 
 @interface ShareManager ()
 - (void)sendViaMailWithSubject:(NSString *)subject withMessage:(NSString*)message 
@@ -45,9 +43,10 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 - (void)setVideoRendered;
 - (void)setRingtoneExported;
 - (BOOL)gotInternet;
-- (void)processVideo;
-- (void)processRingtone;
-- (void)renderFinished;
+- (void)proceedWithAudio;
+- (void)proceedWithVideo;
+- (void)sendRingtone;
+
 
 @end
 
@@ -56,7 +55,7 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 @synthesize facebookUploader;
 @synthesize youTubeUploader;
 @synthesize parentViewController;
-@synthesize renderViewController;
+@synthesize renderManager;
 
 
 + (ShareManager*) shareManager {
@@ -71,6 +70,8 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 		[youTubeUploader addDelegate:self];
 		self.facebookUploader = [FacebookUploader facebookUploader];
 		[facebookUploader addDelegate:self];
+		self.renderManager = [[[RenderManager alloc] init] autorelease];
+		[renderManager setDelegate:self];
 		
 		canSendMail = [MFMailComposeViewController canSendMail];
 		
@@ -82,7 +83,7 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 }
 
 - (void)dealloc {
-	[renderViewController release];
+	[renderManager release];
     [super dealloc];
 }
 
@@ -293,6 +294,8 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 - (void)menuWithView:(UIView *)view {
 	
 	
+	state = STATE_IDLE;
+	bAudioRendered = [self videoRendered] || [self ringtoneExported];
 	
 	UIActionSheet* sheet = [[[UIActionSheet alloc] init] autorelease];
 	
@@ -321,14 +324,20 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 	
 	[sheet showInView:view];
 	//sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
+	 
+	if (!bAudioRendered) {
+		[renderManager performSelector:@selector(renderAudio)];
+	}
+	
+	
+	 
 	
 }
 
 
+
 - (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	
-	
 	
 	switch (buttonIndex)
 	{
@@ -352,111 +361,59 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 			break;
 	}
 	
-	//[self.parentViewController dismissModalViewControllerAnimated:action==ACTION_CANCEL];
-	
-
-	BOOL bNeedToRender = YES;
-	
 	switch (action) {
-		case ACTION_CANCEL:
-			bNeedToRender = NO;
-			break;
 		case ACTION_UPLOAD_TO_YOUTUBE:
 		case ACTION_UPLOAD_TO_FACEBOOK:
 			if (![self gotInternet]) {
 				ShareAlert(@"Upload Movie", @"We're trying hard, but there's no Internet connection");
+				action = ACTION_CANCEL;
 				return;
-			}
-		case ACTION_ADD_TO_LIBRARY:
-		case ACTION_SEND_VIA_MAIL:
-		case ACTION_PLAY:
-		case ACTION_RENDER:
-			if (self.videoRendered ) {
-				bNeedToRender = NO;
-				[self processVideo];
-			}
-			break;
-		case ACTION_SEND_RINGTONE:
-			if (self.ringtoneExported ) {
-				bNeedToRender = NO;
-				[self processRingtone];
-			} 		
-			break;
-			
-		default:
-			break;
+			} break;
 	}
-				 
-	if (bNeedToRender) {
-		RKLog(@"NeedToRender");
-		if (self.renderViewController == nil) {
-			renderViewController = [[RenderViewController alloc] initWithNibName:@"RenderViewController" bundle:nil];
-			renderViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-			[renderViewController setDelegate:self];
-		}
-		
-		[parentViewController presentModalViewController:renderViewController animated:YES];
-		
-	}
-}
-
-- (void) processRingtone {
-	NSString *subject = @"Sweeeet! My New Milgrom Ringtone!";
-	NSString *message = [NSString stringWithFormat:@"Hey,<br/>I just made a ringtone created with the help of this cool little band Milgrom.<br/>Double click the attachment to listen to it first.<br/>Then, save it to your desktop, and then drag it to your itunes library. Now sync your iDevice.<br/>Next, in your iDevice, go to Settings > Sounds > Ringtone > and under 'Custom' you should see this file name.<br/>You can always switch it back if you feel like you're not ready for this work of art, yet.<br/><br/>Now, pay a visit to <a href='%@'>Milgrom's</a> website. I leave it to you to handle the truth.",kMilgromURL];
 	
-	
-	NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"m4r"]];
-	[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"audio/m4r" 
-					withFileName:[[self getSongName] stringByAppendingPathExtension:@"m4r"]];	
-}
-
-- (void) processVideo {
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
-
+	
 	switch (action)
 	{
 		case ACTION_UPLOAD_TO_YOUTUBE: {
-			
+			state = STATE_SELECTED;
 			YouTubeUploadViewController *controller = [[YouTubeUploadViewController alloc] initWithNibName:@"YouTubeUploadViewController" bundle:nil];
 			[controller setDelegate:self];
+			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = appDelegate.shareManager.youTubeUploader;
 			controller.videoTitle = [[self getDisplayName] uppercaseString];
 			//controller.additionalText = kMilgromURL;
-			controller.descriptionView.text = [NSString stringWithFormat:@"this video created with Milgrom's iphone app\nvisit milgrom at http://www.mmmilgrom.com"];
+			controller.descriptionView.text = [NSString stringWithFormat:@"this video created with this iphone app\nvisit lofipeople at %@",kURL];
 			controller.videoPath = [[self getVideoPath] stringByAppendingPathExtension:@"mov"];
 			
 			[controller release];
+			
+
 		}	break;
 			
 		case ACTION_UPLOAD_TO_FACEBOOK: {
-			
+			state = STATE_SELECTED;
 			[facebookUploader login];
 			FacebookUploadViewController * controller = [[FacebookUploadViewController alloc] initWithNibName:@"FacebookUploadViewController" bundle:nil];
 			[controller setDelegate:self];
+			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = appDelegate.shareManager.facebookUploader;
-			controller.videoTitle = [NSString stringWithFormat:@"MILGROM PLAYS %@",[[self getDisplayName] uppercaseString]];
+			controller.videoTitle = [NSString stringWithFormat:@"%@",[[self getDisplayName] uppercaseString]];
 			//controller.additionalText = kMilgromURL;
-			controller.descriptionView.text = @"more milgrom at http://www.mmmilgrom.com/fb";
+			controller.descriptionView.text = @"shana tova";
 			controller.videoPath = [[self getVideoPath]  stringByAppendingPathExtension:@"mov" ];
 			[controller release];
 			
 		}	break;
 			
 		case ACTION_ADD_TO_LIBRARY:
-			[self exportToLibrary];
+		case ACTION_SEND_VIA_MAIL:
+		case ACTION_SEND_RINGTONE:
+			state = STATE_DONE;
 			break;
-			
-		case ACTION_SEND_VIA_MAIL: 
-		{
-			
-			NSString *subject = @"check out my milgrom song";
-			NSString *message = [NSString stringWithFormat:@"Isn't  it a work of art?<br/><br/><a href='%@'>visit milgrom</a>",kMilgromURL];
-			NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"mov"]];
-			[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"video/mov" 
-							withFileName:[[self getSongName] stringByAppendingPathExtension:@"mov"]];
-		} break;
+
 			
 			
 //		case ACTION_PLAY:
@@ -470,68 +427,192 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 			
 	}	
 	
-}
-
-
-
-#pragma mark delegates
-
-- (void)renderFinished {
-}
-
-- (void) RenderViewControllerDelegateCanceled:(RenderViewController *)controller {
-	[parentViewController dismissModalViewControllerAnimated:YES];
-	[self renderFinished];
+	
+	
+	
+	
+	//[self.parentViewController dismissModalViewControllerAnimated:action==ACTION_CANCEL];
 	
 
+		
+	if (bAudioRendered) {
+		[self proceedWithAudio];
+	}
+				 
+//	if (bNeedToRender) {
+//		RKLog(@"NeedToRender");
+//		if (self.renderViewController == nil) {
+//			renderViewController = [[RenderViewController alloc] initWithNibName:@"RenderViewController" bundle:nil];
+//			renderViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+//			[renderViewController setDelegate:self];
+//		}
+//		
+//		[parentViewController presentModalViewController:renderViewController animated:YES];
+//		
+//	}
 }
 
-- (void) RenderViewControllerDelegateAudioRendered:(RenderViewController *)controller {
+
+
+
+- (void) proceedWithAudio {
 	
 	switch (action) {
+		case ACTION_CANCEL:
+			break;
 		case ACTION_UPLOAD_TO_YOUTUBE:
 		case ACTION_UPLOAD_TO_FACEBOOK:
 		case ACTION_ADD_TO_LIBRARY:
 		case ACTION_SEND_VIA_MAIL:
 		case ACTION_PLAY:
 		case ACTION_RENDER:
-			[controller renderVideo];
+			if (self.videoRendered ) {
+				if (state == STATE_DONE) {
+					[self proceedWithVideo];
+				}
+			} else {
+				[self.renderManager renderVideo];
+			}
+			
 			break;
 		case ACTION_SEND_RINGTONE:
-			[controller exportRingtone];
+			if (self.ringtoneExported ) {
+				[self sendRingtone];
+			} else {
+				[self.renderManager exportRingtone];
+			}
+			
 			break;
+			
 		default:
 			break;
 	}
 }
 
-- (void) RenderViewControllerDelegateVideoRendered:(RenderViewController *)controller {
+- (void)proceedWithVideo {
+	if (state == STATE_DONE) {
+		switch (action) {
+			case ACTION_CANCEL:
+				break;
+			
+			case ACTION_UPLOAD_TO_YOUTUBE:
+				[youTubeUploader upload];
+				 break;
+
+			case ACTION_UPLOAD_TO_FACEBOOK:
+				[facebookUploader upload];
+				break;
+				
+			 case ACTION_ADD_TO_LIBRARY:
+				[self exportToLibrary];
+				break;
+				
+			case ACTION_SEND_VIA_MAIL: {
+				NSString *subject = @"check out my song";
+				NSString *message = [NSString stringWithFormat:@"Isn't  it a work of art?<br/><br/><a href='%@'>visit lofipeople</a>",kURL];
+				NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"mov"]];
+				[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"video/mov" 
+								withFileName:[[self getSongName] stringByAppendingPathExtension:@"mov"]];
+
+			} break;
+				
+			default:
+				break;
+		}
+	}
+}
+
+-(void) sendRingtone {
+	NSString *subject = @"Sweeeet! My New Rosh Hashana Ringtone!";
+	NSString *message = [NSString stringWithFormat:@"Hey,<br/>I just made a ringtone created with the help of this cool app.<br/>Double click the attachment to listen to it first.<br/>Then, save it to your desktop, and then drag it to your itunes library. Now sync your iDevice.<br/>Next, in your iDevice, go to Settings > Sounds > Ringtone > and under 'Custom' you should see this file name.<br/>You can always switch it back if you feel like you're not ready for this work of art, yet.<br/><br/>Now, pay a visit to <a href='%@'>lofipeople's</a> website. I leave it to you to handle the truth.",kURL];
+	
+	
+	NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"m4r"]];
+	[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"audio/m4r" 
+					withFileName:[[self getSongName] stringByAppendingPathExtension:@"m4r"]];	
+}
+
+#pragma mark render delegates
+
+
+- (void) renderManagerRenderCanceled:(RenderManager *)manager {
+	RKLog(@"renderManagerRenderCanceled");
+//	[parentViewController dismissModalViewControllerAnimated:YES];
+	
+	
+
+}
+
+- (void) renderManagerAudioRendered:(RenderManager *)manager {
+	
+	RKLog(@"renderManagerAudioRendered");
+	bAudioRendered = YES;
+	if (state == STATE_SELECTED || state == STATE_DONE ) {
+		[self proceedWithAudio];
+	}
+	
+}
+
+- (void) renderManagerVideoRendered:(RenderManager *)manager {
+	RKLog(@"renderManagerVideoRendered");
 	[self setVideoRendered];
-	[parentViewController dismissModalViewControllerAnimated:NO];
-	[self renderFinished];
-	[self processVideo];
+//	[parentViewController dismissModalViewControllerAnimated:NO];
+	if (state == STATE_DONE) {
+		[self proceedWithVideo];
+	}
 }
 
 
-- (void) RenderViewControllerDelegateRingtoneExported:(RenderViewController *)controller {
+- (void) renderManagerRingtoneExported:(RenderManager *)manager {
+	RKLog(@"renderManagerRingtoneExported");
 	[self setRingtoneExported];
-	[parentViewController dismissModalViewControllerAnimated:NO];
-	[self renderFinished];
-	[self processRingtone];
+	
+	[self sendRingtone];
+//	[parentViewController dismissModalViewControllerAnimated:NO];
+	
+}
+
+- (void) renderManagerProgress:(float)progress {
+	RKLog(@"renderManagerProgress: %f",progress);
+//	[(MainViewController *)[(SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate] mainViewController] setShareProgress:progress];
 }
 
 
 
-- (void) YouTubeUploadViewControllerDone:(YouTubeUploadViewController *)controller {
+- (void) YouTubeUploadViewControllerCancel:(YouTubeUploadViewController *)controller {
+	RKLog(@"YouTubeUploadViewControllerCancel");
 	[parentViewController dismissModalViewControllerAnimated:YES];
+	state = STATE_CANCELED;
 }
 
-- (void) FacebookUploadViewControllerDone:(FacebookUploadViewController *)controller {
+- (void) YouTubeUploadViewControllerUpload:(YouTubeUploadViewController *)controller {
 	[parentViewController dismissModalViewControllerAnimated:YES];
+	state = STATE_DONE;
+	if (self.videoRendered ) {
+		 [self proceedWithVideo];
+	}
+}
+
+#pragma mark facebook view controller delegates
+
+- (void) FacebookUploadViewControllerCancel:(FacebookUploadViewController *)controller {
+	RKLog(@"FacebookUploadViewControllerCancel");
+	[parentViewController dismissModalViewControllerAnimated:YES];
+	state = STATE_CANCELED;
+}
+
+- (void) FacebookUploadViewControllerUpload:(FacebookUploadViewController *)controller {
+	RKLog(@"FacebookUploadViewControllerUpload");
+	[parentViewController dismissModalViewControllerAnimated:YES];
+	state = STATE_DONE;
+	if (self.videoRendered ) {
+		[self proceedWithVideo];
+	}
 }
 
 - (void)exportToLibrary
 {
+	RKLog(@"exportToLibrary");
 	NSURL *outputURL = [NSURL fileURLWithPath:[[self getVideoPath] stringByAppendingPathExtension:@"mov"]];
 	ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
 	if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:outputURL]) {
@@ -569,7 +650,7 @@ static NSString* kMilgromURL = @"http://www.mmmilgrom.com";
 //		self.sheet = nil;
 //	}
 	
-	[renderViewController applicationDidEnterBackground];
+	[renderManager applicationDidEnterBackground];
 	[facebookUploader applicationDidEnterBackground];
 	
 }

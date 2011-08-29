@@ -62,6 +62,7 @@ enum {
 + (FacebookUploader *) facebookUploader; 
 -(void) addDelegate:(id<FacebookUploaderDelegate>)delegate; 
 - (void) uploadVideoWithTitle:(NSString *)title withDescription:(NSString *)description andPath:(NSString *)path;
+- (void) upload;
 - (void)login;
 - (void) logout;
 - (BOOL) isConnected;

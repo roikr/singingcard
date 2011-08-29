@@ -30,6 +30,9 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 @implementation YouTubeUploader
 
 @synthesize delegates;
+@synthesize videoTitle;
+@synthesize videoDescription;
+@synthesize videoPath;
 @synthesize username;
 @synthesize password;
 @synthesize progress;
@@ -150,7 +153,7 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 }
 
 	
-- (void) uploadVideoWithTitle:(NSString *)titleStr withDescription:(NSString *)descStr andPath:(NSString *)path {
+- (void) upload {
 	
 	if (self.state == YOUTUBE_UPLOADER_STATE_UPLOAD_REQUESTED || self.state == YOUTUBE_UPLOADER_STATE_UPLOADING) {
 		return;
@@ -172,18 +175,18 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 	
 	
 	
-	NSData *data = [NSData dataWithContentsOfFile:path];
-	NSString *filename = [path lastPathComponent];
+	NSData *data = [NSData dataWithContentsOfFile:videoPath];
+	NSString *filename = [videoPath lastPathComponent];
 	
 	// gather all the metadata needed for the mediaGroup
-	GDataMediaTitle *title = [GDataMediaTitle textConstructWithString:titleStr];
+	GDataMediaTitle *title = [GDataMediaTitle textConstructWithString:videoTitle];
 	
 	NSString *categoryStr = @"Film";//[[mCategoryPopup selectedItem] representedObject];
 	GDataMediaCategory *category = [GDataMediaCategory mediaCategoryWithString:categoryStr]; 
 	[category setScheme:kGDataSchemeYouTubeCategory];
 	
 	
-	GDataMediaDescription *desc = [GDataMediaDescription textConstructWithString:descStr];
+	GDataMediaDescription *desc = [GDataMediaDescription textConstructWithString:videoDescription];
 	
 	//	NSString *keywordsStr = nil;//[mKeywordsField stringValue];
 	//	GDataMediaKeywords *keywords = [GDataMediaKeywords keywordsWithString:keywordsStr];
@@ -197,7 +200,7 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 	//[mediaGroup setMediaKeywords:keywords];
 	[mediaGroup setIsPrivate:isPrivate];
 	
-	NSString *mimeType = [GDataUtilities MIMETypeForFileAtPath:path defaultMIMEType:@"video/quicktime"];
+	NSString *mimeType = [GDataUtilities MIMETypeForFileAtPath:videoPath defaultMIMEType:@"video/quicktime"];
 	
 	// create the upload entry with the mediaGroup and the file data
 	GDataEntryYouTubeUpload *entry;
@@ -222,6 +225,15 @@ NSString* const kDeveloperKey = @"AI39si435pYVfbsWYr6_f70JFUWGyfK7_SEb7vOkGO7ay_
 	
 		
 		//[self updateUI];
+}
+
+- (void) uploadVideoWithTitle:(NSString *)title withDescription:(NSString *)description andPath:(NSString *)path {
+	
+	self.videoTitle = title;
+	self.videoDescription = description;
+	self.videoPath = path;
+	
+	[self upload];	
 }
 
 // progress callback

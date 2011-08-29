@@ -11,7 +11,8 @@
 
 #import "ShareManager.h"
 
-#import "AVPlayerDemoPlaybackViewController.h"
+//#import "AVPlayerDemoPlaybackViewController.h"
+#import "AVPlayerViewController.h"
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -48,10 +49,29 @@
 		
 	self.window.rootViewController = self.mainViewController;
 	[self.window makeKeyAndVisible];
+	
+	AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
+	[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"Shana_Tova_demo1" withExtension:@"mov"]];
+	[self.mainViewController presentModalViewController:playerViewController animated:NO];
+	[playerViewController release];
+	
+//	 AVPlayerDemoPlaybackViewController* mPlaybackViewController = [[[AVPlayerDemoPlaybackViewController allocWithZone:[self zone]] init] autorelease];
+//	 [mPlaybackViewController setURL:]; //[NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"video.mov"]]
+//	 [[mPlaybackViewController player] seekToTime:CMTimeMakeWithSeconds(0.0, NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 2 * NSEC_PER_SEC) toleranceAfter:CMTimeMake(1, 2 * NSEC_PER_SEC)];
+//	 
+//	 //[[mPlaybackViewController player] seekToTime:CMTimeMakeWithSeconds([defaults doubleForKey:AVPlayerDemoContentTimeUserDefaultsKey], NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 2 * NSEC_PER_SEC) toleranceAfter:CMTimeMake(1, 2 * NSEC_PER_SEC)];
+//	 
+//	 [self.mainViewController presentModalViewController:mPlaybackViewController animated:NO];
+	
+	 
+	 
+	
+	
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
 	
 	return YES;
 }
+
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

@@ -26,6 +26,7 @@
 @synthesize additionalText;
 @synthesize processView;
 @synthesize keyboardButton;
+@synthesize bDelayedUpload;
 
 
 
@@ -218,13 +219,23 @@
 	if (uploader!=nil) {
 		uploader.username = username.text;
 		uploader.password = password.text;
-		[uploader uploadVideoWithTitle:titleField.text withDescription:descriptionView.text andPath:videoPath]; //[descriptionView.text stringByAppendingString:additionalText]
+		[uploader setVideoTitle:titleField.text];
+		[uploader setVideoDescription:[descriptionView.text stringByAppendingString:additionalText]];
+		[uploader setVideoPath:videoPath];
+		
+		if (bDelayedUpload) {
+			[delegate YouTubeUploadViewControllerUpload:self];
+		} else {
+			[uploader upload];
+		}
+
+//		[uploader uploadVideoWithTitle:titleField.text withDescription:descriptionView.text andPath:videoPath]; //[descriptionView.text stringByAppendingString:additionalText]
 	}
 		
 }
 
 - (void) cancel:(id)sender {
-	[delegate YouTubeUploadViewControllerDone:self];
+	[delegate YouTubeUploadViewControllerCancel:self];
 }
 
 
@@ -257,7 +268,10 @@
 			
 		case YOUTUBE_UPLOADER_STATE_UPLOADING:
 			processView.hidden = NO;
-			[delegate YouTubeUploadViewControllerDone:self];
+			if (!bDelayedUpload) {
+				[delegate YouTubeUploadViewControllerUpload:self];
+			}
+			
 			break;
 			
 		default:

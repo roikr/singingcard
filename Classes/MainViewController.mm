@@ -23,6 +23,7 @@
 #import "RKMacros.h"
 
 #import "ShareManager.h"
+#import "RenderProgressView.h"
 
 
 
@@ -39,6 +40,7 @@
 @synthesize recordView;
 @synthesize playView;
 @synthesize playButton;
+@synthesize renderProgressView;
 
 
 //@synthesize shareProgressView;
@@ -51,8 +53,9 @@
 - (void)viewDidLoad	// need to be called after the EAGL awaked from nib
 //- (void)awakeFromNib
 {
-     [super viewDidLoad];
-		
+	[super viewDidLoad];
+	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
+	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	//[[self cameraToggleButton] setEnabled:[self cameraCount] > 1];
 	
 	
@@ -122,6 +125,8 @@
 	recordView.hidden = YES;
 	playView.hidden = YES;
 	playButton.selected = NO;
+	renderProgressView.hidden = YES;
+	renderProgressView.cancelButton.hidden = YES;
 	
 	
 	
@@ -145,14 +150,13 @@
 					break;
 			}
 			
-			
-	
 		}	break;
-		case SONG_RENDER_AUDIO:
 		case SONG_RENDER_VIDEO:
+			renderProgressView.cancelButton.hidden = NO;
+		case SONG_RENDER_AUDIO:
 		case SONG_RENDER_AUDIO_FINISHED:
 		case SONG_CANCEL_RENDER_AUDIO:
-			
+			renderProgressView.hidden = NO;
 		default:
 			break;
 	}

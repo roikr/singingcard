@@ -26,6 +26,8 @@
 	NSString *additionalText;
 	
 	id<FacebookUploadViewControllerDelegate> delegate;
+	
+	BOOL bDelayedUpload;
 }
 
 @property (nonatomic, retain) FacebookUploader *uploader;
@@ -40,6 +42,8 @@
 @property (nonatomic,retain) NSString* videoPath;
 @property (nonatomic,retain) NSString* additionalText;
 
+@property BOOL bDelayedUpload;
+
 -(void)setDelegate:(id<FacebookUploadViewControllerDelegate>)theDelegate;
 - (void) upload:(id)sender;
 - (void) cancel:(id)sender;
@@ -53,6 +57,7 @@
 
 @protocol FacebookUploadViewControllerDelegate<NSObject>
 
-- (void) FacebookUploadViewControllerDone:(FacebookUploadViewController *)controller;
+- (void) FacebookUploadViewControllerUpload:(FacebookUploadViewController *)controller;
+- (void) FacebookUploadViewControllerCancel:(FacebookUploadViewController *)controller;
 
 @end

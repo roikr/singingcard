@@ -24,33 +24,6 @@
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
 		E4895D2312B637CC00314C97 /* camera-toggle-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E4895D1F12B637CC00314C97 /* camera-toggle-pressed.png */; };
 		E4895D2412B637CC00314C97 /* camera-toggle.png in Resources */ = {isa = PBXBuildFile; fileRef = E4895D2012B637CC00314C97 /* camera-toggle.png */; };
-		E48B814F1402855400E4EFDB /* RKUBackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FA61402855400E4EFDB /* RKUBackgroundTask.m */; };
-		E48B81531402855400E4EFDB /* OpenGLTOMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FB01402855400E4EFDB /* OpenGLTOMovie.m */; };
-		E48B81541402855400E4EFDB /* RenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FB21402855400E4EFDB /* RenderView.m */; };
-		E48B81591402855400E4EFDB /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FBE1402855400E4EFDB /* Facebook.m */; };
-		E48B815A1402855400E4EFDB /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E48B7FC01402855400E4EFDB /* FBDialog.bundle */; };
-		E48B815B1402855400E4EFDB /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FC21402855400E4EFDB /* FBDialog.m */; };
-		E48B815C1402855400E4EFDB /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FC41402855400E4EFDB /* FBLoginDialog.m */; };
-		E48B815D1402855400E4EFDB /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FC61402855400E4EFDB /* FBRequest.m */; };
-		E48B815E1402855400E4EFDB /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FCA1402855400E4EFDB /* NSObject+SBJSON.m */; };
-		E48B815F1402855400E4EFDB /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FCC1402855400E4EFDB /* NSString+SBJSON.m */; };
-		E48B81601402855400E4EFDB /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FCE1402855400E4EFDB /* SBJSON.m */; };
-		E48B81611402855400E4EFDB /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FD01402855400E4EFDB /* SBJsonBase.m */; };
-		E48B81621402855400E4EFDB /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FD21402855400E4EFDB /* SBJsonParser.m */; };
-		E48B81631402855400E4EFDB /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B7FD41402855400E4EFDB /* SBJsonWriter.m */; };
-		E48B81A31402855400E4EFDB /* FacebookUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B80241402855400E4EFDB /* FacebookUploader.m */; };
-		E48B81A41402855400E4EFDB /* FacebookUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B80261402855400E4EFDB /* FacebookUploadViewController.m */; };
-		E48B81A51402855400E4EFDB /* facebook_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E48B80271402855400E4EFDB /* facebook_logo.png */; };
-		E48B81A71402855400E4EFDB /* FacebookUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48B802D1402855400E4EFDB /* FacebookUploadViewController.xib */; };
-		E48B81AB1402855400E4EFDB /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B80331402855400E4EFDB /* Reachability.m */; };
-		E48B82AA1402855400E4EFDB /* YouTubeUploadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B81411402855400E4EFDB /* YouTubeUploadAppDelegate.m */; };
-		E48B82AB1402855400E4EFDB /* YouTubeUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B81431402855400E4EFDB /* YouTubeUploader.m */; };
-		E48B82AC1402855400E4EFDB /* YouTubeUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B81451402855400E4EFDB /* YouTubeUploadViewController.m */; };
-		E48B82AF1402855400E4EFDB /* youtube_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E48B81481402855400E4EFDB /* youtube_logo.png */; };
-		E48B82B11402855400E4EFDB /* YouTubeUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48B814E1402855400E4EFDB /* YouTubeUploadViewController.xib */; };
-		E48B82F21402876700E4EFDB /* AVPlayerDemoPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B82EE1402876700E4EFDB /* AVPlayerDemoPlaybackView.m */; };
-		E48B82F31402876700E4EFDB /* AVPlayerDemoPlaybackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48B82EF1402876700E4EFDB /* AVPlayerDemoPlaybackView.xib */; };
-		E48B82F41402876700E4EFDB /* AVPlayerDemoPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B82F11402876700E4EFDB /* AVPlayerDemoPlaybackViewController.m */; };
 		E48B831C140287AF00E4EFDB /* ofxRKTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */; };
 		E48B841A1402880000E4EFDB /* GDataEntryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B83361402880000E4EFDB /* GDataEntryBase.m */; };
 		E48B841B1402880000E4EFDB /* GDataFeedBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B83381402880000E4EFDB /* GDataFeedBase.m */; };
@@ -158,10 +131,36 @@
 		E48B84811402880000E4EFDB /* GDataProgressMonitorInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B84111402880000E4EFDB /* GDataProgressMonitorInputStream.m */; };
 		E48B84821402880000E4EFDB /* GDataServerError.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B84131402880000E4EFDB /* GDataServerError.m */; };
 		E48B84841402880000E4EFDB /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B84171402880000E4EFDB /* GDataXMLNode.m */; };
-		E48B8491140288C000E4EFDB /* ExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B8490140288C000E4EFDB /* ExportManager.m */; };
 		E48B849C1402890D00E4EFDB /* PVRTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B849B1402890D00E4EFDB /* PVRTexture.m */; };
-		E48B84FC140294F200E4EFDB /* RenderViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48B84FB140294F200E4EFDB /* RenderViewController.mm */; };
-		E48B851F140298A800E4EFDB /* RenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48B851E140298A800E4EFDB /* RenderViewController.xib */; };
+		E493CFCC140AE971004CB633 /* AVPlayerDemoPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE19140AE970004CB633 /* AVPlayerDemoPlaybackView.m */; };
+		E493CFCF140AE971004CB633 /* RKUBackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE1F140AE971004CB633 /* RKUBackgroundTask.m */; };
+		E493CFD3140AE971004CB633 /* OpenGLTOMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE29140AE971004CB633 /* OpenGLTOMovie.m */; };
+		E493CFD4140AE971004CB633 /* RenderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE2B140AE971004CB633 /* RenderView.m */; };
+		E493CFD9140AE971004CB633 /* ExportManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE36140AE971004CB633 /* ExportManager.m */; };
+		E493CFDA140AE971004CB633 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE3A140AE971004CB633 /* Facebook.m */; };
+		E493CFDB140AE971004CB633 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E493CE3C140AE971004CB633 /* FBDialog.bundle */; };
+		E493CFDC140AE971004CB633 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE3E140AE971004CB633 /* FBDialog.m */; };
+		E493CFDD140AE971004CB633 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE40140AE971004CB633 /* FBLoginDialog.m */; };
+		E493CFDE140AE971004CB633 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE42140AE971004CB633 /* FBRequest.m */; };
+		E493CFDF140AE971004CB633 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE46140AE971004CB633 /* NSObject+SBJSON.m */; };
+		E493CFE0140AE971004CB633 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE48140AE971004CB633 /* NSString+SBJSON.m */; };
+		E493CFE1140AE971004CB633 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE4A140AE971004CB633 /* SBJSON.m */; };
+		E493CFE2140AE971004CB633 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE4C140AE971004CB633 /* SBJsonBase.m */; };
+		E493CFE3140AE971004CB633 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE4E140AE971004CB633 /* SBJsonParser.m */; };
+		E493CFE4140AE971004CB633 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE50140AE971004CB633 /* SBJsonWriter.m */; };
+		E493D024140AE971004CB633 /* FacebookUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CEA0140AE971004CB633 /* FacebookUploader.m */; };
+		E493D025140AE971004CB633 /* FacebookUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CEA2140AE971004CB633 /* FacebookUploadViewController.m */; };
+		E493D026140AE971004CB633 /* facebook_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E493CEA3140AE971004CB633 /* facebook_logo.png */; };
+		E493D028140AE971004CB633 /* FacebookUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493CEA9140AE971004CB633 /* FacebookUploadViewController.xib */; };
+		E493D02C140AE971004CB633 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CEB0140AE971004CB633 /* Reachability.m */; };
+		E493D12C140AE971004CB633 /* YouTubeUploader.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CFC0140AE971004CB633 /* YouTubeUploader.m */; };
+		E493D12D140AE971004CB633 /* YouTubeUploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CFC2140AE971004CB633 /* YouTubeUploadViewController.m */; };
+		E493D130140AE971004CB633 /* youtube_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = E493CFC5140AE971004CB633 /* youtube_logo.png */; };
+		E493D132140AE971004CB633 /* YouTubeUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E493CFCB140AE971004CB633 /* YouTubeUploadViewController.xib */; };
+		E493D172140AEFC1004CB633 /* RenderManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = E493D171140AEFC1004CB633 /* RenderManager.mm */; };
+		E493D1CE140AF97C004CB633 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E493D1CB140AF97C004CB633 /* Default.png */; };
+		E493D1CF140AF97C004CB633 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E493D1CC140AF97C004CB633 /* icon.png */; };
+		E493D1D0140AF97C004CB633 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E493D1CD140AF97C004CB633 /* icon@2x.png */; };
 		E4A8AAF913F95546006058D4 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AAF713F95546006058D4 /* testApp.mm */; };
 		E4A8AB1F13F95585006058D4 /* easing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AAFB13F95585006058D4 /* easing.cpp */; };
 		E4A8AB2013F95585006058D4 /* ofMainExt.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4A8AAFE13F95585006058D4 /* ofMainExt.mm */; };
@@ -198,6 +197,10 @@
 		E4AFFF4112B0CA3000457BC7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */; };
 		E4AFFF4712B0CA4900457BC7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */; };
 		E4AFFFC112B0D37300457BC7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */; };
+		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
+		E4C821A5140BE06A00E190F1 /* Shana_Tova_demo1.mov in Resources */ = {isa = PBXBuildFile; fileRef = E4C821A4140BE06A00E190F1 /* Shana_Tova_demo1.mov */; };
+		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
+		E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */; };
 		E4F3916613FC1B23007B18EC /* ofxAudioPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */; };
 		E4F3916813FC1B23007B18EC /* MyVideoBuffer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3915F13FC1B23007B18EC /* MyVideoBuffer.mm */; };
 		E4F3916913FC1B23007B18EC /* ofxiVideoGrabber.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3916113FC1B23007B18EC /* ofxiVideoGrabber.mm */; };
@@ -234,57 +237,6 @@
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
 		E4895D1F12B637CC00314C97 /* camera-toggle-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-toggle-pressed.png"; path = "Resources/camera-toggle-pressed.png"; sourceTree = "<group>"; };
 		E4895D2012B637CC00314C97 /* camera-toggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-toggle.png"; path = "Resources/camera-toggle.png"; sourceTree = "<group>"; };
-		E48B7FA51402855400E4EFDB /* RKUBackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKUBackgroundTask.h; sourceTree = "<group>"; };
-		E48B7FA61402855400E4EFDB /* RKUBackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKUBackgroundTask.m; sourceTree = "<group>"; };
-		E48B7FAF1402855400E4EFDB /* OpenGLTOMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLTOMovie.h; sourceTree = "<group>"; };
-		E48B7FB01402855400E4EFDB /* OpenGLTOMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLTOMovie.m; sourceTree = "<group>"; };
-		E48B7FB11402855400E4EFDB /* RenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderView.h; sourceTree = "<group>"; };
-		E48B7FB21402855400E4EFDB /* RenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderView.m; sourceTree = "<group>"; };
-		E48B7FBD1402855400E4EFDB /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
-		E48B7FBE1402855400E4EFDB /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
-		E48B7FBF1402855400E4EFDB /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
-		E48B7FC01402855400E4EFDB /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
-		E48B7FC11402855400E4EFDB /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
-		E48B7FC21402855400E4EFDB /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDialog.m; sourceTree = "<group>"; };
-		E48B7FC31402855400E4EFDB /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
-		E48B7FC41402855400E4EFDB /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginDialog.m; sourceTree = "<group>"; };
-		E48B7FC51402855400E4EFDB /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
-		E48B7FC61402855400E4EFDB /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequest.m; sourceTree = "<group>"; };
-		E48B7FC81402855400E4EFDB /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		E48B7FC91402855400E4EFDB /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		E48B7FCA1402855400E4EFDB /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
-		E48B7FCB1402855400E4EFDB /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		E48B7FCC1402855400E4EFDB /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
-		E48B7FCD1402855400E4EFDB /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		E48B7FCE1402855400E4EFDB /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
-		E48B7FCF1402855400E4EFDB /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		E48B7FD01402855400E4EFDB /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
-		E48B7FD11402855400E4EFDB /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		E48B7FD21402855400E4EFDB /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		E48B7FD31402855400E4EFDB /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		E48B7FD41402855400E4EFDB /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		E48B80231402855400E4EFDB /* FacebookUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookUploader.h; sourceTree = "<group>"; };
-		E48B80241402855400E4EFDB /* FacebookUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookUploader.m; sourceTree = "<group>"; };
-		E48B80251402855400E4EFDB /* FacebookUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookUploadViewController.h; sourceTree = "<group>"; };
-		E48B80261402855400E4EFDB /* FacebookUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookUploadViewController.m; sourceTree = "<group>"; };
-		E48B80271402855400E4EFDB /* facebook_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_logo.png; sourceTree = "<group>"; };
-		E48B802D1402855400E4EFDB /* FacebookUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookUploadViewController.xib; sourceTree = "<group>"; };
-		E48B80321402855400E4EFDB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		E48B80331402855400E4EFDB /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		E48B81401402855400E4EFDB /* YouTubeUploadAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeUploadAppDelegate.h; sourceTree = "<group>"; };
-		E48B81411402855400E4EFDB /* YouTubeUploadAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeUploadAppDelegate.m; sourceTree = "<group>"; };
-		E48B81421402855400E4EFDB /* YouTubeUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeUploader.h; sourceTree = "<group>"; };
-		E48B81431402855400E4EFDB /* YouTubeUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeUploader.m; sourceTree = "<group>"; };
-		E48B81441402855400E4EFDB /* YouTubeUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeUploadViewController.h; sourceTree = "<group>"; };
-		E48B81451402855400E4EFDB /* YouTubeUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeUploadViewController.m; sourceTree = "<group>"; };
-		E48B81481402855400E4EFDB /* youtube_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube_logo.png; sourceTree = "<group>"; };
-		E48B814E1402855400E4EFDB /* YouTubeUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouTubeUploadViewController.xib; sourceTree = "<group>"; };
-		E48B82C81402861C00E4EFDB /* RKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKMacros.h; sourceTree = "<group>"; };
-		E48B82ED1402876700E4EFDB /* AVPlayerDemoPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackView.h; sourceTree = "<group>"; };
-		E48B82EE1402876700E4EFDB /* AVPlayerDemoPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackView.m; sourceTree = "<group>"; };
-		E48B82EF1402876700E4EFDB /* AVPlayerDemoPlaybackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVPlayerDemoPlaybackView.xib; sourceTree = "<group>"; };
-		E48B82F01402876700E4EFDB /* AVPlayerDemoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackViewController.h; sourceTree = "<group>"; };
-		E48B82F11402876700E4EFDB /* AVPlayerDemoPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackViewController.m; sourceTree = "<group>"; };
 		E48B831A140287AF00E4EFDB /* ofxRKTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxRKTexture.h; path = ../yesplastic/src/ofxRKTexture.h; sourceTree = SOURCE_ROOT; };
 		E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ofxRKTexture.mm; path = ../yesplastic/src/ofxRKTexture.mm; sourceTree = SOURCE_ROOT; };
 		E48B83311402880000E4EFDB /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
@@ -508,13 +460,61 @@
 		E48B84141402880000E4EFDB /* ReleaseNotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReleaseNotes.txt; sourceTree = "<group>"; };
 		E48B84161402880000E4EFDB /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		E48B84171402880000E4EFDB /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
-		E48B848F140288C000E4EFDB /* ExportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportManager.h; sourceTree = "<group>"; };
-		E48B8490140288C000E4EFDB /* ExportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportManager.m; sourceTree = "<group>"; };
 		E48B849A1402890D00E4EFDB /* PVRTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PVRTexture.h; path = ../yesplastic/src/PVRTexture.h; sourceTree = SOURCE_ROOT; };
 		E48B849B1402890D00E4EFDB /* PVRTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PVRTexture.m; path = ../yesplastic/src/PVRTexture.m; sourceTree = SOURCE_ROOT; };
-		E48B84FA140294F200E4EFDB /* RenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderViewController.h; sourceTree = "<group>"; };
-		E48B84FB140294F200E4EFDB /* RenderViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RenderViewController.mm; sourceTree = "<group>"; };
-		E48B851E140298A800E4EFDB /* RenderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RenderViewController.xib; path = Resources/RenderViewController.xib; sourceTree = SOURCE_ROOT; };
+		E493CE18140AE970004CB633 /* AVPlayerDemoPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackView.h; sourceTree = "<group>"; };
+		E493CE19140AE970004CB633 /* AVPlayerDemoPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackView.m; sourceTree = "<group>"; };
+		E493CE1E140AE971004CB633 /* RKUBackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKUBackgroundTask.h; sourceTree = "<group>"; };
+		E493CE1F140AE971004CB633 /* RKUBackgroundTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKUBackgroundTask.m; sourceTree = "<group>"; };
+		E493CE28140AE971004CB633 /* OpenGLTOMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGLTOMovie.h; sourceTree = "<group>"; };
+		E493CE29140AE971004CB633 /* OpenGLTOMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGLTOMovie.m; sourceTree = "<group>"; };
+		E493CE2A140AE971004CB633 /* RenderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderView.h; sourceTree = "<group>"; };
+		E493CE2B140AE971004CB633 /* RenderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderView.m; sourceTree = "<group>"; };
+		E493CE35140AE971004CB633 /* ExportManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExportManager.h; sourceTree = "<group>"; };
+		E493CE36140AE971004CB633 /* ExportManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExportManager.m; sourceTree = "<group>"; };
+		E493CE39140AE971004CB633 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		E493CE3A140AE971004CB633 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
+		E493CE3B140AE971004CB633 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		E493CE3C140AE971004CB633 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		E493CE3D140AE971004CB633 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		E493CE3E140AE971004CB633 /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDialog.m; sourceTree = "<group>"; };
+		E493CE3F140AE971004CB633 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		E493CE40140AE971004CB633 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginDialog.m; sourceTree = "<group>"; };
+		E493CE41140AE971004CB633 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		E493CE42140AE971004CB633 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequest.m; sourceTree = "<group>"; };
+		E493CE44140AE971004CB633 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		E493CE45140AE971004CB633 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		E493CE46140AE971004CB633 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		E493CE47140AE971004CB633 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		E493CE48140AE971004CB633 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		E493CE49140AE971004CB633 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		E493CE4A140AE971004CB633 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		E493CE4B140AE971004CB633 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		E493CE4C140AE971004CB633 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		E493CE4D140AE971004CB633 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		E493CE4E140AE971004CB633 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		E493CE4F140AE971004CB633 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		E493CE50140AE971004CB633 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		E493CE9F140AE971004CB633 /* FacebookUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookUploader.h; sourceTree = "<group>"; };
+		E493CEA0140AE971004CB633 /* FacebookUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookUploader.m; sourceTree = "<group>"; };
+		E493CEA1140AE971004CB633 /* FacebookUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookUploadViewController.h; sourceTree = "<group>"; };
+		E493CEA2140AE971004CB633 /* FacebookUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookUploadViewController.m; sourceTree = "<group>"; };
+		E493CEA3140AE971004CB633 /* facebook_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook_logo.png; sourceTree = "<group>"; };
+		E493CEA9140AE971004CB633 /* FacebookUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookUploadViewController.xib; sourceTree = "<group>"; };
+		E493CEAD140AE971004CB633 /* RKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKMacros.h; sourceTree = "<group>"; };
+		E493CEAF140AE971004CB633 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E493CEB0140AE971004CB633 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E493CFBF140AE971004CB633 /* YouTubeUploader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeUploader.h; sourceTree = "<group>"; };
+		E493CFC0140AE971004CB633 /* YouTubeUploader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeUploader.m; sourceTree = "<group>"; };
+		E493CFC1140AE971004CB633 /* YouTubeUploadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YouTubeUploadViewController.h; sourceTree = "<group>"; };
+		E493CFC2140AE971004CB633 /* YouTubeUploadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YouTubeUploadViewController.m; sourceTree = "<group>"; };
+		E493CFC5140AE971004CB633 /* youtube_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube_logo.png; sourceTree = "<group>"; };
+		E493CFCB140AE971004CB633 /* YouTubeUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YouTubeUploadViewController.xib; sourceTree = "<group>"; };
+		E493D170140AEFC1004CB633 /* RenderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderManager.h; sourceTree = "<group>"; };
+		E493D171140AEFC1004CB633 /* RenderManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RenderManager.mm; sourceTree = "<group>"; };
+		E493D1CB140AF97C004CB633 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		E493D1CC140AF97C004CB633 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
+		E493D1CD140AF97C004CB633 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icon@2x.png"; sourceTree = "<group>"; };
 		E4A8AAF413F95546006058D4 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E4A8AAF613F95546006058D4 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testApp.h; sourceTree = "<group>"; };
 		E4A8AAF713F95546006058D4 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = testApp.mm; sourceTree = "<group>"; };
@@ -568,6 +568,14 @@
 		E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E4C82115140BD03A00E190F1 /* RenderProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderProgressView.h; sourceTree = "<group>"; };
+		E4C82116140BD03A00E190F1 /* RenderProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderProgressView.m; sourceTree = "<group>"; };
+		E4C821A4140BE06A00E190F1 /* Shana_Tova_demo1.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Shana_Tova_demo1.mov; path = Resources/Shana_Tova_demo1.mov; sourceTree = "<group>"; };
+		E4C821F9140BF50200E190F1 /* AVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerViewController.h; sourceTree = "<group>"; };
+		E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerViewController.m; sourceTree = "<group>"; };
+		E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AVPlayerViewController.xib; sourceTree = "<group>"; };
+		E4C82243140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackViewController.h; sourceTree = "<group>"; };
+		E4C82244140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackViewController.m; sourceTree = "<group>"; };
 		E4F3915513FC1B23007B18EC /* ofxAudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioPlayer.cpp; sourceTree = "<group>"; };
 		E4F3915613FC1B23007B18EC /* ofxAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioPlayer.h; sourceTree = "<group>"; };
 		E4F3915B13FC1B23007B18EC /* ofxAudioSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioSample.h; sourceTree = "<group>"; };
@@ -626,15 +634,16 @@
 				28EC4C5611D54ECE0027AA9F /* MainViewController.h */,
 				28EC4C5711D54ECE0027AA9F /* MainViewController.mm */,
 				E4AF012D12B0EF5700457BC7 /* MainViewController.xib */,
+				E4C82115140BD03A00E190F1 /* RenderProgressView.h */,
+				E4C82116140BD03A00E190F1 /* RenderProgressView.m */,
 				E41C4B9712CA37DD004D3FA6 /* EAGLView.h */,
 				E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */,
 				E4AFFC3F12B0B93B00457BC7 /* ShareManager.h */,
 				E4AFFC4012B0B93B00457BC7 /* ShareManager.mm */,
-				E48B84FA140294F200E4EFDB /* RenderViewController.h */,
-				E48B84FB140294F200E4EFDB /* RenderViewController.mm */,
-				E48B851E140298A800E4EFDB /* RenderViewController.xib */,
 				E430D28912C8937400E65D3D /* TouchView.h */,
 				E430D28A12C8937400E65D3D /* TouchView.mm */,
+				E493D170140AEFC1004CB633 /* RenderManager.h */,
+				E493D171140AEFC1004CB633 /* RenderManager.mm */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -654,7 +663,7 @@
 				E4A8AAF313F95546006058D4 /* santaExample */,
 				E4F742C313FABA73002D7E1B /* src */,
 				E4D5392012B393C200B9EFD8 /* addons */,
-				E48B7FA31402855400E4EFDB /* iOSUtils */,
+				E493CE16140AE970004CB633 /* iOSUtils */,
 				E48B83161402878200E4EFDB /* yesplastic */,
 				E42C522F13FD9C99009CA603 /* data */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -677,6 +686,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4C821A4140BE06A00E190F1 /* Shana_Tova_demo1.mov */,
+				E493D1CB140AF97C004CB633 /* Default.png */,
+				E493D1CC140AF97C004CB633 /* icon.png */,
+				E493D1CD140AF97C004CB633 /* icon@2x.png */,
 				E4895D1F12B637CC00314C97 /* camera-toggle-pressed.png */,
 				E4895D2012B637CC00314C97 /* camera-toggle.png */,
 				8D1107310486CEB800E47090 /* SingingCard-Info.plist */,
@@ -741,163 +754,6 @@
 				E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		E48B7FA31402855400E4EFDB /* iOSUtils */ = {
-			isa = PBXGroup;
-			children = (
-				E48B82EC1402876700E4EFDB /* AVPlayerClasses */,
-				E48B82C81402861C00E4EFDB /* RKMacros.h */,
-				E48B7FA41402855400E4EFDB /* Background */,
-				E48B7FA71402855400E4EFDB /* ConvertToVideo */,
-				E48B7FBB1402855400E4EFDB /* facebook-ios-sdk */,
-				E48B7FD51402855400E4EFDB /* OldFacebookUpload */,
-				E48B80311402855400E4EFDB /* Utilities */,
-				E48B80341402855400E4EFDB /* YouTubeUpload */,
-				E48B848E140288C000E4EFDB /* Export */,
-			);
-			name = iOSUtils;
-			path = ../iOSUtils;
-			sourceTree = SOURCE_ROOT;
-		};
-		E48B7FA41402855400E4EFDB /* Background */ = {
-			isa = PBXGroup;
-			children = (
-				E48B7FA51402855400E4EFDB /* RKUBackgroundTask.h */,
-				E48B7FA61402855400E4EFDB /* RKUBackgroundTask.m */,
-			);
-			path = Background;
-			sourceTree = "<group>";
-		};
-		E48B7FA71402855400E4EFDB /* ConvertToVideo */ = {
-			isa = PBXGroup;
-			children = (
-				E48B7FA81402855400E4EFDB /* Classes */,
-			);
-			path = ConvertToVideo;
-			sourceTree = "<group>";
-		};
-		E48B7FA81402855400E4EFDB /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E48B7FAF1402855400E4EFDB /* OpenGLTOMovie.h */,
-				E48B7FB01402855400E4EFDB /* OpenGLTOMovie.m */,
-				E48B7FB11402855400E4EFDB /* RenderView.h */,
-				E48B7FB21402855400E4EFDB /* RenderView.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		E48B7FBB1402855400E4EFDB /* facebook-ios-sdk */ = {
-			isa = PBXGroup;
-			children = (
-				E48B7FBC1402855400E4EFDB /* src */,
-			);
-			path = "facebook-ios-sdk";
-			sourceTree = "<group>";
-		};
-		E48B7FBC1402855400E4EFDB /* src */ = {
-			isa = PBXGroup;
-			children = (
-				E48B7FBD1402855400E4EFDB /* Facebook.h */,
-				E48B7FBE1402855400E4EFDB /* Facebook.m */,
-				E48B7FBF1402855400E4EFDB /* FBConnect.h */,
-				E48B7FC01402855400E4EFDB /* FBDialog.bundle */,
-				E48B7FC11402855400E4EFDB /* FBDialog.h */,
-				E48B7FC21402855400E4EFDB /* FBDialog.m */,
-				E48B7FC31402855400E4EFDB /* FBLoginDialog.h */,
-				E48B7FC41402855400E4EFDB /* FBLoginDialog.m */,
-				E48B7FC51402855400E4EFDB /* FBRequest.h */,
-				E48B7FC61402855400E4EFDB /* FBRequest.m */,
-				E48B7FC71402855400E4EFDB /* JSON */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		E48B7FC71402855400E4EFDB /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				E48B7FC81402855400E4EFDB /* JSON.h */,
-				E48B7FC91402855400E4EFDB /* NSObject+SBJSON.h */,
-				E48B7FCA1402855400E4EFDB /* NSObject+SBJSON.m */,
-				E48B7FCB1402855400E4EFDB /* NSString+SBJSON.h */,
-				E48B7FCC1402855400E4EFDB /* NSString+SBJSON.m */,
-				E48B7FCD1402855400E4EFDB /* SBJSON.h */,
-				E48B7FCE1402855400E4EFDB /* SBJSON.m */,
-				E48B7FCF1402855400E4EFDB /* SBJsonBase.h */,
-				E48B7FD01402855400E4EFDB /* SBJsonBase.m */,
-				E48B7FD11402855400E4EFDB /* SBJsonParser.h */,
-				E48B7FD21402855400E4EFDB /* SBJsonParser.m */,
-				E48B7FD31402855400E4EFDB /* SBJsonWriter.h */,
-				E48B7FD41402855400E4EFDB /* SBJsonWriter.m */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		E48B7FD51402855400E4EFDB /* OldFacebookUpload */ = {
-			isa = PBXGroup;
-			children = (
-				E48B80201402855400E4EFDB /* Classes */,
-				E48B80271402855400E4EFDB /* facebook_logo.png */,
-				E48B802D1402855400E4EFDB /* FacebookUploadViewController.xib */,
-			);
-			path = OldFacebookUpload;
-			sourceTree = "<group>";
-		};
-		E48B80201402855400E4EFDB /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E48B80231402855400E4EFDB /* FacebookUploader.h */,
-				E48B80241402855400E4EFDB /* FacebookUploader.m */,
-				E48B80251402855400E4EFDB /* FacebookUploadViewController.h */,
-				E48B80261402855400E4EFDB /* FacebookUploadViewController.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		E48B80311402855400E4EFDB /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				E48B80321402855400E4EFDB /* Reachability.h */,
-				E48B80331402855400E4EFDB /* Reachability.m */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		E48B80341402855400E4EFDB /* YouTubeUpload */ = {
-			isa = PBXGroup;
-			children = (
-				E48B83301402880000E4EFDB /* gdata-objectivec-client-read-only */,
-				E48B813F1402855400E4EFDB /* Classes */,
-				E48B81481402855400E4EFDB /* youtube_logo.png */,
-				E48B814E1402855400E4EFDB /* YouTubeUploadViewController.xib */,
-			);
-			path = YouTubeUpload;
-			sourceTree = "<group>";
-		};
-		E48B813F1402855400E4EFDB /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				E48B81401402855400E4EFDB /* YouTubeUploadAppDelegate.h */,
-				E48B81411402855400E4EFDB /* YouTubeUploadAppDelegate.m */,
-				E48B81421402855400E4EFDB /* YouTubeUploader.h */,
-				E48B81431402855400E4EFDB /* YouTubeUploader.m */,
-				E48B81441402855400E4EFDB /* YouTubeUploadViewController.h */,
-				E48B81451402855400E4EFDB /* YouTubeUploadViewController.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		E48B82EC1402876700E4EFDB /* AVPlayerClasses */ = {
-			isa = PBXGroup;
-			children = (
-				E48B82ED1402876700E4EFDB /* AVPlayerDemoPlaybackView.h */,
-				E48B82EE1402876700E4EFDB /* AVPlayerDemoPlaybackView.m */,
-				E48B82EF1402876700E4EFDB /* AVPlayerDemoPlaybackView.xib */,
-				E48B82F01402876700E4EFDB /* AVPlayerDemoPlaybackViewController.h */,
-				E48B82F11402876700E4EFDB /* AVPlayerDemoPlaybackViewController.m */,
-			);
-			path = AVPlayerClasses;
 			sourceTree = "<group>";
 		};
 		E48B83161402878200E4EFDB /* yesplastic */ = {
@@ -1220,13 +1076,169 @@
 			path = XMLSupport;
 			sourceTree = "<group>";
 		};
-		E48B848E140288C000E4EFDB /* Export */ = {
+		E493CE16140AE970004CB633 /* iOSUtils */ = {
 			isa = PBXGroup;
 			children = (
-				E48B848F140288C000E4EFDB /* ExportManager.h */,
-				E48B8490140288C000E4EFDB /* ExportManager.m */,
+				E493CE17140AE970004CB633 /* AVPlayerClasses */,
+				E493CE1D140AE971004CB633 /* Background */,
+				E493CE20140AE971004CB633 /* ConvertToVideo */,
+				E493CE34140AE971004CB633 /* Export */,
+				E493CE37140AE971004CB633 /* facebook-ios-sdk */,
+				E493CE51140AE971004CB633 /* OldFacebookUpload */,
+				E493CEAD140AE971004CB633 /* RKMacros.h */,
+				E493CEAE140AE971004CB633 /* Utilities */,
+				E493CEB1140AE971004CB633 /* YouTubeUpload */,
+			);
+			path = iOSUtils;
+			sourceTree = "<group>";
+		};
+		E493CE17140AE970004CB633 /* AVPlayerClasses */ = {
+			isa = PBXGroup;
+			children = (
+				E4C82243140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.h */,
+				E4C82244140BFF7100E190F1 /* AVPlayerDemoPlaybackViewController.m */,
+				E493CE18140AE970004CB633 /* AVPlayerDemoPlaybackView.h */,
+				E493CE19140AE970004CB633 /* AVPlayerDemoPlaybackView.m */,
+				E4C821F9140BF50200E190F1 /* AVPlayerViewController.h */,
+				E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */,
+				E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */,
+			);
+			path = AVPlayerClasses;
+			sourceTree = "<group>";
+		};
+		E493CE1D140AE971004CB633 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE1E140AE971004CB633 /* RKUBackgroundTask.h */,
+				E493CE1F140AE971004CB633 /* RKUBackgroundTask.m */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		E493CE20140AE971004CB633 /* ConvertToVideo */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE21140AE971004CB633 /* Classes */,
+			);
+			path = ConvertToVideo;
+			sourceTree = "<group>";
+		};
+		E493CE21140AE971004CB633 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE28140AE971004CB633 /* OpenGLTOMovie.h */,
+				E493CE29140AE971004CB633 /* OpenGLTOMovie.m */,
+				E493CE2A140AE971004CB633 /* RenderView.h */,
+				E493CE2B140AE971004CB633 /* RenderView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E493CE34140AE971004CB633 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE35140AE971004CB633 /* ExportManager.h */,
+				E493CE36140AE971004CB633 /* ExportManager.m */,
 			);
 			path = Export;
+			sourceTree = "<group>";
+		};
+		E493CE37140AE971004CB633 /* facebook-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE38140AE971004CB633 /* src */,
+			);
+			path = "facebook-ios-sdk";
+			sourceTree = "<group>";
+		};
+		E493CE38140AE971004CB633 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE39140AE971004CB633 /* Facebook.h */,
+				E493CE3A140AE971004CB633 /* Facebook.m */,
+				E493CE3B140AE971004CB633 /* FBConnect.h */,
+				E493CE3C140AE971004CB633 /* FBDialog.bundle */,
+				E493CE3D140AE971004CB633 /* FBDialog.h */,
+				E493CE3E140AE971004CB633 /* FBDialog.m */,
+				E493CE3F140AE971004CB633 /* FBLoginDialog.h */,
+				E493CE40140AE971004CB633 /* FBLoginDialog.m */,
+				E493CE41140AE971004CB633 /* FBRequest.h */,
+				E493CE42140AE971004CB633 /* FBRequest.m */,
+				E493CE43140AE971004CB633 /* JSON */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		E493CE43140AE971004CB633 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE44140AE971004CB633 /* JSON.h */,
+				E493CE45140AE971004CB633 /* NSObject+SBJSON.h */,
+				E493CE46140AE971004CB633 /* NSObject+SBJSON.m */,
+				E493CE47140AE971004CB633 /* NSString+SBJSON.h */,
+				E493CE48140AE971004CB633 /* NSString+SBJSON.m */,
+				E493CE49140AE971004CB633 /* SBJSON.h */,
+				E493CE4A140AE971004CB633 /* SBJSON.m */,
+				E493CE4B140AE971004CB633 /* SBJsonBase.h */,
+				E493CE4C140AE971004CB633 /* SBJsonBase.m */,
+				E493CE4D140AE971004CB633 /* SBJsonParser.h */,
+				E493CE4E140AE971004CB633 /* SBJsonParser.m */,
+				E493CE4F140AE971004CB633 /* SBJsonWriter.h */,
+				E493CE50140AE971004CB633 /* SBJsonWriter.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		E493CE51140AE971004CB633 /* OldFacebookUpload */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE9C140AE971004CB633 /* Classes */,
+				E493CEA3140AE971004CB633 /* facebook_logo.png */,
+				E493CEA9140AE971004CB633 /* FacebookUploadViewController.xib */,
+			);
+			path = OldFacebookUpload;
+			sourceTree = "<group>";
+		};
+		E493CE9C140AE971004CB633 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E493CE9F140AE971004CB633 /* FacebookUploader.h */,
+				E493CEA0140AE971004CB633 /* FacebookUploader.m */,
+				E493CEA1140AE971004CB633 /* FacebookUploadViewController.h */,
+				E493CEA2140AE971004CB633 /* FacebookUploadViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E493CEAE140AE971004CB633 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E493CEAF140AE971004CB633 /* Reachability.h */,
+				E493CEB0140AE971004CB633 /* Reachability.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E493CEB1140AE971004CB633 /* YouTubeUpload */ = {
+			isa = PBXGroup;
+			children = (
+				E48B83301402880000E4EFDB /* gdata-objectivec-client-read-only */,
+				E493CFBC140AE971004CB633 /* Classes */,
+				E493CFC5140AE971004CB633 /* youtube_logo.png */,
+				E493CFCB140AE971004CB633 /* YouTubeUploadViewController.xib */,
+			);
+			path = YouTubeUpload;
+			sourceTree = "<group>";
+		};
+		E493CFBC140AE971004CB633 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E493CFBF140AE971004CB633 /* YouTubeUploader.h */,
+				E493CFC0140AE971004CB633 /* YouTubeUploader.m */,
+				E493CFC1140AE971004CB633 /* YouTubeUploadViewController.h */,
+				E493CFC2140AE971004CB633 /* YouTubeUploadViewController.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E4A8AAF313F95546006058D4 /* santaExample */ = {
@@ -1603,19 +1615,22 @@
 				E42C523813FD9C99009CA603 /* jingle_03.mid in Resources */,
 				E46625C31402F35700A4B6E7 /* rosh_hashana.pvr in Resources */,
 				E42C523913FD9C99009CA603 /* santa.pvr in Resources */,
-				E48B815A1402855400E4EFDB /* FBDialog.bundle in Resources */,
-				E48B81A51402855400E4EFDB /* facebook_logo.png in Resources */,
-				E48B81A71402855400E4EFDB /* FacebookUploadViewController.xib in Resources */,
-				E48B82AF1402855400E4EFDB /* youtube_logo.png in Resources */,
-				E48B82B11402855400E4EFDB /* YouTubeUploadViewController.xib in Resources */,
-				E48B82F31402876700E4EFDB /* AVPlayerDemoPlaybackView.xib in Resources */,
-				E48B851F140298A800E4EFDB /* RenderViewController.xib in Resources */,
 				E4A9A60F1407D7E100981AD5 /* ROSHANA1.mid in Resources */,
 				E4A9A6101407D7E100981AD5 /* ROSHANA2.mid in Resources */,
 				E4A9A6111407D7E100981AD5 /* ROSHANA3.mid in Resources */,
 				E4A9A6121407D7E100981AD5 /* ROSHANA4.mid in Resources */,
 				E4A9A6131407D7E100981AD5 /* ROSHANA5.mid in Resources */,
 				E4A9A6141407D7E100981AD5 /* ROSHANA6.mid in Resources */,
+				E493CFDB140AE971004CB633 /* FBDialog.bundle in Resources */,
+				E493D026140AE971004CB633 /* facebook_logo.png in Resources */,
+				E493D028140AE971004CB633 /* FacebookUploadViewController.xib in Resources */,
+				E493D130140AE971004CB633 /* youtube_logo.png in Resources */,
+				E493D132140AE971004CB633 /* YouTubeUploadViewController.xib in Resources */,
+				E493D1CE140AF97C004CB633 /* Default.png in Resources */,
+				E493D1CF140AF97C004CB633 /* icon.png in Resources */,
+				E493D1D0140AF97C004CB633 /* icon@2x.png in Resources */,
+				E4C821A5140BE06A00E190F1 /* Shana_Tova_demo1.mov in Resources */,
+				E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1656,27 +1671,6 @@
 				E4F3917E13FC1B5E007B18EC /* CAXException.cpp in Sources */,
 				E4F3918013FC1B5E007B18EC /* ofxAudioFile.mm in Sources */,
 				E4F3918A13FC1B7E007B18EC /* ofxiFBO.mm in Sources */,
-				E48B814F1402855400E4EFDB /* RKUBackgroundTask.m in Sources */,
-				E48B81531402855400E4EFDB /* OpenGLTOMovie.m in Sources */,
-				E48B81541402855400E4EFDB /* RenderView.m in Sources */,
-				E48B81591402855400E4EFDB /* Facebook.m in Sources */,
-				E48B815B1402855400E4EFDB /* FBDialog.m in Sources */,
-				E48B815C1402855400E4EFDB /* FBLoginDialog.m in Sources */,
-				E48B815D1402855400E4EFDB /* FBRequest.m in Sources */,
-				E48B815E1402855400E4EFDB /* NSObject+SBJSON.m in Sources */,
-				E48B815F1402855400E4EFDB /* NSString+SBJSON.m in Sources */,
-				E48B81601402855400E4EFDB /* SBJSON.m in Sources */,
-				E48B81611402855400E4EFDB /* SBJsonBase.m in Sources */,
-				E48B81621402855400E4EFDB /* SBJsonParser.m in Sources */,
-				E48B81631402855400E4EFDB /* SBJsonWriter.m in Sources */,
-				E48B81A31402855400E4EFDB /* FacebookUploader.m in Sources */,
-				E48B81A41402855400E4EFDB /* FacebookUploadViewController.m in Sources */,
-				E48B81AB1402855400E4EFDB /* Reachability.m in Sources */,
-				E48B82AA1402855400E4EFDB /* YouTubeUploadAppDelegate.m in Sources */,
-				E48B82AB1402855400E4EFDB /* YouTubeUploader.m in Sources */,
-				E48B82AC1402855400E4EFDB /* YouTubeUploadViewController.m in Sources */,
-				E48B82F21402876700E4EFDB /* AVPlayerDemoPlaybackView.m in Sources */,
-				E48B82F41402876700E4EFDB /* AVPlayerDemoPlaybackViewController.m in Sources */,
 				E48B831C140287AF00E4EFDB /* ofxRKTexture.mm in Sources */,
 				E48B841A1402880000E4EFDB /* GDataEntryBase.m in Sources */,
 				E48B841B1402880000E4EFDB /* GDataFeedBase.m in Sources */,
@@ -1784,10 +1778,31 @@
 				E48B84811402880000E4EFDB /* GDataProgressMonitorInputStream.m in Sources */,
 				E48B84821402880000E4EFDB /* GDataServerError.m in Sources */,
 				E48B84841402880000E4EFDB /* GDataXMLNode.m in Sources */,
-				E48B8491140288C000E4EFDB /* ExportManager.m in Sources */,
 				E48B849C1402890D00E4EFDB /* PVRTexture.m in Sources */,
-				E48B84FC140294F200E4EFDB /* RenderViewController.mm in Sources */,
 				E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */,
+				E493CFCC140AE971004CB633 /* AVPlayerDemoPlaybackView.m in Sources */,
+				E493CFCF140AE971004CB633 /* RKUBackgroundTask.m in Sources */,
+				E493CFD3140AE971004CB633 /* OpenGLTOMovie.m in Sources */,
+				E493CFD4140AE971004CB633 /* RenderView.m in Sources */,
+				E493CFD9140AE971004CB633 /* ExportManager.m in Sources */,
+				E493CFDA140AE971004CB633 /* Facebook.m in Sources */,
+				E493CFDC140AE971004CB633 /* FBDialog.m in Sources */,
+				E493CFDD140AE971004CB633 /* FBLoginDialog.m in Sources */,
+				E493CFDE140AE971004CB633 /* FBRequest.m in Sources */,
+				E493CFDF140AE971004CB633 /* NSObject+SBJSON.m in Sources */,
+				E493CFE0140AE971004CB633 /* NSString+SBJSON.m in Sources */,
+				E493CFE1140AE971004CB633 /* SBJSON.m in Sources */,
+				E493CFE2140AE971004CB633 /* SBJsonBase.m in Sources */,
+				E493CFE3140AE971004CB633 /* SBJsonParser.m in Sources */,
+				E493CFE4140AE971004CB633 /* SBJsonWriter.m in Sources */,
+				E493D024140AE971004CB633 /* FacebookUploader.m in Sources */,
+				E493D025140AE971004CB633 /* FacebookUploadViewController.m in Sources */,
+				E493D02C140AE971004CB633 /* Reachability.m in Sources */,
+				E493D12C140AE971004CB633 /* YouTubeUploader.m in Sources */,
+				E493D12D140AE971004CB633 /* YouTubeUploadViewController.m in Sources */,
+				E493D172140AEFC1004CB633 /* RenderManager.mm in Sources */,
+				E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */,
+				E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -34,7 +34,7 @@
 	
 	id<YouTubeUploadViewControllerDelegate> delegate;
 	
-	
+	BOOL bDelayedUpload;
 	
 }
 
@@ -54,6 +54,8 @@
 
 @property (nonatomic,retain) NSString* additionalText;
 
+@property BOOL bDelayedUpload;
+
 -(void)setDelegate:(id<YouTubeUploadViewControllerDelegate>)theDelegate;
 - (void) upload:(id)sender;
 - (void) cancel:(id)sender;
@@ -62,6 +64,7 @@
 
 @protocol YouTubeUploadViewControllerDelegate<NSObject>
 
-- (void) YouTubeUploadViewControllerDone:(YouTubeUploadViewController *)controller;
+- (void) YouTubeUploadViewControllerUpload:(YouTubeUploadViewController *)controller;
+- (void) YouTubeUploadViewControllerCancel:(YouTubeUploadViewController *)controller;
 
 @end
