@@ -97,7 +97,7 @@
 							</object>
 							<object class="IBUIButton" id="206257212">
 								<reference key="NSNextResponder" ref="503231365"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">-2147483356</int>
 								<string key="NSFrame">{{400, 283}, {80, 37}}</string>
 								<reference key="NSSuperview" ref="503231365"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -197,7 +197,7 @@
 								<int key="IBUIContentVerticalAlignment">0</int>
 								<reference key="IBUIFont" ref="400879542"/>
 								<int key="IBUIButtonType">1</int>
-								<string key="IBUINormalTitle">camera</string>
+								<string key="IBUINormalTitle">start over</string>
 								<reference key="IBUIHighlightedTitleColor" ref="885626976"/>
 								<object class="NSColor" key="IBUINormalTitleColor">
 									<int key="NSColorSpace">1</int>
@@ -246,7 +246,7 @@
 							</object>
 							<object class="IBUIButton" id="101781966">
 								<reference key="NSNextResponder" ref="838564291"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">-2147483356</int>
 								<string key="NSFrame">{{400, 283}, {80, 37}}</string>
 								<reference key="NSSuperview" ref="838564291"/>
 								<bool key="IBUIOpaque">NO</bool>
@@ -764,7 +764,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>TouchView</string>
-					<string>{{839, 563}, {480, 320}}</string>
+					<string>{{800, 436}, {480, 320}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform"/>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

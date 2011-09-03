@@ -12,8 +12,6 @@
 @interface RenderView : UIView {
 }
 
-@property (nonatomic,retain) IBOutlet UIView *slideView;
-
 +(RenderView *) renderViewWithFrame:(CGRect)frame;
 
 @end

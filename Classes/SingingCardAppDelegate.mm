@@ -51,7 +51,7 @@
 	[self.window makeKeyAndVisible];
 	
 	AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
-	[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"Shana_Tova_demo1" withExtension:@"mov"]];
+	[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"shana_tova_intro" withExtension:@"mov"]];
 	[self.mainViewController presentModalViewController:playerViewController animated:NO];
 	[playerViewController release];
 	
@@ -128,6 +128,32 @@
      RKLog(@"applicationWillTerminate");
 	[self.eAGLView stopAnimation]; 
 }
+
+- (void)beginInterruption {
+	RKLog(@"beginInterruption");
+	if (OFSAptr) {
+		OFSAptr->soundStreamStop();
+	}
+}
+
+- (void)endInterruptionWithFlags:(NSUInteger)flags {
+	RKLog(@"endInterruptionWithFlags: %u",flags);
+	
+	if (flags && AVAudioSessionInterruptionFlags_ShouldResume) {
+		NSError *activationError = nil;
+		[[AVAudioSession sharedInstance] setActive: YES error: &activationError];
+		RKLog(@"audio session activated");
+		if (OFSAptr) {
+			OFSAptr->soundStreamStart();
+		}
+		
+	}
+	
+}
+
+
+
+
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
