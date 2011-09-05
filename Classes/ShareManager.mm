@@ -123,12 +123,54 @@ static NSString* kURL = @"http://www.lofipeople.com";
 
 
 - (NSString *)getSongName {
-	return @"jingle bells";
+	NSString *name;
+	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
+	
+	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
+		case 0:
+			name=@"jingle_bells";
+			break;
+		case 1:
+			name=@"shana_tova";
+			break;
+		case 2:
+			name=@"bashana_habaha";
+			break;
+		case 3:
+			name=@"berosh_hashana";
+			break;
+		default:
+			break;
+	}
+	
+	
+	return name;
 }
 
 
 - (NSString *)getDisplayName {
-	return @"santa example";
+	NSString *name;
+	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
+	
+	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
+		case 0:
+			name=@"jingle_bells";
+			break;
+		case 1:
+			name=@"shana_tova";
+			break;
+		case 2:
+			name=@"bashana_habaha";
+			break;
+		case 3:
+			name=@"berosh_hashana";
+			break;
+		default:
+			break;
+	}
+	
+	
+	return name;
 		
 }
 
@@ -144,7 +186,28 @@ static NSString* kURL = @"http://www.lofipeople.com";
 		return @"";
 	}
 	
-	return [[paths objectAtIndex:0] stringByAppendingPathComponent:@"santa"];
+	NSString *name;
+	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
+	
+	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
+		case 0:
+			name=@"jingle_bells";
+			break;
+		case 1:
+			name=@"shana_tova";
+			break;
+		case 2:
+			name=@"bashana_habaha";
+			break;
+		case 3:
+			name=@"berosh_hashana";
+			break;
+		default:
+			break;
+	}
+	
+	
+	return [[paths objectAtIndex:0] stringByAppendingPathComponent:name];
 }
 
 
