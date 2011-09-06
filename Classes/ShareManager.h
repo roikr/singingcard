@@ -36,8 +36,8 @@ enum {
 	NSInteger renderedVideoVersion;
 	NSInteger exportedRingtoneVersion;
 	BOOL canSendMail;
-	NSInteger action;
-	NSInteger state;
+	NSUInteger action;
+	NSUInteger state;
 	BOOL bAudioRendered;
 	
 	UIViewController *parentViewController;
@@ -62,7 +62,6 @@ enum {
 - (NSString *)getSongName;
 - (NSString *)getDisplayName;
 - (NSString *)getVideoPath;
-
 
 - (void)resetVersions;
 - (void)applicationDidEnterBackground;

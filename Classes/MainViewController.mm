@@ -56,6 +56,7 @@
 	[super viewDidLoad];
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
+	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];
 	//[[self cameraToggleButton] setEnabled:[self cameraCount] > 1];
 	
 	

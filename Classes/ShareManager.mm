@@ -15,6 +15,7 @@
 #import "FacebookUploadViewController.h"
 
 #import "testApp.h"
+#import "Constants.h"
 #import "Reachability.h"
 
 enum {
@@ -355,9 +356,9 @@ static NSString* kURL = @"http://www.lofipeople.com";
 #pragma mark actionSheet
 
 - (void)menuWithView:(UIView *)view {
-	
-	
 	state = STATE_IDLE;
+	
+	
 	bAudioRendered = [self videoRendered] || [self ringtoneExported];
 	
 	UIActionSheet* sheet = [[[UIActionSheet alloc] init] autorelease];
@@ -471,9 +472,12 @@ static NSString* kURL = @"http://www.lofipeople.com";
 			
 		}	break;
 			
-		case ACTION_ADD_TO_LIBRARY:
 		case ACTION_SEND_VIA_MAIL:
 		case ACTION_SEND_RINGTONE:
+			state = STATE_SELECTED;
+			break;
+			
+		case ACTION_ADD_TO_LIBRARY:
 			state = STATE_DONE;
 			break;
 
@@ -484,6 +488,8 @@ static NSString* kURL = @"http://www.lofipeople.com";
 //			break;
 			
 		case ACTION_CANCEL:
+			state = STATE_CANCELED;
+			break;
 		case ACTION_RENDER:
 			//[appDelegate mainViewController].view.userInteractionEnabled = YES; 
 			break;
@@ -520,68 +526,84 @@ static NSString* kURL = @"http://www.lofipeople.com";
 
 - (void) proceedWithAudio {
 	
-	switch (action) {
-		case ACTION_CANCEL:
+	switch (state) {
+		case STATE_IDLE:
 			break;
-		case ACTION_UPLOAD_TO_YOUTUBE:
-		case ACTION_UPLOAD_TO_FACEBOOK:
-		case ACTION_ADD_TO_LIBRARY:
-		case ACTION_SEND_VIA_MAIL:
-		case ACTION_PLAY:
-		case ACTION_RENDER:
-			if (self.videoRendered ) {
-				if (state == STATE_DONE) {
-					[self proceedWithVideo];
-				}
-			} else {
-				[self.renderManager renderVideo];
+		case STATE_SELECTED:
+		case STATE_DONE:
+			switch (action) {
+				case ACTION_UPLOAD_TO_YOUTUBE:
+				case ACTION_UPLOAD_TO_FACEBOOK:
+				case ACTION_ADD_TO_LIBRARY:
+				case ACTION_SEND_VIA_MAIL:
+					if (self.videoRendered ) {
+							[self proceedWithVideo];
+					} else {
+						[self.renderManager renderVideo];
+					}
+					
+					break;
+				case ACTION_SEND_RINGTONE:
+					if (self.ringtoneExported ) {
+						[self sendRingtone];
+					} else {
+						[self.renderManager exportRingtone];
+					}
+					
+					break;
+					
+				default:
+					break;
 			}
 			
 			break;
-		case ACTION_SEND_RINGTONE:
-			if (self.ringtoneExported ) {
-				[self sendRingtone];
-			} else {
-				[self.renderManager exportRingtone];
-			}
-			
+		case STATE_CANCELED:
+			testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
+			OFSAptr->setSongState(SONG_IDLE);
 			break;
-			
-		default:
-			break;
+	
 	}
 }
 
 - (void)proceedWithVideo {
-	if (state == STATE_DONE) {
-		switch (action) {
-			case ACTION_CANCEL:
-				break;
-			
-			case ACTION_UPLOAD_TO_YOUTUBE:
-				[youTubeUploader upload];
-				 break;
-
-			case ACTION_UPLOAD_TO_FACEBOOK:
-				[facebookUploader upload];
-				break;
+	switch (state) {
+		case STATE_DONE:
+			switch (action) {
+									
+				case ACTION_UPLOAD_TO_YOUTUBE:
+					[youTubeUploader upload];
+					break;
+					
+				case ACTION_UPLOAD_TO_FACEBOOK:
+					[facebookUploader upload];
+					break;
+					
+				case ACTION_ADD_TO_LIBRARY:
+					[self exportToLibrary];
+					break;
+					
 				
-			 case ACTION_ADD_TO_LIBRARY:
-				[self exportToLibrary];
-				break;
-				
-			case ACTION_SEND_VIA_MAIL: {
-				NSString *subject = @"check out my song";
-				NSString *message = [NSString stringWithFormat:@"Isn't  it a work of art?<br/><br/><a href='%@'>visit lofipeople</a>",kURL];
-				NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"mov"]];
-				[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"video/mov" 
-								withFileName:[[self getSongName] stringByAppendingPathExtension:@"mov"]];
-
-			} break;
-				
-			default:
-				break;
-		}
+					
+				default:
+					break;
+			}
+			break;
+		case STATE_SELECTED:
+			switch (action) {
+				case ACTION_SEND_VIA_MAIL: {
+					NSString *subject = @"check out my song";
+					NSString *message = [NSString stringWithFormat:@"Isn't  it a work of art?<br/><br/><a href='%@'>visit lofipeople</a>",kURL];
+					NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"mov"]];
+					[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"video/mov" 
+									withFileName:[[self getSongName] stringByAppendingPathExtension:@"mov"]];
+					
+				} break;
+				default:
+					break;
+			}
+			break;
+		default:
+			break;
 	}
 }
 
@@ -610,9 +632,8 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	
 	RKLog(@"renderManagerAudioRendered");
 	bAudioRendered = YES;
-	if (state == STATE_SELECTED || state == STATE_DONE ) {
-		[self proceedWithAudio];
-	}
+	[self proceedWithAudio];
+	
 	
 }
 
@@ -620,9 +641,9 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	RKLog(@"renderManagerVideoRendered");
 	[self setVideoRendered];
 //	[parentViewController dismissModalViewControllerAnimated:NO];
-	if (state == STATE_DONE) {
-		[self proceedWithVideo];
-	}
+	
+	[self proceedWithVideo];
+	
 }
 
 
