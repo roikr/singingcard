@@ -46,7 +46,7 @@
 //@property (nonatomic,retain) IBOutlet UIButton *cameraToggleButton;
 
 
-
+- (IBAction) more:(id)sender;
 - (IBAction) live:(id)sender;
 - (IBAction) record:(id)sender;
 - (IBAction) stop:(id)sender;
@@ -54,6 +54,7 @@
 - (IBAction) play:(id)sender;
 - (IBAction) stop:(id)sender;
 - (IBAction) share:(id)sender;
+
 //- (IBAction)cameraToggle:(id)sender;
 
 - (void)updateViews;

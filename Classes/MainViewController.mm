@@ -163,6 +163,9 @@
 	}
 }
 
+- (IBAction) more:(id)sender {
+	self.OFSAptr->more();
+}
 
 - (IBAction) live:(id)sender {
 	self.OFSAptr->live();
