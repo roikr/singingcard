@@ -29,7 +29,7 @@
 
 
 @interface MainViewController ()
-
+- (NSUInteger) cameraCount;
 
 
 @end
@@ -48,7 +48,7 @@
 
 
 
-//@synthesize cameraToggleButton = _cameraToggleButton;
+@synthesize cameraToggleButton;
 
 - (void)viewDidLoad	// need to be called after the EAGL awaked from nib
 //- (void)awakeFromNib
@@ -57,8 +57,7 @@
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];
-	//[[self cameraToggleButton] setEnabled:[self cameraCount] > 1];
-	
+	self.cameraToggleButton.hidden = [self cameraCount] <= 1;
 	
 }
 
@@ -206,11 +205,11 @@
 	// BUG FIX: this is very important: don't present from milgromViewController as it will result in crash when returning to BandView after share
 	
 }
-//
-//- (IBAction)cameraToggle:(id)sender
-//{
-//    self.OFSAptr->cameraToggle();
-//}
+
+- (IBAction)cameraToggle:(id)sender
+{
+    self.OFSAptr->cameraToggle();
+}
 
 
 #pragma mark Render && Share
@@ -218,12 +217,6 @@
 - (void) setShareProgress:(float) progress {
 //	[shareProgressView setRect:CGRectMake(0, 1.0-progress, 1.0f,progress)];
 }
-
-
-
-
-
-
 
 - (NSUInteger) cameraCount
 {

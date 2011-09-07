@@ -23,12 +23,13 @@
 	UIView *recordView;
 	UIView *playView;
 	UIButton *playButton;
+
 	
 	RenderProgressView *renderProgressView;
 	
 //	CustomImageView *shareProgressView;
 
-//	UIButton *_cameraToggleButton;
+	UIButton *cameraToggleButton;
 	
 }
 
@@ -41,9 +42,10 @@
 @property (nonatomic, retain) IBOutlet UIButton *playButton;
 @property (nonatomic, retain) IBOutlet RenderProgressView *renderProgressView;
 
+
 //@property (nonatomic,retain ) IBOutlet CustomImageView *shareProgressView;
 
-//@property (nonatomic,retain) IBOutlet UIButton *cameraToggleButton;
+@property (nonatomic,retain) IBOutlet UIButton *cameraToggleButton;
 
 
 - (IBAction) more:(id)sender;
@@ -55,7 +57,7 @@
 - (IBAction) stop:(id)sender;
 - (IBAction) share:(id)sender;
 
-//- (IBAction)cameraToggle:(id)sender;
+- (IBAction)cameraToggle:(id)sender;
 
 - (void)updateViews;
 - (void) setShareProgress:(float) progress;
