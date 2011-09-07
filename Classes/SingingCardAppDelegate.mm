@@ -119,6 +119,10 @@
 {
     RKLog(@"applicationWillResignActive");
 	[self.eAGLView stopAnimation];
+	
+	if (OFSAptr) {
+		OFSAptr->soundStreamStop();
+	}
 }
 
 
