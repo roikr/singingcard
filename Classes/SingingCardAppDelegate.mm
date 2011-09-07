@@ -163,12 +163,19 @@
 {
      RKLog(@"applicationDidEnterBackground");
 	// Handle any background procedures not related to animation here.
+	if (OFSAptr) {
+		OFSAptr->suspend();
+	}
+	
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     RKLog(@"applicationWillEnterForeground");
 	// Handle any foreground procedures not related to animation here.
+	if (OFSAptr) {
+		OFSAptr->resume();
+	}
 }
 
 - (void)dealloc
