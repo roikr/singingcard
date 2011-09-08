@@ -34,5 +34,9 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FbKomic-Regular.otf</string>
+	</array>
 </dict>
 </plist>

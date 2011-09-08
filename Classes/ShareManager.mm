@@ -275,13 +275,13 @@ static NSString* kURL = @"http://www.lofipeople.com";
 - (void) facebookUploaderStateChanged:(FacebookUploader *)theUploader {
 	switch (theUploader.state) {
 		case FACEBOOK_UPLOADER_STATE_UPLOAD_FINISHED: {
-			ShareAlert(@"Facebook upload", @"Your video was uploaded successfully!\ngo check your wall");
+			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload finished", @"Your video was uploaded successfully!\ngo check your wall"));
 #ifdef _FLURRY
 			[FlurryAPI endTimedEvent:@"FACEBOOK_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"FINISHED" forKey:@"STATE"]];
 #endif
 		} break;
 		case FACEBOOK_UPLOADER_STATE_UPLOADING: {
-			ShareAlert(@"Facebook upload", @"Upload is in progress");
+			ShareAlert(NSLocalizedString(@"FB alert",@"Facebook upload"),NSLocalizedString(@"FB upload progress", @"Upload is in progress"));
 #ifdef _FLURRY
 			[FlurryAPI logEvent:@"FACEBOOK_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"STARTED" forKey:@"STATE"] timed:YES];
 #endif
@@ -310,13 +310,13 @@ static NSString* kURL = @"http://www.lofipeople.com";
 -(void) youTubeUploaderStateChanged:(YouTubeUploader *)theUploader{
 	switch (theUploader.state) {
 		case YOUTUBE_UPLOADER_STATE_UPLOAD_FINISHED: {
-			ShareAlert(@"YouTube upload", [NSString stringWithFormat:@"your video was uploaded successfully!"]); // link: %@",[theUploader.link absoluteString]]);
+			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), [NSString stringWithFormat:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully!")]); // link: %@",[theUploader.link absoluteString]]);
 #ifdef _FLURRY
 			[FlurryAPI endTimedEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"FINISHED" forKey:@"STATE"]];
 #endif
 		} break;
 		case YOUTUBE_UPLOADER_STATE_UPLOADING: {
-			ShareAlert(@"YouTube upload", @"Upload is in progress");
+			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), NSLocalizedString(@"YT upload progress",@"Upload is in progress"));
 #ifdef _FLURRY
 			[FlurryAPI logEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"STARTED" forKey:@"STATE"] timed:YES];
 #endif
@@ -324,7 +324,7 @@ static NSString* kURL = @"http://www.lofipeople.com";
 			
 		} break;
 		case YOUTUBE_UPLOADER_STATE_UPLOAD_STOPPED: {
-			ShareAlert(@"YouTube Upload error" , @"your upload has been stopped");
+			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload") , NSLocalizedString(@"YT upload stopped",@"your upload has been stopped"));
 #ifdef _FLURRY
 			[FlurryAPI endTimedEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"STOPPED" forKey:@"STATE"]];
 #endif
@@ -368,19 +368,16 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	sheet.delegate = self;
 	
 	
-	[sheet addButtonWithTitle:@"Upload to FaceBook"];
-	[sheet addButtonWithTitle:@"Upload to YouTube"];
+	[sheet addButtonWithTitle:NSLocalizedString(@"Upload to FaceBook",@"Upload to FaceBook")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"Upload to YouTube",@"Upload to YouTube")];
 	
-	[sheet addButtonWithTitle:@"Add to Library"];
+	[sheet addButtonWithTitle:NSLocalizedString(@"Add to Library",@"Add to Library")];
 
 	
-	[sheet addButtonWithTitle:@"Send via mail"];
-	[sheet addButtonWithTitle:@"Send ringtone"];
+	[sheet addButtonWithTitle:NSLocalizedString(@"Send via mail",@"Send via mail")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"Send ringtone",@"Send ringtone")];
 	
-	
-	
-	
-	[sheet addButtonWithTitle:@"Cancel"];
+	[sheet addButtonWithTitle:NSLocalizedString(@"Cancel",@"Cancel")];
 //	[sheet addButtonWithTitle:@"Render"];
 //	[sheet addButtonWithTitle:@"Play"];
 	
@@ -446,9 +443,9 @@ static NSString* kURL = @"http://www.lofipeople.com";
 			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = appDelegate.shareManager.youTubeUploader;
-			controller.videoTitle = [[self getDisplayName] uppercaseString];
+			controller.videoTitle = NSLocalizedString(@"YT title",@"shana tova musical card"); // [[self getDisplayName] uppercaseString];
 			//controller.additionalText = kMilgromURL;
-			controller.descriptionView.text = [NSString stringWithFormat:@"this video created with this iphone app\nvisit lofipeople at %@",kURL];
+			controller.descriptionView.text = [NSString stringWithFormat:NSLocalizedString(@"YT desc",@"this video created with this iphone app\nvisit lofipeople at %@"),kURL];
 			controller.videoPath = [[self getVideoPath] stringByAppendingPathExtension:@"mov"];
 			
 			[controller release];
@@ -464,9 +461,9 @@ static NSString* kURL = @"http://www.lofipeople.com";
 			[controller setBDelayedUpload:YES];
 			[parentViewController presentModalViewController:controller animated:YES];
 			controller.uploader = appDelegate.shareManager.facebookUploader;
-			controller.videoTitle = [NSString stringWithFormat:@"%@",[[self getDisplayName] uppercaseString]];
+			controller.videoTitle = NSLocalizedString(@"FB title",@"shana tova musical card") ; //[NSString stringWithFormat:@"%@",[[self getDisplayName] uppercaseString]];
 			//controller.additionalText = kMilgromURL;
-			controller.descriptionView.text = @"shana tova";
+			controller.descriptionView.text = NSLocalizedString(@"FB desc",@"shana tova");
 			controller.videoPath = [[self getVideoPath]  stringByAppendingPathExtension:@"mov" ];
 			[controller release];
 			

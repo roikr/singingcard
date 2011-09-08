@@ -20,6 +20,10 @@
 		E42C523813FD9C99009CA603 /* jingle_03.mid in Resources */ = {isa = PBXBuildFile; fileRef = E42C523313FD9C99009CA603 /* jingle_03.mid */; };
 		E42C523913FD9C99009CA603 /* santa.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E42C523413FD9C99009CA603 /* santa.pvr */; };
 		E430D28B12C8937400E65D3D /* TouchView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E430D28A12C8937400E65D3D /* TouchView.mm */; };
+		E43797CF141908DC00F3BBE9 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CC141908DC00F3BBE9 /* CustomButton.m */; };
+		E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */; };
+		E43797D81419091200F3BBE9 /* FbKomic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */; };
+		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
 		E46625C31402F35700A4B6E7 /* rosh_hashana.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E46625A61402F33F00A4B6E7 /* rosh_hashana.pvr */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
 		E48B831C140287AF00E4EFDB /* ofxRKTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */; };
@@ -130,6 +134,7 @@
 		E48B84821402880000E4EFDB /* GDataServerError.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B84131402880000E4EFDB /* GDataServerError.m */; };
 		E48B84841402880000E4EFDB /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B84171402880000E4EFDB /* GDataXMLNode.m */; };
 		E48B849C1402890D00E4EFDB /* PVRTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B849B1402890D00E4EFDB /* PVRTexture.m */; };
+		E48BE17214197A89000958A2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E48BE17014197A89000958A2 /* Localizable.strings */; };
 		E493CFCC140AE971004CB633 /* AVPlayerDemoPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE19140AE970004CB633 /* AVPlayerDemoPlaybackView.m */; };
 		E493CFCF140AE971004CB633 /* RKUBackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE1F140AE971004CB633 /* RKUBackgroundTask.m */; };
 		E493CFD3140AE971004CB633 /* OpenGLTOMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = E493CE29140AE971004CB633 /* OpenGLTOMovie.m */; };
@@ -239,6 +244,13 @@
 		E42E5CAB1412602E003C4574 /* ShanaTova-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShanaTova-Info.plist"; sourceTree = "<group>"; };
 		E430D28912C8937400E65D3D /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
 		E430D28A12C8937400E65D3D /* TouchView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchView.mm; sourceTree = "<group>"; };
+		E43797CB141908DC00F3BBE9 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
+		E43797CC141908DC00F3BBE9 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
+		E43797CD141908DC00F3BBE9 /* CustomFontTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontTextView.h; sourceTree = "<group>"; };
+		E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontTextView.m; sourceTree = "<group>"; };
+		E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FbKomic-Regular.otf"; path = "Resources/FbKomic-Regular.otf"; sourceTree = "<group>"; };
+		E43797E114190BDB00F3BBE9 /* CustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontLabel.h; sourceTree = "<group>"; };
+		E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
 		E46625A61402F33F00A4B6E7 /* rosh_hashana.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = rosh_hashana.pvr; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
@@ -467,6 +479,8 @@
 		E48B84171402880000E4EFDB /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		E48B849A1402890D00E4EFDB /* PVRTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PVRTexture.h; path = ../yesplastic/src/PVRTexture.h; sourceTree = SOURCE_ROOT; };
 		E48B849B1402890D00E4EFDB /* PVRTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PVRTexture.m; path = ../yesplastic/src/PVRTexture.m; sourceTree = SOURCE_ROOT; };
+		E48BE17714197DFA000958A2 /* he */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = he; path = Resources/he.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E48BE18314197F91000958A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E493CE18140AE970004CB633 /* AVPlayerDemoPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerDemoPlaybackView.h; sourceTree = "<group>"; };
 		E493CE19140AE970004CB633 /* AVPlayerDemoPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerDemoPlaybackView.m; sourceTree = "<group>"; };
 		E493CE1E140AE971004CB633 /* RKUBackgroundTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKUBackgroundTask.h; sourceTree = "<group>"; };
@@ -700,6 +714,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E48BE17014197A89000958A2 /* Localizable.strings */,
+				E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */,
 				E4BD528D141798BE00D23A17 /* camera-toggle.png */,
 				E4BD527C1417987D00D23A17 /* camera-toggle-pressed.png */,
 				E42E5CAB1412602E003C4574 /* ShanaTova-Info.plist */,
@@ -758,6 +774,19 @@
 			name = data;
 			path = "../of_preRelease/apps/My iPhone Apps/SantaExample/bin/data";
 			sourceTree = SOURCE_ROOT;
+		};
+		E43797CA141908DC00F3BBE9 /* CustomUIFont */ = {
+			isa = PBXGroup;
+			children = (
+				E43797E114190BDB00F3BBE9 /* CustomFontLabel.h */,
+				E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */,
+				E43797CB141908DC00F3BBE9 /* CustomButton.h */,
+				E43797CC141908DC00F3BBE9 /* CustomButton.m */,
+				E43797CD141908DC00F3BBE9 /* CustomFontTextView.h */,
+				E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */,
+			);
+			path = CustomUIFont;
+			sourceTree = "<group>";
 		};
 		E476ED151407EC960091FFA3 /* ofxAudioLimiter */ = {
 			isa = PBXGroup;
@@ -1100,6 +1129,7 @@
 		E493CE16140AE970004CB633 /* iOSUtils */ = {
 			isa = PBXGroup;
 			children = (
+				E43797CA141908DC00F3BBE9 /* CustomUIFont */,
 				E493CE17140AE970004CB633 /* AVPlayerClasses */,
 				E493CE1D140AE971004CB633 /* Background */,
 				E493CE20140AE971004CB633 /* ConvertToVideo */,
@@ -1610,6 +1640,8 @@
 				Japanese,
 				French,
 				German,
+				en,
+				he,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -1659,6 +1691,8 @@
 				E49EC6D414125A0900A068E3 /* SHTOVA3.mid in Resources */,
 				E4BD527D1417987D00D23A17 /* camera-toggle-pressed.png in Resources */,
 				E4BD528E141798BE00D23A17 /* camera-toggle.png in Resources */,
+				E43797D81419091200F3BBE9 /* FbKomic-Regular.otf in Resources */,
+				E48BE17214197A89000958A2 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1831,10 +1865,25 @@
 				E493D172140AEFC1004CB633 /* RenderManager.mm in Sources */,
 				E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */,
 				E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */,
+				E43797CF141908DC00F3BBE9 /* CustomButton.m in Sources */,
+				E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */,
+				E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E48BE17014197A89000958A2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E48BE17714197DFA000958A2 /* he */,
+				E48BE18314197F91000958A2 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
