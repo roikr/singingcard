@@ -7,7 +7,7 @@
 //
 
 #import "RenderProgressView.h"
-
+#import "CustomImageView.h"
 
 @implementation RenderProgressView
 
@@ -25,7 +25,8 @@
 }
 
 -(void)setRenderProgress:(float)progress {
-	self.progressView.progress = progress;
+//	self.progressView.progress = progress;
+	[progressView setRect:CGRectMake(0.0f, 0.0f,progress,1.0f)];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

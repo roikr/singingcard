@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-
+@class CustomImageView;
 
 @interface RenderProgressView : UIView {
-	UIProgressView *progressView;
+	CustomImageView *progressView;
 	UIButton *cancelButton;
 }
 
-@property (nonatomic,retain ) IBOutlet UIProgressView *progressView;
+@property (nonatomic,retain ) IBOutlet CustomImageView *progressView;
 @property (nonatomic,retain ) IBOutlet UIButton *cancelButton;
 
 -(void)setRenderProgress:(float)progress;

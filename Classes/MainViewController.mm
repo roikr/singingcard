@@ -24,6 +24,7 @@
 
 #import "ShareManager.h"
 #import "RenderProgressView.h"
+#import "CustomImageView.h"
 
 
 
@@ -57,6 +58,7 @@
 {
 	[super viewDidLoad];
 	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
+	self.renderProgressView.progressView.image =  [UIImage imageNamed:@"button_0006_progress.png"];
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];
 	self.cameraToggleButton.hidden = [self cameraCount] <= 1;
