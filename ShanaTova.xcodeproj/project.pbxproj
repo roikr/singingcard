@@ -13,18 +13,16 @@
 		28EC4C5911D54ECE0027AA9F /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 28EC4C5711D54ECE0027AA9F /* MainViewController.mm */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		E40FE458141F43C900E9CEDF /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E40FE457141F43C900E9CEDF /* CustomImageView.m */; };
+		E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */; };
+		E40FE4B0141F49FC00E9CEDF /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40FE4AF141F49FC00E9CEDF /* ShareViewController.xib */; };
 		E41C4B9912CA37DD004D3FA6 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */; };
 		E42C523513FD9C99009CA603 /* cards.xml in Resources */ = {isa = PBXBuildFile; fileRef = E42C523013FD9C99009CA603 /* cards.xml */; };
-		E42C523613FD9C99009CA603 /* jingle_01.mid in Resources */ = {isa = PBXBuildFile; fileRef = E42C523113FD9C99009CA603 /* jingle_01.mid */; };
-		E42C523713FD9C99009CA603 /* jingle_02.mid in Resources */ = {isa = PBXBuildFile; fileRef = E42C523213FD9C99009CA603 /* jingle_02.mid */; };
-		E42C523813FD9C99009CA603 /* jingle_03.mid in Resources */ = {isa = PBXBuildFile; fileRef = E42C523313FD9C99009CA603 /* jingle_03.mid */; };
-		E42C523913FD9C99009CA603 /* santa.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E42C523413FD9C99009CA603 /* santa.pvr */; };
 		E430D28B12C8937400E65D3D /* TouchView.mm in Sources */ = {isa = PBXBuildFile; fileRef = E430D28A12C8937400E65D3D /* TouchView.mm */; };
 		E43797CF141908DC00F3BBE9 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CC141908DC00F3BBE9 /* CustomButton.m */; };
 		E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797CE141908DC00F3BBE9 /* CustomFontTextView.m */; };
 		E43797D81419091200F3BBE9 /* FbKomic-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */; };
 		E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */; };
-		E46625C31402F35700A4B6E7 /* rosh_hashana.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E46625A61402F33F00A4B6E7 /* rosh_hashana.pvr */; };
 		E476ED191407EC960091FFA3 /* ofxAudioLimiter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */; };
 		E48B831C140287AF00E4EFDB /* ofxRKTexture.mm in Sources */ = {isa = PBXBuildFile; fileRef = E48B831B140287AF00E4EFDB /* ofxRKTexture.mm */; };
 		E48B841A1402880000E4EFDB /* GDataEntryBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E48B83361402880000E4EFDB /* GDataEntryBase.m */; };
@@ -164,7 +162,6 @@
 		E493D1CE140AF97C004CB633 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E493D1CB140AF97C004CB633 /* Default.png */; };
 		E493D1CF140AF97C004CB633 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E493D1CC140AF97C004CB633 /* icon.png */; };
 		E493D1D0140AF97C004CB633 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E493D1CD140AF97C004CB633 /* icon@2x.png */; };
-		E49EC68414124BA800A068E3 /* shana_tova_intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = E49EC68314124BA800A068E3 /* shana_tova_intro.mov */; };
 		E49EC6B21412576400A068E3 /* magic.caf in Resources */ = {isa = PBXBuildFile; fileRef = E49EC6B11412576400A068E3 /* magic.caf */; };
 		E49EC6CF14125A0900A068E3 /* BASHANA1.mid in Resources */ = {isa = PBXBuildFile; fileRef = E49EC6C914125A0900A068E3 /* BASHANA1.mid */; };
 		E49EC6D014125A0900A068E3 /* BASHANA2.mid in Resources */ = {isa = PBXBuildFile; fileRef = E49EC6CA14125A0900A068E3 /* BASHANA2.mid */; };
@@ -222,6 +219,22 @@
 		E4F3918013FC1B5E007B18EC /* ofxAudioFile.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3917813FC1B5E007B18EC /* ofxAudioFile.mm */; };
 		E4F3918A13FC1B7E007B18EC /* ofxiFBO.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */; };
 		E4F742C613FABA73002D7E1B /* ofxiPhoneSoundStream.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */; };
+		E4FE8FD8141BDB9F001AE508 /* apple.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4FE8FD5141BDB9F001AE508 /* apple.pvr */; };
+		E4FE8FD9141BDB9F001AE508 /* bee.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4FE8FD6141BDB9F001AE508 /* bee.pvr */; };
+		E4FE8FDA141BDB9F001AE508 /* fish.pvr in Resources */ = {isa = PBXBuildFile; fileRef = E4FE8FD7141BDB9F001AE508 /* fish.pvr */; };
+		E4FE8FDC141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v in Resources */ = {isa = PBXBuildFile; fileRef = E4FE8FDB141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v */; };
+		E4FE9019141BEC99001AE508 /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE900D141BEC99001AE508 /* loading.png */; };
+		E4FE901E141BEC99001AE508 /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9012141BEC99001AE508 /* share.png */; };
+		E4FE9040141BEF9A001AE508 /* button_0000_record.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9036141BEF9A001AE508 /* button_0000_record.png */; };
+		E4FE9041141BEF9A001AE508 /* button_0001_start_over.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9037141BEF9A001AE508 /* button_0001_start_over.png */; };
+		E4FE9042141BEF9A001AE508 /* button_0002_play.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9038141BEF9A001AE508 /* button_0002_play.png */; };
+		E4FE9043141BEF9A001AE508 /* button_0003_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE9039141BEF9A001AE508 /* button_0003_stop.png */; };
+		E4FE9044141BEF9A001AE508 /* button_0004_envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE903A141BEF9A001AE508 /* button_0004_envelope.png */; };
+		E4FE9045141BEF9A001AE508 /* button_0005_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE903B141BEF9A001AE508 /* button_0005_camera.png */; };
+		E4FE9046141BEF9A001AE508 /* button_0006_progress.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE903C141BEF9A001AE508 /* button_0006_progress.png */; };
+		E4FE9047141BEF9A001AE508 /* button_0007_more.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE903D141BEF9A001AE508 /* button_0007_more.png */; };
+		E4FE9048141BEF9A001AE508 /* button_0008_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE903E141BEF9A001AE508 /* button_0008_background.png */; };
+		E4FE9049141BEF9A001AE508 /* button_0009_cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = E4FE903F141BEF9A001AE508 /* button_0009_cancel.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,13 +247,14 @@
 		28EC4C5711D54ECE0027AA9F /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E40FE456141F43C900E9CEDF /* CustomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageView.h; sourceTree = "<group>"; };
+		E40FE457141F43C900E9CEDF /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
+		E40FE4A7141F49AA00E9CEDF /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShareViewController.mm; sourceTree = "<group>"; };
+		E40FE4AF141F49FC00E9CEDF /* ShareViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ShareViewController.xib; path = Resources/ShareViewController.xib; sourceTree = SOURCE_ROOT; };
 		E41C4B9712CA37DD004D3FA6 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
 		E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		E42C523013FD9C99009CA603 /* cards.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = cards.xml; sourceTree = "<group>"; };
-		E42C523113FD9C99009CA603 /* jingle_01.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = jingle_01.mid; sourceTree = "<group>"; };
-		E42C523213FD9C99009CA603 /* jingle_02.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = jingle_02.mid; sourceTree = "<group>"; };
-		E42C523313FD9C99009CA603 /* jingle_03.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = jingle_03.mid; sourceTree = "<group>"; };
-		E42C523413FD9C99009CA603 /* santa.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = santa.pvr; sourceTree = "<group>"; };
 		E42E5CAB1412602E003C4574 /* ShanaTova-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShanaTova-Info.plist"; sourceTree = "<group>"; };
 		E430D28912C8937400E65D3D /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
 		E430D28A12C8937400E65D3D /* TouchView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TouchView.mm; sourceTree = "<group>"; };
@@ -251,7 +265,6 @@
 		E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FbKomic-Regular.otf"; path = "Resources/FbKomic-Regular.otf"; sourceTree = "<group>"; };
 		E43797E114190BDB00F3BBE9 /* CustomFontLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFontLabel.h; sourceTree = "<group>"; };
 		E43797E214190BDB00F3BBE9 /* CustomFontLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFontLabel.m; sourceTree = "<group>"; };
-		E46625A61402F33F00A4B6E7 /* rosh_hashana.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = rosh_hashana.pvr; sourceTree = "<group>"; };
 		E476ED171407EC960091FFA3 /* ofxAudioLimiter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAudioLimiter.cpp; sourceTree = "<group>"; };
 		E476ED181407EC960091FFA3 /* ofxAudioLimiter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxAudioLimiter.h; sourceTree = "<group>"; };
 		E48B831A140287AF00E4EFDB /* ofxRKTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxRKTexture.h; path = ../yesplastic/src/ofxRKTexture.h; sourceTree = SOURCE_ROOT; };
@@ -534,7 +547,6 @@
 		E493D1CB140AF97C004CB633 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		E493D1CC140AF97C004CB633 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = "<group>"; };
 		E493D1CD140AF97C004CB633 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icon@2x.png"; sourceTree = "<group>"; };
-		E49EC68314124BA800A068E3 /* shana_tova_intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = shana_tova_intro.mov; path = Resources/shana_tova_intro.mov; sourceTree = "<group>"; };
 		E49EC6B11412576400A068E3 /* magic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = magic.caf; sourceTree = "<group>"; };
 		E49EC6C914125A0900A068E3 /* BASHANA1.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = BASHANA1.mid; sourceTree = "<group>"; };
 		E49EC6CA14125A0900A068E3 /* BASHANA2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = BASHANA2.mid; sourceTree = "<group>"; };
@@ -626,6 +638,22 @@
 		E4F3918913FC1B7E007B18EC /* ofxiFBO.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiFBO.mm; sourceTree = "<group>"; };
 		E4F742C413FABA73002D7E1B /* ofSoundStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSoundStream.h; sourceTree = "<group>"; };
 		E4F742C513FABA73002D7E1B /* ofxiPhoneSoundStream.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxiPhoneSoundStream.mm; sourceTree = "<group>"; };
+		E4FE8FD5141BDB9F001AE508 /* apple.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = apple.pvr; sourceTree = "<group>"; };
+		E4FE8FD6141BDB9F001AE508 /* bee.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = bee.pvr; sourceTree = "<group>"; };
+		E4FE8FD7141BDB9F001AE508 /* fish.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = fish.pvr; sourceTree = "<group>"; };
+		E4FE8FDB141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; name = SHANA_DEMO_IPHONE.m4v; path = Resources/SHANA_DEMO_IPHONE.m4v; sourceTree = "<group>"; };
+		E4FE900D141BEC99001AE508 /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		E4FE9012141BEC99001AE508 /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		E4FE9036141BEF9A001AE508 /* button_0000_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0000_record.png; sourceTree = "<group>"; };
+		E4FE9037141BEF9A001AE508 /* button_0001_start_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0001_start_over.png; sourceTree = "<group>"; };
+		E4FE9038141BEF9A001AE508 /* button_0002_play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0002_play.png; sourceTree = "<group>"; };
+		E4FE9039141BEF9A001AE508 /* button_0003_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0003_stop.png; sourceTree = "<group>"; };
+		E4FE903A141BEF9A001AE508 /* button_0004_envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0004_envelope.png; sourceTree = "<group>"; };
+		E4FE903B141BEF9A001AE508 /* button_0005_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0005_camera.png; sourceTree = "<group>"; };
+		E4FE903C141BEF9A001AE508 /* button_0006_progress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0006_progress.png; sourceTree = "<group>"; };
+		E4FE903D141BEF9A001AE508 /* button_0007_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0007_more.png; sourceTree = "<group>"; };
+		E4FE903E141BEF9A001AE508 /* button_0008_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0008_background.png; sourceTree = "<group>"; };
+		E4FE903F141BEF9A001AE508 /* button_0009_cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_0009_cancel.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -668,6 +696,9 @@
 				E41C4B9812CA37DD004D3FA6 /* EAGLView.mm */,
 				E4AFFC3F12B0B93B00457BC7 /* ShareManager.h */,
 				E4AFFC4012B0B93B00457BC7 /* ShareManager.mm */,
+				E40FE4A7141F49AA00E9CEDF /* ShareViewController.h */,
+				E40FE4A8141F49AA00E9CEDF /* ShareViewController.mm */,
+				E40FE4AF141F49FC00E9CEDF /* ShareViewController.xib */,
 				E430D28912C8937400E65D3D /* TouchView.h */,
 				E430D28A12C8937400E65D3D /* TouchView.mm */,
 				E493D170140AEFC1004CB633 /* RenderManager.h */,
@@ -714,12 +745,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E4FE9008141BEC99001AE508 /* UI */,
+				E4FE8FDB141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v */,
 				E48BE17014197A89000958A2 /* Localizable.strings */,
 				E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */,
 				E4BD528D141798BE00D23A17 /* camera-toggle.png */,
 				E4BD527C1417987D00D23A17 /* camera-toggle-pressed.png */,
 				E42E5CAB1412602E003C4574 /* ShanaTova-Info.plist */,
-				E49EC68314124BA800A068E3 /* shana_tova_intro.mov */,
 				E493D1CB140AF97C004CB633 /* Default.png */,
 				E493D1CC140AF97C004CB633 /* icon.png */,
 				E493D1CD140AF97C004CB633 /* icon@2x.png */,
@@ -748,9 +780,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E40FE455141F43C900E9CEDF /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				E40FE456141F43C900E9CEDF /* CustomImageView.h */,
+				E40FE457141F43C900E9CEDF /* CustomImageView.m */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
 		E42C522F13FD9C99009CA603 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				E4FE8FD5141BDB9F001AE508 /* apple.pvr */,
+				E4FE8FD6141BDB9F001AE508 /* bee.pvr */,
+				E4FE8FD7141BDB9F001AE508 /* fish.pvr */,
 				E49EC6C914125A0900A068E3 /* BASHANA1.mid */,
 				E49EC6CA14125A0900A068E3 /* BASHANA2.mid */,
 				E49EC6CB14125A0900A068E3 /* BASHANA3.mid */,
@@ -764,12 +808,7 @@
 				E4A9A60C1407D7E100981AD5 /* ROSHANA4.mid */,
 				E4A9A60D1407D7E100981AD5 /* ROSHANA5.mid */,
 				E4A9A60E1407D7E100981AD5 /* ROSHANA6.mid */,
-				E46625A61402F33F00A4B6E7 /* rosh_hashana.pvr */,
 				E42C523013FD9C99009CA603 /* cards.xml */,
-				E42C523113FD9C99009CA603 /* jingle_01.mid */,
-				E42C523213FD9C99009CA603 /* jingle_02.mid */,
-				E42C523313FD9C99009CA603 /* jingle_03.mid */,
-				E42C523413FD9C99009CA603 /* santa.pvr */,
 			);
 			name = data;
 			path = "../of_preRelease/apps/My iPhone Apps/SantaExample/bin/data";
@@ -1129,6 +1168,7 @@
 		E493CE16140AE970004CB633 /* iOSUtils */ = {
 			isa = PBXGroup;
 			children = (
+				E40FE455141F43C900E9CEDF /* CustomUI */,
 				E43797CA141908DC00F3BBE9 /* CustomUIFont */,
 				E493CE17140AE970004CB633 /* AVPlayerClasses */,
 				E493CE1D140AE971004CB633 /* Background */,
@@ -1606,6 +1646,26 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		E4FE9008141BEC99001AE508 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E4FE9036141BEF9A001AE508 /* button_0000_record.png */,
+				E4FE9037141BEF9A001AE508 /* button_0001_start_over.png */,
+				E4FE9038141BEF9A001AE508 /* button_0002_play.png */,
+				E4FE9039141BEF9A001AE508 /* button_0003_stop.png */,
+				E4FE903A141BEF9A001AE508 /* button_0004_envelope.png */,
+				E4FE903B141BEF9A001AE508 /* button_0005_camera.png */,
+				E4FE903C141BEF9A001AE508 /* button_0006_progress.png */,
+				E4FE903D141BEF9A001AE508 /* button_0007_more.png */,
+				E4FE903E141BEF9A001AE508 /* button_0008_background.png */,
+				E4FE903F141BEF9A001AE508 /* button_0009_cancel.png */,
+				E4FE900D141BEC99001AE508 /* loading.png */,
+				E4FE9012141BEC99001AE508 /* share.png */,
+			);
+			name = UI;
+			path = Resources/UI;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1661,11 +1721,6 @@
 				E4AF013012B0EF5700457BC7 /* MainWindow.xib in Resources */,
 				E4A8AB3813F955C2006058D4 /* install.xml in Resources */,
 				E42C523513FD9C99009CA603 /* cards.xml in Resources */,
-				E42C523613FD9C99009CA603 /* jingle_01.mid in Resources */,
-				E42C523713FD9C99009CA603 /* jingle_02.mid in Resources */,
-				E42C523813FD9C99009CA603 /* jingle_03.mid in Resources */,
-				E46625C31402F35700A4B6E7 /* rosh_hashana.pvr in Resources */,
-				E42C523913FD9C99009CA603 /* santa.pvr in Resources */,
 				E4A9A60F1407D7E100981AD5 /* ROSHANA1.mid in Resources */,
 				E4A9A6101407D7E100981AD5 /* ROSHANA2.mid in Resources */,
 				E4A9A6111407D7E100981AD5 /* ROSHANA3.mid in Resources */,
@@ -1681,7 +1736,6 @@
 				E493D1CF140AF97C004CB633 /* icon.png in Resources */,
 				E493D1D0140AF97C004CB633 /* icon@2x.png in Resources */,
 				E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */,
-				E49EC68414124BA800A068E3 /* shana_tova_intro.mov in Resources */,
 				E49EC6B21412576400A068E3 /* magic.caf in Resources */,
 				E49EC6CF14125A0900A068E3 /* BASHANA1.mid in Resources */,
 				E49EC6D014125A0900A068E3 /* BASHANA2.mid in Resources */,
@@ -1693,6 +1747,23 @@
 				E4BD528E141798BE00D23A17 /* camera-toggle.png in Resources */,
 				E43797D81419091200F3BBE9 /* FbKomic-Regular.otf in Resources */,
 				E48BE17214197A89000958A2 /* Localizable.strings in Resources */,
+				E4FE8FD8141BDB9F001AE508 /* apple.pvr in Resources */,
+				E4FE8FD9141BDB9F001AE508 /* bee.pvr in Resources */,
+				E4FE8FDA141BDB9F001AE508 /* fish.pvr in Resources */,
+				E4FE8FDC141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v in Resources */,
+				E4FE9019141BEC99001AE508 /* loading.png in Resources */,
+				E4FE901E141BEC99001AE508 /* share.png in Resources */,
+				E4FE9040141BEF9A001AE508 /* button_0000_record.png in Resources */,
+				E4FE9041141BEF9A001AE508 /* button_0001_start_over.png in Resources */,
+				E4FE9042141BEF9A001AE508 /* button_0002_play.png in Resources */,
+				E4FE9043141BEF9A001AE508 /* button_0003_stop.png in Resources */,
+				E4FE9044141BEF9A001AE508 /* button_0004_envelope.png in Resources */,
+				E4FE9045141BEF9A001AE508 /* button_0005_camera.png in Resources */,
+				E4FE9046141BEF9A001AE508 /* button_0006_progress.png in Resources */,
+				E4FE9047141BEF9A001AE508 /* button_0007_more.png in Resources */,
+				E4FE9048141BEF9A001AE508 /* button_0008_background.png in Resources */,
+				E4FE9049141BEF9A001AE508 /* button_0009_cancel.png in Resources */,
+				E40FE4B0141F49FC00E9CEDF /* ShareViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1868,6 +1939,8 @@
 				E43797CF141908DC00F3BBE9 /* CustomButton.m in Sources */,
 				E43797D0141908DC00F3BBE9 /* CustomFontTextView.m in Sources */,
 				E43797E314190BDB00F3BBE9 /* CustomFontLabel.m in Sources */,
+				E40FE458141F43C900E9CEDF /* CustomImageView.m in Sources */,
+				E40FE4A9141F49AA00E9CEDF /* ShareViewController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1914,7 +1987,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = ShanaTova;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "325CF5E2-1D8D-40CF-A295-982D0BD65130";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAA6F447-8C39-4E2D-8746-C4E36E5E865D";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 			};
 			name = Debug;
@@ -2015,7 +2088,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = ShanaTova;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E06CA6E9-321A-4779-8F7D-7D8EAB9619E8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3E9BB101-4940-4039-9B0B-AF05F6809433";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};
