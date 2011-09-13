@@ -10,6 +10,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AVPlayerDemoPlaybackView.h"
 
+@interface AVPlayerViewController()
+-(void)close;
+@end
+
+
 @implementation AVPlayerViewController
 
 @synthesize player;
@@ -104,11 +109,19 @@ static const NSString *ItemStatusContext;
 }
 
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
-   [self dismissModalViewControllerAnimated:NO];
+	[self close];
+   
 }
 
 -(IBAction)skip:(id)sender {
 	[self.player pause];
+	[self close];
+}
+
+-(void)close {
+	AVPlayerLayer *layer = (AVPlayerLayer *)[(AVPlayerDemoPlaybackView *)self.view layer];
+	[layer removeObserver:self forKeyPath:@"readyForDisplay"];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[self dismissModalViewControllerAnimated:NO];
 }
 
