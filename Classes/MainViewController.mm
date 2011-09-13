@@ -37,7 +37,9 @@
 @implementation MainViewController
 
 @synthesize liveView;
+@synthesize liveTextView;
 @synthesize recordView;
+@synthesize recordTextView;
 @synthesize playView;
 @synthesize playButton;
 @synthesize renderProgressView;
@@ -58,6 +60,9 @@
 	[shareManager.renderManager setRenderProgressView:self.renderProgressView];
 	[self.renderProgressView.cancelButton addTarget:shareManager.renderManager action:@selector(cancelRendering:) forControlEvents:UIControlEventTouchUpInside];
 	self.cameraToggleButton.hidden = [self cameraCount] <= 1;
+	
+	[self.liveTextView setFont:[[self.liveTextView font] fontWithSize:22]];
+	[self.recordTextView setFont:[[self.recordTextView font] fontWithSize:22]];
 	
 }
 
