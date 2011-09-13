@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVPlayerViewController.h"
 
 
 @class MainViewController;
@@ -14,7 +15,7 @@
 @class EAGLView;
 class testApp;
 
-@interface SingingCardAppDelegate : NSObject <UIApplicationDelegate> {
+@interface SingingCardAppDelegate : NSObject <UIApplicationDelegate,AVPlayerViewControllerDelegate> {
     UIWindow *window;
 	EAGLView *eAGLView;
     MainViewController *mainViewController;

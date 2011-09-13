@@ -12,7 +12,7 @@
 #import "ShareManager.h"
 
 //#import "AVPlayerDemoPlaybackViewController.h"
-#import "AVPlayerViewController.h"
+
 #import <CoreMedia/CoreMedia.h>
 #import <AVFoundation/AVFoundation.h>
 
@@ -51,7 +51,12 @@
 	[self.window makeKeyAndVisible];
 	
 	AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
-	[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"shana_tova_intro" withExtension:@"mov"]];
+	[playerViewController setDelegate:self];
+	[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_IPHONE" withExtension:@"m4v"]];
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+	[playerViewController.view addSubview:imageView];
+	imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
+	imageView.center = CGPointMake(240.0, 160.0);
 	[self.mainViewController presentModalViewController:playerViewController animated:NO];
 	[playerViewController release];
 	
@@ -72,6 +77,13 @@
 	return YES;
 }
 
+-(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller {
+	for (UIView *view in [controller.view subviews]) {
+		if ([view isKindOfClass:[UIImageView class]]) {
+			[view removeFromSuperview];
+		}
+	}
+}
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {

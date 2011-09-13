@@ -13,6 +13,7 @@
 @implementation AVPlayerViewController
 
 @synthesize player;
+@synthesize delegate;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -60,6 +61,8 @@
     [super dealloc];
 }
 
+static const NSString *ItemStatusContext;
+
 -(void)loadAssetFromURL:(NSURL *)fileURL {
 	AVURLAsset *asset = [AVURLAsset URLAssetWithURL:fileURL options:nil];
     NSString *tracksKey = @"tracks";
@@ -71,6 +74,11 @@
 		 
 		 if (status == AVKeyValueStatusLoaded) {
 			 AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
+			 
+			 AVPlayerLayer *layer = (AVPlayerLayer *)[(AVPlayerDemoPlaybackView *)self.view layer];
+			 [layer addObserver:self forKeyPath:@"readyForDisplay"
+							 options:0 context:&ItemStatusContext];
+			 
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
 			 self.player = [AVPlayer playerWithPlayerItem:playerItem];
 			 [(AVPlayerDemoPlaybackView *)self.view setPlayer:self.player];
@@ -81,6 +89,18 @@
 			 NSLog(@"The asset's tracks were not loaded:\n%@", [error localizedDescription]);
 		 }
      }];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change context:(void *)context {
+	
+    if (context == &ItemStatusContext) {
+        [delegate AVPlayerLayerIsReadyForDisplay:self];
+        return;
+    }
+    [super observeValueForKeyPath:keyPath ofObject:object
+						   change:change context:context];
+    return;
 }
 
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
