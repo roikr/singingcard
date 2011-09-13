@@ -35,8 +35,6 @@ void ShareAlert(NSString *title,NSString *message) {
 }
 
 
-static NSString* kURL = @"http://www.lofipeople.com";
-
 @interface ShareManager ()
 - (void)sendViaMailWithSubject:(NSString *)subject withMessage:(NSString*)message 
 					  withData:(NSData *)data withMimeType:(NSString*) mimeType withFileName:(NSString*)fileName;
@@ -301,7 +299,7 @@ static NSString* kURL = @"http://www.lofipeople.com";
 -(void) youTubeUploaderStateChanged:(YouTubeUploader *)theUploader{
 	switch (theUploader.state) {
 		case YOUTUBE_UPLOADER_STATE_UPLOAD_FINISHED: {
-			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), [NSString stringWithFormat:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully!")]); // link: %@",[theUploader.link absoluteString]]);
+			ShareAlert(NSLocalizedString(@"YT alert",@"YouTube upload"), [NSString stringWithFormat:NSLocalizedString(@"YT upload finished",@"your video was uploaded successfully! link: %@"),[theUploader.link absoluteString]]); // ",]);
 #ifdef _FLURRY
 			[FlurryAPI endTimedEvent:@"YOUTUBE_UPLOAD" withParameters:[NSDictionary dictionaryWithObject:@"FINISHED" forKey:@"STATE"]];
 #endif
@@ -355,16 +353,16 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	sheet.delegate = self;
 	
 	
-	[sheet addButtonWithTitle:NSLocalizedString(@"Upload to FaceBook",@"Upload to FaceBook")];
-	[sheet addButtonWithTitle:NSLocalizedString(@"Upload to YouTube",@"Upload to YouTube")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"upload to facebook",@"Upload to FaceBook")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"upload to youtube",@"Upload to YouTube")];
 	
-	[sheet addButtonWithTitle:NSLocalizedString(@"Add to Library",@"Add to Library")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"add to library",@"Add to Library")];
 
 	
-	[sheet addButtonWithTitle:NSLocalizedString(@"Send via mail",@"Send via mail")];
-	[sheet addButtonWithTitle:NSLocalizedString(@"Send ringtone",@"Send ringtone")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"send via mail",@"Send via mail")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"send ringtone",@"Send ringtone")];
 	
-	[sheet addButtonWithTitle:NSLocalizedString(@"Cancel",@"Cancel")];
+	[sheet addButtonWithTitle:NSLocalizedString(@"cancel",@"Cancel")];
 //	[sheet addButtonWithTitle:@"Render"];
 //	[sheet addButtonWithTitle:@"Play"];
 	
@@ -435,7 +433,7 @@ static NSString* kURL = @"http://www.lofipeople.com";
 		case ACTION_UPLOAD_TO_YOUTUBE:
 		case ACTION_UPLOAD_TO_FACEBOOK:
 			if (![self gotInternet]) {
-				ShareAlert(@"Upload Movie", @"We're trying hard, but there's no Internet connection");
+				ShareAlert(NSLocalizedString(@"upload alert title",@"Upload Movie"), NSLocalizedString(@"upload alert message",@"We're trying hard, but there's no Internet connection"));
 				action = ACTION_CANCEL;
 				return;
 			} break;
@@ -454,7 +452,7 @@ static NSString* kURL = @"http://www.lofipeople.com";
 			controller.uploader = appDelegate.shareManager.youTubeUploader;
 			controller.videoTitle = NSLocalizedString(@"YT title",@"shana tova musical card"); // [[self getDisplayName] uppercaseString];
 			//controller.additionalText = kMilgromURL;
-			controller.descriptionView.text = [NSString stringWithFormat:NSLocalizedString(@"YT desc",@"this video created with this iphone app\nvisit lofipeople at %@"),kURL];
+			controller.descriptionView.text = NSLocalizedString(@"YT desc",@"this video created with this iphone app\nvisit lofipeople at http://www.lofipeople.com");
 			controller.videoPath = [[self getVideoPath] stringByAppendingPathExtension:@"mov"];
 			
 			[controller release];
@@ -597,8 +595,8 @@ static NSString* kURL = @"http://www.lofipeople.com";
 		case STATE_SELECTED:
 			switch (action) {
 				case ACTION_SEND_VIA_MAIL: {
-					NSString *subject = @"check out my song";
-					NSString *message = [NSString stringWithFormat:@"Isn't  it a work of art?<br/><br/><a href='%@'>visit lofipeople</a>",kURL];
+					NSString *subject = NSLocalizedString(@"email subject",@"check out my song");
+					NSString *message = NSLocalizedString(@"email message",@"Isn't  it a work of art?<br/><br/><a href='http://www.lofipeople.com/shanatova/appstore'>visit lofipeople</a>");
 					NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"mov"]];
 					[self sendViaMailWithSubject:subject withMessage:message withData:myData withMimeType:@"video/mov" 
 									withFileName:[[self getSongName] stringByAppendingPathExtension:@"mov"]];
@@ -614,8 +612,8 @@ static NSString* kURL = @"http://www.lofipeople.com";
 }
 
 -(void) sendRingtone {
-	NSString *subject = @"Sweeeet! My New Rosh Hashana Ringtone!";
-	NSString *message = [NSString stringWithFormat:@"Hey,<br/>I just made a ringtone created with the help of this cool app.<br/>Double click the attachment to listen to it first.<br/>Then, save it to your desktop, and then drag it to your itunes library. Now sync your iDevice.<br/>Next, in your iDevice, go to Settings > Sounds > Ringtone > and under 'Custom' you should see this file name.<br/>You can always switch it back if you feel like you're not ready for this work of art, yet.<br/><br/>Now, pay a visit to <a href='%@'>lofipeople's</a> website. I leave it to you to handle the truth.",kURL];
+	NSString *subject = NSLocalizedString(@"ringtone subject",@"Sweeeet! My New Rosh Hashana Ringtone!");
+	NSString *message = NSLocalizedString(@"ringtone message",@"Hey,<br/>I just made a ringtone created with the help of this cool app.<br/>Double click the attachment to listen to it first.<br/>Then, save it to your desktop, and then drag it to your itunes library. Now sync your iDevice.<br/>Next, in your iDevice, go to Settings > Sounds > Ringtone > and under 'Custom' you should see this file name.<br/>You can always switch it back if you feel like you're not ready for this work of art, yet.<br/><br/>Now, pay a visit to <a href='http://www.lofipeople.com/shanatova/appstore'>lofipeople's</a> website. I leave it to you to handle the truth.");
 	
 	
 	NSData *myData = [NSData dataWithContentsOfFile:[[self getVideoPath]  stringByAppendingPathExtension:@"m4r"]];
@@ -716,7 +714,7 @@ static NSString* kURL = @"http://www.lofipeople.com";
 											}
 											else {
 												RKLog(@"writeVideoToAssestsLibrary successed");
-												ShareAlert(@"Library", @"The video has been saved to your photos library");
+												ShareAlert(NSLocalizedString(@"library alert title",@"Library"),NSLocalizedString(@"library alert message",@"The video has been saved to your photos library"));
 #ifdef _FLURRY
 												[FlurryAPI logEvent:@"VIDEO_ADDED_TO_LIBRARY"];												
 #endif
