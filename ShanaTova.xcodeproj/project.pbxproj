@@ -205,8 +205,6 @@
 		E4AFFF4112B0CA3000457BC7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */; };
 		E4AFFF4712B0CA4900457BC7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */; };
 		E4AFFFC112B0D37300457BC7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */; };
-		E4BD527D1417987D00D23A17 /* camera-toggle-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD527C1417987D00D23A17 /* camera-toggle-pressed.png */; };
-		E4BD528E141798BE00D23A17 /* camera-toggle.png in Resources */ = {isa = PBXBuildFile; fileRef = E4BD528D141798BE00D23A17 /* camera-toggle.png */; };
 		E4C82117140BD03A00E190F1 /* RenderProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C82116140BD03A00E190F1 /* RenderProgressView.m */; };
 		E4C821FC140BF50200E190F1 /* AVPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C821FA140BF50200E190F1 /* AVPlayerViewController.m */; };
 		E4C821FD140BF50200E190F1 /* AVPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C821FB140BF50200E190F1 /* AVPlayerViewController.xib */; };
@@ -607,8 +605,6 @@
 		E4AFFF4012B0CA3000457BC7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		E4AFFF4612B0CA4900457BC7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E4AFFFC012B0D37300457BC7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		E4BD527C1417987D00D23A17 /* camera-toggle-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-toggle-pressed.png"; path = "Resources/camera-toggle-pressed.png"; sourceTree = "<group>"; };
-		E4BD528D141798BE00D23A17 /* camera-toggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-toggle.png"; path = "Resources/camera-toggle.png"; sourceTree = "<group>"; };
 		E4C82115140BD03A00E190F1 /* RenderProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderProgressView.h; sourceTree = "<group>"; };
 		E4C82116140BD03A00E190F1 /* RenderProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenderProgressView.m; sourceTree = "<group>"; };
 		E4C821F9140BF50200E190F1 /* AVPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerViewController.h; sourceTree = "<group>"; };
@@ -721,10 +717,10 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				E4A8AAF313F95546006058D4 /* santaExample */,
 				E4F742C313FABA73002D7E1B /* src */,
+				E42C522F13FD9C99009CA603 /* data */,
 				E4D5392012B393C200B9EFD8 /* addons */,
 				E493CE16140AE970004CB633 /* iOSUtils */,
 				E48B83161402878200E4EFDB /* yesplastic */,
-				E42C522F13FD9C99009CA603 /* data */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -749,8 +745,6 @@
 				E4FE8FDB141BDBC2001AE508 /* SHANA_DEMO_IPHONE.m4v */,
 				E48BE17014197A89000958A2 /* Localizable.strings */,
 				E43797D71419091200F3BBE9 /* FbKomic-Regular.otf */,
-				E4BD528D141798BE00D23A17 /* camera-toggle.png */,
-				E4BD527C1417987D00D23A17 /* camera-toggle-pressed.png */,
 				E42E5CAB1412602E003C4574 /* ShanaTova-Info.plist */,
 				E493D1CB140AF97C004CB633 /* Default.png */,
 				E493D1CC140AF97C004CB633 /* icon.png */,
@@ -1743,8 +1737,6 @@
 				E49EC6D214125A0900A068E3 /* SHTOVA1.mid in Resources */,
 				E49EC6D314125A0900A068E3 /* SHTOVA2.mid in Resources */,
 				E49EC6D414125A0900A068E3 /* SHTOVA3.mid in Resources */,
-				E4BD527D1417987D00D23A17 /* camera-toggle-pressed.png in Resources */,
-				E4BD528E141798BE00D23A17 /* camera-toggle.png in Resources */,
 				E43797D81419091200F3BBE9 /* FbKomic-Regular.otf in Resources */,
 				E48BE17214197A89000958A2 /* Localizable.strings in Resources */,
 				E4FE8FD8141BDB9F001AE508 /* apple.pvr in Resources */,
@@ -1997,7 +1989,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Roee Kremer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Roee Kremer (S8LHA25A98)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SingingCard_Prefix.pch;
@@ -2016,7 +2008,7 @@
 					"-lxml2",
 				);
 				PRODUCT_NAME = ShanaTova;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9B645451-838A-4D98-A5AD-784C854DD1A3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FAA6F447-8C39-4E2D-8746-C4E36E5E865D";
 				USER_HEADER_SEARCH_PATHS = "/Users/roikr/Developer/OpenSource/facebook-iphone-sdk/src";
 				VALIDATE_PRODUCT = YES;
 			};
