@@ -129,16 +129,13 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"jingle_bells";
+			name=@"berosh_hashana";
 			break;
 		case 1:
-			name=@"shana_tova";
-			break;
-		case 2:
 			name=@"bashana_habaha";
 			break;
-		case 3:
-			name=@"berosh_hashana";
+		case 2:
+			name=@"shana_tova";
 			break;
 		default:
 			break;
@@ -155,16 +152,13 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"jingle_bells";
+			name=@"berosh_hashana";
 			break;
 		case 1:
-			name=@"shana_tova";
-			break;
-		case 2:
 			name=@"bashana_habaha";
 			break;
-		case 3:
-			name=@"berosh_hashana";
+		case 2:
+			name=@"shana_tova";
 			break;
 		default:
 			break;
@@ -192,16 +186,13 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	
 	switch (distance(OFSAptr->cards.begin(),OFSAptr->citer)) {
 		case 0:
-			name=@"jingle_bells";
+			name=@"berosh_hashana";
 			break;
 		case 1:
-			name=@"shana_tova";
-			break;
-		case 2:
 			name=@"bashana_habaha";
 			break;
-		case 3:
-			name=@"berosh_hashana";
+		case 2:
+			name=@"shana_tova";
 			break;
 		default:
 			break;
