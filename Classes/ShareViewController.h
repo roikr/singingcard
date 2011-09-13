@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ShareViewController : UIViewController<UIActionSheetDelegate> {
-
+@interface ShareViewController : UIViewController {
+	NSInteger action;
 }
+
+-(void)action:(id)sender;
 
 @end

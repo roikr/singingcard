@@ -347,10 +347,6 @@ static NSString* kURL = @"http://www.lofipeople.com";
 #pragma mark actionSheet
 
 - (void)menuWithView:(UIView *)view {
-	state = STATE_IDLE;
-	
-	
-	bAudioRendered = [self videoRendered] || [self ringtoneExported];
 	
 	UIActionSheet* sheet = [[[UIActionSheet alloc] init] autorelease];
 	
@@ -377,12 +373,25 @@ static NSString* kURL = @"http://www.lofipeople.com";
 	[sheet showInView:view];
 	//sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
 	 
+	[self renderAudio];
+}
+
+
+
+
+- (void)renderAudio {
+	state = STATE_IDLE;
+	
+	
+	bAudioRendered = [self videoRendered] || [self ringtoneExported];
+	
+	
 	if (!bAudioRendered) {
 		[renderManager performSelector:@selector(renderAudio)];
 	}
 	
 	
-	 
+	
 	
 }
 
@@ -391,27 +400,36 @@ static NSString* kURL = @"http://www.lofipeople.com";
 - (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
 	
+	NSUInteger theAction;
+	
 	switch (buttonIndex)
 	{
 		case 0: 
-			action = ACTION_UPLOAD_TO_FACEBOOK;
+			theAction = ACTION_UPLOAD_TO_FACEBOOK;
 			break;
 		case 1:
-			action = ACTION_UPLOAD_TO_YOUTUBE;
+			theAction = ACTION_UPLOAD_TO_YOUTUBE;
 			break;
 		case 2:
-			action = ACTION_ADD_TO_LIBRARY;
+			theAction = ACTION_ADD_TO_LIBRARY;
 			break;
 		case 3:
-			action = ACTION_SEND_VIA_MAIL;
+			theAction = ACTION_SEND_VIA_MAIL;
 			break;
 		case 4:
-			action = ACTION_SEND_RINGTONE;
+			theAction = ACTION_SEND_RINGTONE;
 			break;
 		case 5:
-			action = ACTION_CANCEL;
+			theAction = ACTION_CANCEL;
 			break;
 	}
+	
+	[self performAction:theAction]; 
+}
+
+
+-(void) performAction:(NSUInteger)theAction {
+	action = theAction;
 	
 	switch (action) {
 		case ACTION_UPLOAD_TO_YOUTUBE:

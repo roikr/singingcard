@@ -11,6 +11,8 @@
 
 
 @class MainViewController;
+@class ShareViewController;
+
 @class ShareManager;
 @class EAGLView;
 class testApp;
@@ -19,7 +21,7 @@ class testApp;
     UIWindow *window;
 	EAGLView *eAGLView;
     MainViewController *mainViewController;
-	\
+	ShareViewController *shareViewController;
 		
 	testApp *OFSAptr;
 	
@@ -32,6 +34,7 @@ class testApp;
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic,retain)  IBOutlet EAGLView *eAGLView;
 @property (nonatomic, retain) IBOutlet MainViewController *mainViewController;
+@property (nonatomic, retain) IBOutlet ShareViewController *shareViewController;
 
 
 @property testApp *OFSAptr;

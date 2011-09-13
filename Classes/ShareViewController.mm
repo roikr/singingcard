@@ -12,7 +12,6 @@
 #import "RKMacros.h"
 
 @interface ShareViewController() 
--(void) presentActionSheet;
 @end
 
 
@@ -66,82 +65,43 @@
 #pragma mark actionSheet
 
 - (void)viewDidAppear:(BOOL)animated {	
-	
+	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
+	[shareManager renderAudio];
 }
 
--(void) presentActionSheet {
-		
+- (void) action:(id)sender {
 	
-	UIActionSheet* sheet = [[[UIActionSheet alloc] init] autorelease];
-	sheet.actionSheetStyle = UIActionSheetStyleDefault;
-	
-	//sheet.title = @"Illustrations";
-	sheet.delegate = self;
-	
-	
-	[sheet addButtonWithTitle:@"Upload to FaceBook"];
-	[sheet addButtonWithTitle:@"Upload to YouTube"];
-	
-	[sheet addButtonWithTitle:@"Add to Library"];
-	
-	
-	[sheet addButtonWithTitle:@"Send via mail"];
-	[sheet addButtonWithTitle:@"Send ringtone"];
-	
-	
-	
-	
-	[sheet addButtonWithTitle:@"Done"];
-	//	[sheet addButtonWithTitle:@"Render"];
-	//	[sheet addButtonWithTitle:@"Play"];
-	
-	
-	
-	[sheet showInView:self.view];
-	//sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
-	
-}
-
-- (void)willPresentActionSheet:(UIActionSheet *)actionSheet {
-	RKLog(@"willPresentActionSheet");
-	
-	
-}
-
-- (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	RKLog(@"actionSheet clickedButtonAtIndex");
-}
-
-
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-	RKLog(@"actionSheet didDismissWithButtonIndex");
-	NSUInteger action;
-	switch (buttonIndex)
+	UIButton *button = (UIButton *)sender;
+		switch (button.tag)
 	{
 		case 0: 
 			action = ACTION_UPLOAD_TO_FACEBOOK;
 			break;
 		case 1:
+			action = ACTION_SEND_VIA_MAIL;
+			break;			
+		case 2:
 			action = ACTION_UPLOAD_TO_YOUTUBE;
 			break;
-		case 2:
-			action = ACTION_ADD_TO_LIBRARY;
-			break;
 		case 3:
-			action = ACTION_SEND_VIA_MAIL;
+			action = ACTION_ADD_TO_LIBRARY;
 			break;
 		case 4:
 			action = ACTION_SEND_RINGTONE;
 			break;
 		case 5:
-			action = ACTION_DONE;
+			action = ACTION_CANCEL;
 			break;
 	}
-	[self.parentViewController dismissModalViewControllerAnimated:NO];
-	[((SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate]).shareManager execute:action];
+	
+	
+	[self dismissModalViewControllerAnimated:YES]; // action==ACTION_CANCEL
+	
+	
 }
 
-
+- (void)viewDidDisappear:(BOOL)animated {	
+	[((SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate]).shareManager performAction:action];
+}
 
 @end

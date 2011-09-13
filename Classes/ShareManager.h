@@ -59,6 +59,8 @@ enum {
 + (ShareManager*) shareManager;
 
 - (void)menuWithView:(UIView *)view;
+- (void)renderAudio;
+-(void) performAction:(NSUInteger)theAction;
 - (NSString *)getSongName;
 - (NSString *)getDisplayName;
 - (NSString *)getVideoPath;

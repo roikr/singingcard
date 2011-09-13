@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h> // only for camera count
 
 #import "MainViewController.h"
+#import "ShareViewController.h"
 #import "EAGLView.h"
 #import "SingingCardAppDelegate.h"
 
@@ -207,7 +208,8 @@
 		
 		//[[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager] prepare];
 		self.OFSAptr->setSongState(SONG_IDLE);
-		[shareManager menuWithView:self.view];
+//		[shareManager menuWithView:self.view];
+		[self presentModalViewController:((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).shareViewController animated:YES];
 	}
 	// BUG FIX: this is very important: don't present from milgromViewController as it will result in crash when returning to BandView after share
 	
