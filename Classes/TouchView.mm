@@ -15,7 +15,7 @@
 
 @implementation TouchView
 
-@synthesize renderTouch;
+
 
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -42,28 +42,10 @@
 	
 	
 	//	NSLog(@"touchesBegan: %i %i %i", [touches count],  [[event touchesForView:self] count], multitouchData.numTouches);
-	
-	
-	
-//	MilgromInterfaceAppDelegate *appDelegate = (MilgromInterfaceAppDelegate *)[[UIApplication sharedApplication] delegate];
-//	if (appDelegate.OFSAptr->getSongState() == SONG_PLAY) {
-//		return;
-//	}
-	
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate];
-	
-	if (!renderTouch && appDelegate.OFSAptr->getSongState()==SONG_RENDER_VIDEO) {
-		renderTouch = YES;
-		[appDelegate.mainViewController updateViews];
+	if (!appDelegate.OFSAptr) {
+		return;
 	}
-	
-	
-//	if (appDelegate.mainViewController.bShowHelp) {
-//		return;
-//	}
-
-	
-	//self.timer = [NSTimer scheduledTimerWithTimeInterval:(NSTimeInterval)(0.5) target:controller selector:@selector(bringPlayerMenu:) userInfo:nil repeats:NO];
 	
 	for(UITouch *touch in touches) {
 		int touchIndex = 0;
@@ -83,6 +65,7 @@
 		t.id = touchIndex;
 		
 		if([touch tapCount] == 2) {
+
 			appDelegate.OFSAptr->touchDoubleTap(t);// send doubletap
 		}
 		
@@ -104,14 +87,10 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
 	
 	//	NSLog(@"touchesMoved: %i %i %i", [touches count],  [[event touchesForView:self] count], multitouchData.numTouches);
-	//[timer invalidate];
-	//self.timer = nil;
-	
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate];
-//	if (appDelegate.mainViewController.bShowHelp) {
-//		return;
-//	}
-
+	if (!appDelegate.OFSAptr) {
+		return;
+	}
 	
 	for(UITouch *touch in touches) {
 		int touchIndex = 0;
@@ -135,16 +114,13 @@
 //------------------------------------------------------
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
 	
-	//[timer invalidate];
-	//self.timer = nil;
-	
+		
 	//	NSLog(@"touchesEnded: %i %i %i", [touches count],  [[event touchesForView:self] count], multitouchData.numTouches);
 	
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate];
-//	if (appDelegate.mainViewController.bShowHelp) {
-//		[appDelegate.mainViewController hideHelp];
-//		return;
-//	}
+	if (!appDelegate.OFSAptr) {
+		return;
+	}
 	
 	
 	for(UITouch *touch in touches) {
@@ -175,8 +151,11 @@
 
 //------------------------------------------------------
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-	//[timer invalidate];
-	//self.timer = nil;
+	
+	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate];
+	if (!appDelegate.OFSAptr) {
+		return;
+	}
 	
 	for(int i=0; i<OF_MAX_TOUCHES; i++){
 		if(activeTouches[i]){
@@ -189,7 +168,7 @@
 			t.y = touchPoint.y;
 			t.id = i;
 			
-			((SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate]).OFSAptr->touchUp(t);
+			appDelegate.OFSAptr->touchUp(t);
 			
 		}
 	}

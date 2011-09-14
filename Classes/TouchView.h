@@ -13,9 +13,7 @@
 
 @interface TouchView : UIView {
 	UITouch					*activeTouches[OF_MAX_TOUCHES];
-	BOOL renderTouch;
 }
 
-@property BOOL renderTouch;
 
 @end
