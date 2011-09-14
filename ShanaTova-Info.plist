@@ -23,7 +23,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0.1</string>
 	<key>CFBundleShortVersionString</key>
-	<string>10</string>
+	<string>11</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
@@ -38,5 +38,7 @@
 	<array>
 		<string>FbKomic-Regular.otf</string>
 	</array>
+	<key>UIPrerenderedIcon</key>
+	<string>true</string>
 </dict>
 </plist>
