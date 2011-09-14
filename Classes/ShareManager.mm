@@ -101,6 +101,16 @@ void ShareAlert(NSString *title,NSString *message) {
 	return facebookUploader.state == FACEBOOK_UPLOADER_STATE_UPLOADING || youTubeUploader.state == YOUTUBE_UPLOADER_STATE_UPLOADING;
 }
 
+- (void)setAudioRendered {
+	renderedAudioVersion = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->getSongVersion();
+}
+
+
+- (BOOL)audioRendered {
+	return renderedAudioVersion == ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->getSongVersion();
+}
+
+
 
 - (void)setVideoRendered {
 	renderedVideoVersion = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->getSongVersion();
@@ -337,6 +347,7 @@ void ShareAlert(NSString *title,NSString *message) {
 
 - (void)resetVersions {
 	
+	renderedAudioVersion = 0;
 	renderedVideoVersion = 0;
 	exportedRingtoneVersion = 0;
 }
@@ -348,11 +359,7 @@ void ShareAlert(NSString *title,NSString *message) {
 	state = STATE_IDLE;
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
 	
-	
-	bAudioRendered = [self videoRendered] || [self ringtoneExported];
-	
-	
-	if (!bAudioRendered) {
+	if (![self audioRendered]) {
 		appDelegate.mainViewController.view.userInteractionEnabled = NO;
 		[renderManager renderAudio];
 	} else {
@@ -367,7 +374,7 @@ void ShareAlert(NSString *title,NSString *message) {
 - (void) renderManagerAudioRendered:(RenderManager *)manager {
 	
 	RKLog(@"renderManagerAudioRendered");
-	bAudioRendered = YES;
+	[self setAudioRendered];
 	
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
 	appDelegate.mainViewController.view.userInteractionEnabled = YES;
@@ -459,7 +466,7 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 
 		
-	if (bAudioRendered) {
+	if ([self audioRendered]) {
 		[self proceedWithAudio];
 	}
 				 

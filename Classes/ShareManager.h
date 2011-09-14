@@ -33,12 +33,12 @@ enum {
 	FacebookUploader *facebookUploader;
 	YouTubeUploader *youTubeUploader;
 	
-	NSInteger renderedVideoVersion;
-	NSInteger exportedRingtoneVersion;
+	NSUInteger renderedAudioVersion;
+	NSUInteger renderedVideoVersion;
+	NSUInteger exportedRingtoneVersion;
 	BOOL canSendMail;
 	NSUInteger action;
 	NSUInteger state;
-	BOOL bAudioRendered;
 	
 	UIViewController *parentViewController;
 	
@@ -50,6 +50,7 @@ enum {
 @property (nonatomic,retain) YouTubeUploader *youTubeUploader;
 @property (readonly) BOOL isUploading;
 
+@property (readonly) BOOL audioRendered;
 @property (readonly) BOOL videoRendered;
 @property (readonly) BOOL ringtoneExported;
 
