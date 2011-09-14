@@ -43,6 +43,7 @@ class testApp;
 @property NSInteger lastSavedVersion;
 
 
+-(void)start;
 
 
 

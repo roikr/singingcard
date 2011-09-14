@@ -14,6 +14,7 @@
 #import "glu.h"
 #import "ExportManager.h"
 #import "RenderProgressView.h"
+#include "ofxiVideoGrabber.h"
 
 
 #import "EAGLView.h"
@@ -112,6 +113,7 @@
 	
 	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
 	
+	OFSAptr->grabber.stopCamera();
 	OFSAptr->soundStreamStop();
 	
 	dispatch_async(myCustomQueue, ^{
@@ -122,6 +124,7 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			OFSAptr->setSongState(SONG_IDLE); // roikr: is this fixed the stubborn 
 			OFSAptr->soundStreamStart();
+			OFSAptr->grabber.startCamera();
 			[delegate renderManagerAudioRendered:self];
 		});
 		
@@ -159,6 +162,7 @@
 	dispatch_queue_t myCustomQueue;
 	myCustomQueue = dispatch_queue_create("renderQueue", NULL);
 	
+	OFSAptr->grabber.stopCamera();
 	OFSAptr->soundStreamStop();
 	
 	OFSAptr->setSongState(SONG_RENDER_VIDEO);
@@ -204,6 +208,8 @@
 					 NSLog(@"write completed");
 					 OFSAptr->setSongState(SONG_IDLE);
 					 OFSAptr->soundStreamStart();
+					 OFSAptr->grabber.startCamera();
+
 					 [delegate renderManagerVideoRendered:self];
 					 
 					 self.renderer = nil;
@@ -218,6 +224,7 @@
 					NSLog(@"videoRender canceled");
 					OFSAptr->setSongState(SONG_IDLE);
 					 OFSAptr->soundStreamStart();
+					 OFSAptr->grabber.startCamera();
 					[delegate renderManagerRenderCanceled:self];
 					self.renderer = nil;
 #ifdef _FLURRY
