@@ -64,11 +64,6 @@
 
 #pragma mark actionSheet
 
-- (void)viewDidAppear:(BOOL)animated {	
-	ShareManager *shareManager = [(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
-	[shareManager renderAudio];
-}
-
 - (void) action:(id)sender {
 	
 	UIButton *button = (UIButton *)sender;

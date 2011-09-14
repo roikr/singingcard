@@ -282,7 +282,7 @@
     
 	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	if (appDelegate.OFSAptr->getSongState()==SONG_RENDER_VIDEO) {
+	if (!appDelegate.OFSAptr || appDelegate.OFSAptr->getSongState()==SONG_RENDER_VIDEO) {
 		return;
 	}
 	

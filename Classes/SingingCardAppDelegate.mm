@@ -43,44 +43,13 @@
     RKLog(@"application didFinishLaunchingWithOptions");
 	setiPhoneDataPath();	
 	
-	
-
-	self.OFSAptr = new testApp;
 	self.shareManager = [ShareManager shareManager];
 	
-
-	OFSAptr->setup();
-		
 	self.window.rootViewController = self.mainViewController;
 	[self.window makeKeyAndVisible];
-	
-	
-#ifdef PLAY_INTRO
-	AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
-	[playerViewController setDelegate:self];
-	[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_IPHONE" withExtension:@"m4v"]];
-	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
-	imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
-	imageView.center = CGPointMake(240.0, 160.0);
-	[playerViewController.view addSubview:imageView];
-	[imageView release];
-	[self.mainViewController presentModalViewController:playerViewController animated:NO];
-	[playerViewController release];
-	
-//	 AVPlayerDemoPlaybackViewController* mPlaybackViewController = [[[AVPlayerDemoPlaybackViewController allocWithZone:[self zone]] init] autorelease];
-//	 [mPlaybackViewController setURL:]; //[NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"video.mov"]]
-//	 [[mPlaybackViewController player] seekToTime:CMTimeMakeWithSeconds(0.0, NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 2 * NSEC_PER_SEC) toleranceAfter:CMTimeMake(1, 2 * NSEC_PER_SEC)];
-//	 
-//	 //[[mPlaybackViewController player] seekToTime:CMTimeMakeWithSeconds([defaults doubleForKey:AVPlayerDemoContentTimeUserDefaultsKey], NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 2 * NSEC_PER_SEC) toleranceAfter:CMTimeMake(1, 2 * NSEC_PER_SEC)];
-//	 
-//	 [self.mainViewController presentModalViewController:mPlaybackViewController animated:NO];
-#endif
-	 
-	 
-	
-	
+		
 	[self.eAGLView setInterfaceOrientation:UIInterfaceOrientationLandscapeRight duration:0];
-	
+	RKLog(@"application didFinishLaunchingWithOptions finished");
 	return YES;
 }
 
@@ -98,6 +67,35 @@
 	/*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
+	
+	if (!OFSAptr) {
+		self.OFSAptr = new testApp;
+		OFSAptr->setup();
+#ifdef PLAY_INTRO
+		AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
+		[playerViewController setDelegate:self];
+		[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_IPHONE" withExtension:@"m4v"]];
+		UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+		imageView.transform = CGAffineTransformRotate(CGAffineTransformIdentity,-M_PI/2.0);
+		imageView.center = CGPointMake(240.0, 160.0);
+		[playerViewController.view addSubview:imageView];
+		[imageView release];
+		[self.mainViewController presentModalViewController:playerViewController animated:NO];
+		[playerViewController release];
+		
+		//	 AVPlayerDemoPlaybackViewController* mPlaybackViewController = [[[AVPlayerDemoPlaybackViewController allocWithZone:[self zone]] init] autorelease];
+		//	 [mPlaybackViewController setURL:]; //[NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"video.mov"]]
+		//	 [[mPlaybackViewController player] seekToTime:CMTimeMakeWithSeconds(0.0, NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 2 * NSEC_PER_SEC) toleranceAfter:CMTimeMake(1, 2 * NSEC_PER_SEC)];
+		//	 
+		//	 //[[mPlaybackViewController player] seekToTime:CMTimeMakeWithSeconds([defaults doubleForKey:AVPlayerDemoContentTimeUserDefaultsKey], NSEC_PER_SEC) toleranceBefore:CMTimeMake(1, 2 * NSEC_PER_SEC) toleranceAfter:CMTimeMake(1, 2 * NSEC_PER_SEC)];
+		//	 
+		//	 [self.mainViewController presentModalViewController:mPlaybackViewController animated:NO];
+#endif
+	} else {
+		OFSAptr->soundStreamStart();
+	}
+
+	
 	
 	[self.eAGLView startAnimation];
 
@@ -127,11 +125,7 @@
 		RKLog(@"update loop exited");		
 	});
 
-	
-	if (OFSAptr) {
-		OFSAptr->soundStreamStart();
-	}
-	
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -160,6 +160,7 @@
 			
 		}	break;
 		case SONG_RENDER_VIDEO:
+		case SONG_EXPORT_RINGTONE:
 			renderProgressView.cancelButton.hidden = NO;
 		case SONG_RENDER_AUDIO:
 		case SONG_RENDER_AUDIO_FINISHED:
@@ -207,9 +208,7 @@
 	} else {
 		
 		//[[(SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager] prepare];
-		self.OFSAptr->setSongState(SONG_IDLE);
-//		[shareManager menuWithView:self.view];
-		[self presentModalViewController:((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).shareViewController animated:YES];
+		[shareManager renderAudio];
 	}
 	// BUG FIX: this is very important: don't present from milgromViewController as it will result in crash when returning to BandView after share
 	

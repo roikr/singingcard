@@ -17,6 +17,7 @@
 #import "testApp.h"
 #import "Constants.h"
 #import "Reachability.h"
+#import "ShareViewController.h"
 
 enum {
 	STATE_IDLE,
@@ -342,50 +343,20 @@ void ShareAlert(NSString *title,NSString *message) {
 						
 				
 
-#pragma mark actionSheet
-
-- (void)menuWithView:(UIView *)view {
-	
-	UIActionSheet* sheet = [[[UIActionSheet alloc] init] autorelease];
-	
-	
-	//sheet.title = @"Illustrations";
-	sheet.delegate = self;
-	
-	
-	[sheet addButtonWithTitle:NSLocalizedString(@"upload to facebook",@"Upload to FaceBook")];
-	[sheet addButtonWithTitle:NSLocalizedString(@"upload to youtube",@"Upload to YouTube")];
-	
-	[sheet addButtonWithTitle:NSLocalizedString(@"add to library",@"Add to Library")];
-
-	
-	[sheet addButtonWithTitle:NSLocalizedString(@"send via mail",@"Send via mail")];
-	[sheet addButtonWithTitle:NSLocalizedString(@"send ringtone",@"Send ringtone")];
-	
-	[sheet addButtonWithTitle:NSLocalizedString(@"cancel",@"Cancel")];
-//	[sheet addButtonWithTitle:@"Render"];
-//	[sheet addButtonWithTitle:@"Play"];
-	
-	sheet.actionSheetStyle = UIActionSheetStyleDefault;
-	
-	[sheet showInView:view];
-	//sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
-	 
-	[self renderAudio];
-}
-
-
-
 
 - (void)renderAudio {
 	state = STATE_IDLE;
+	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
 	
 	
 	bAudioRendered = [self videoRendered] || [self ringtoneExported];
 	
 	
 	if (!bAudioRendered) {
-		[renderManager performSelector:@selector(renderAudio)];
+		appDelegate.mainViewController.view.userInteractionEnabled = NO;
+		[renderManager renderAudio];
+	} else {
+		[appDelegate.mainViewController presentModalViewController:appDelegate.shareViewController animated:YES];
 	}
 	
 	
@@ -393,36 +364,16 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 }
 
-
-
-- (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+- (void) renderManagerAudioRendered:(RenderManager *)manager {
 	
-	NSUInteger theAction;
+	RKLog(@"renderManagerAudioRendered");
+	bAudioRendered = YES;
 	
-	switch (buttonIndex)
-	{
-		case 0: 
-			theAction = ACTION_UPLOAD_TO_FACEBOOK;
-			break;
-		case 1:
-			theAction = ACTION_UPLOAD_TO_YOUTUBE;
-			break;
-		case 2:
-			theAction = ACTION_ADD_TO_LIBRARY;
-			break;
-		case 3:
-			theAction = ACTION_SEND_VIA_MAIL;
-			break;
-		case 4:
-			theAction = ACTION_SEND_RINGTONE;
-			break;
-		case 5:
-			theAction = ACTION_CANCEL;
-			break;
-	}
+	SingingCardAppDelegate *appDelegate = (SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate];
+	appDelegate.mainViewController.view.userInteractionEnabled = YES;
+	[appDelegate.mainViewController presentModalViewController:appDelegate.shareViewController animated:YES];
 	
-	[self performAction:theAction]; 
+	
 }
 
 
@@ -562,8 +513,8 @@ void ShareAlert(NSString *title,NSString *message) {
 			
 			break;
 		case STATE_CANCELED:
-			testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
-			OFSAptr->setSongState(SONG_IDLE);
+			((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->setSongState(SONG_IDLE);
+			((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr->soundStreamStart();
 			break;
 	
 	}
@@ -630,15 +581,6 @@ void ShareAlert(NSString *title,NSString *message) {
 	
 	
 
-}
-
-- (void) renderManagerAudioRendered:(RenderManager *)manager {
-	
-	RKLog(@"renderManagerAudioRendered");
-	bAudioRendered = YES;
-	[self proceedWithAudio];
-	
-	
 }
 
 - (void) renderManagerVideoRendered:(RenderManager *)manager {

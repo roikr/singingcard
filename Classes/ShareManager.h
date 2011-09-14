@@ -29,7 +29,7 @@ enum {
 
 
 
-@interface ShareManager : NSObject<UIActionSheetDelegate,FacebookUploaderDelegate,FacebookUploadViewControllerDelegate,YouTubeUploaderDelegate,YouTubeUploadViewControllerDelegate,MFMailComposeViewControllerDelegate,RenderManagerDelegate> {
+@interface ShareManager : NSObject<FacebookUploaderDelegate,FacebookUploadViewControllerDelegate,YouTubeUploaderDelegate,YouTubeUploadViewControllerDelegate,MFMailComposeViewControllerDelegate,RenderManagerDelegate> {
 	FacebookUploader *facebookUploader;
 	YouTubeUploader *youTubeUploader;
 	
@@ -58,7 +58,7 @@ enum {
 
 + (ShareManager*) shareManager;
 
-- (void)menuWithView:(UIView *)view;
+
 - (void)renderAudio;
 -(void) performAction:(NSUInteger)theAction;
 - (NSString *)getSongName;

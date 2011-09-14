@@ -28,7 +28,6 @@
 @interface RenderManager() 
 
 - (void)updateRenderProgress;
-- (void)renderAudioDidFinish;
 - (void)updateExportProgress:(ExportManager*)manager;
 - (void) setRenderProgress:(float) progress;
 
@@ -121,7 +120,9 @@
 		
 		
 		dispatch_async(dispatch_get_main_queue(), ^{
-			[self renderAudioDidFinish];
+			OFSAptr->setSongState(SONG_IDLE); // roikr: is this fixed the stubborn 
+			OFSAptr->soundStreamStart();
+			[delegate renderManagerAudioRendered:self];
 		});
 		
 		
@@ -140,17 +141,6 @@
 
 
 
-- (void)renderAudioDidFinish {
-	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
-	
-	OFSAptr->soundStreamStart();
-	[delegate renderManagerAudioRendered:self];
-	
-#ifdef _FLURRY
-	[FlurryAPI endTimedEvent:@"RENDER_AUDIO" withParameters:nil];
-#endif
-	
-}
 
 
 
@@ -164,19 +154,17 @@
 	
 	testApp *OFSAptr = appDelegate.OFSAptr;
 	
-	
-	OFSAptr->preRender();
-	
 	self.renderer = [OpenGLTOMovie renderManager];
 	
 	dispatch_queue_t myCustomQueue;
 	myCustomQueue = dispatch_queue_create("renderQueue", NULL);
 	
+	OFSAptr->soundStreamStop();
 	
+	OFSAptr->setSongState(SONG_RENDER_VIDEO);
 	
 	dispatch_async(myCustomQueue, ^{
 		
-		//OFSAptr->renderAudio();
 		
 		
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -214,10 +202,8 @@
 		 
 				 withCompletionHandler:^ {
 					 NSLog(@"write completed");
-					 
-					 
-					 //					 self.renderView.slideView.hidden = YES;
-					 OFSAptr->postRender();
+					 OFSAptr->setSongState(SONG_IDLE);
+					 OFSAptr->soundStreamStart();
 					 [delegate renderManagerVideoRendered:self];
 					 
 					 self.renderer = nil;
@@ -230,7 +216,8 @@
 		 
 				withCancelationHandler:^ {
 					NSLog(@"videoRender canceled");
-					OFSAptr->postRender();
+					OFSAptr->setSongState(SONG_IDLE);
+					 OFSAptr->soundStreamStart();
 					[delegate renderManagerRenderCanceled:self];
 					self.renderer = nil;
 #ifdef _FLURRY
@@ -271,6 +258,7 @@
 	testApp *OFSAptr = ((SingingCardAppDelegate*)[[UIApplication sharedApplication] delegate]).OFSAptr;
 	
 	OFSAptr->soundStreamStop();
+	OFSAptr->setSongState(SONG_EXPORT_RINGTONE);
 	
 	//ShareManager *shareManager = [(MilgromInterfaceAppDelegate*)[[UIApplication sharedApplication] delegate] shareManager];
 	
@@ -337,8 +325,6 @@
 	if (exportManager) {
 		[exportManager cancelExport];
 		self.exportManager = nil;
-		OFSAptr->setSongState(SONG_IDLE);
-		OFSAptr->soundStreamStart();
 		[delegate renderManagerRenderCanceled:self];
 	}
 	
