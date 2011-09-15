@@ -37,5 +37,6 @@
 @protocol AVPlayerViewControllerDelegate
 
 -(void) AVPlayerLayerIsReadyForDisplay:(AVPlayerViewController*)controller;
+-(void) AVPlayerViewControllerDone:(AVPlayerViewController*)controller;
 
 @end

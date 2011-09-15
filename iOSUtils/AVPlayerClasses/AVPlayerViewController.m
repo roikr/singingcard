@@ -9,7 +9,6 @@
 #import "AVPlayerViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "AVPlayerDemoPlaybackView.h"
-#import "SingingCardAppDelegate.h"
 
 @interface AVPlayerViewController()
 -(void)close;
@@ -68,7 +67,7 @@
 }
 
 
-static NSString* const AVPlayerViewControllerRateObservationContext = @"AVPlayerViewControllerRateObservationContext";
+//static NSString* const AVPlayerViewControllerRateObservationContext = @"AVPlayerViewControllerRateObservationContext";
 static NSString* const AVPlayerViewControllerReadyForDisplayObservationContext = @"AVPlayerViewControllerReadyForDisplayObservationContext";
 
 -(void)loadAssetFromURL:(NSURL *)fileURL {
@@ -91,7 +90,7 @@ static NSString* const AVPlayerViewControllerReadyForDisplayObservationContext =
 			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
 			
 			 			 self.player = [AVPlayer playerWithPlayerItem:playerItem];
-			 [self.player addObserver:self forKeyPath:@"rate" options:0 context:AVPlayerViewControllerRateObservationContext];
+//			 [self.player addObserver:self forKeyPath:@"rate" options:0 context:AVPlayerViewControllerRateObservationContext];
 			 
 			 [(AVPlayerDemoPlaybackView *)self.view setPlayer:self.player];
 			 [self.player play];
@@ -112,14 +111,14 @@ static NSString* const AVPlayerViewControllerReadyForDisplayObservationContext =
 				[delegate AVPlayerLayerIsReadyForDisplay:self];
 		   });
 		
-    } else if (context == AVPlayerViewControllerRateObservationContext)
-	{
-		dispatch_async(dispatch_get_main_queue(),
-					   ^{
-						   if (player.rate == 0.0) {
-							   [self close];
-						   }
-					   });
+//    } else if (context == AVPlayerViewControllerRateObservationContext)
+//	{
+//		dispatch_async(dispatch_get_main_queue(),
+//					   ^{
+//						   if (player.rate == 0.0) {
+//							   [self close];
+//						   }
+//					   });
 	} else {	
 		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 	}
@@ -137,16 +136,18 @@ static NSString* const AVPlayerViewControllerReadyForDisplayObservationContext =
 
 -(IBAction)skip:(id)sender {
 	[self.player pause];
+	self.view.userInteractionEnabled = NO;
+	[self close];
 }
 
 -(void)close {
+	NSLog(@"AVPlayerViewController - close");
 	AVPlayerLayer *layer = (AVPlayerLayer *)[(AVPlayerDemoPlaybackView *)self.view layer];
 	[layer removeObserver:self forKeyPath:@"readyForDisplay"];
-	[player removeObserver:self forKeyPath:@"rate"];
+//	[player removeObserver:self forKeyPath:@"rate"];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[self dismissModalViewControllerAnimated:NO];
-	[(SingingCardAppDelegate *)[[UIApplication sharedApplication] delegate] start];
-	
+	[self dismissModalViewControllerAnimated:YES];
+	[delegate AVPlayerViewControllerDone:self];
 }
 
 
