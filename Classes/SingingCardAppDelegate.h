@@ -42,11 +42,6 @@ class testApp;
 @property (nonatomic, retain) ShareManager *shareManager;
 @property NSInteger lastSavedVersion;
 
-
--(void)start;
-
-
-
 @end
 
 

@@ -61,9 +61,7 @@
 	}
 }
 
--(void)start {
-	OFSAptr->soundStreamStart();
-	
+-(void) AVPlayerViewControllerDone:(AVPlayerViewController*)controller {
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -100,11 +98,8 @@
 	
 		
 	if (!OFSAptr) {
-		self.OFSAptr = new testApp;
-		OFSAptr->setup();
-#ifdef PLAY_INTRO
-		OFSAptr->soundStreamStop();
 		
+#ifdef PLAY_INTRO
 		AVPlayerViewController *playerViewController =[[AVPlayerViewController alloc] initWithNibName:@"AVPlayerViewController" bundle:nil];
 		[playerViewController setDelegate:self];
 		[playerViewController loadAssetFromURL:[[NSBundle mainBundle] URLForResource:@"SHANA_DEMO_IPHONE" withExtension:@"m4v"]];
@@ -113,10 +108,12 @@
 		imageView.center = CGPointMake(240.0, 160.0);
 		[playerViewController.view addSubview:imageView];
 		[imageView release];
+//		playerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 		[self.mainViewController presentModalViewController:playerViewController animated:NO];
 		[playerViewController release];
-		
 #endif
+		self.OFSAptr = new testApp;
+		OFSAptr->setup();
 	} else {
 		OFSAptr->soundStreamStart();
 	}
