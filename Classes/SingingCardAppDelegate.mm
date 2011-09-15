@@ -168,7 +168,12 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-     RKLog(@"applicationDidEnterBackground");
+     
+	
+	RKLog(@"applicationDidEnterBackground");
+	
+	[shareManager applicationDidEnterBackground];
+	
 	// Handle any background procedures not related to animation here.
 	if (OFSAptr) {
 		OFSAptr->suspend();

@@ -234,6 +234,7 @@
 		 
 				   withAbortionHandler:^ {
 					   NSLog(@"videoRender aborted");
+					   OFSAptr->setSongState(SONG_IDLE);
 					   self.renderer = nil;  
 #ifdef _FLURRY
 					   [FlurryAPI endTimedEvent:@"RENDER_VIDEO" withParameters:[NSDictionary dictionaryWithObjectsAndKeys:@"ABORTED",@"STATUS", nil]];
