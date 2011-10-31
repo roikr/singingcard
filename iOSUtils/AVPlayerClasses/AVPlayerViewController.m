@@ -71,29 +71,37 @@
 static NSString* const AVPlayerViewControllerReadyForDisplayObservationContext = @"AVPlayerViewControllerReadyForDisplayObservationContext";
 
 -(void)loadAssetFromURL:(NSURL *)fileURL {
-	AVURLAsset *asset = [AVURLAsset URLAssetWithURL:fileURL options:nil];
+	NSLog(@"AVPlayerViewController::loadAssetFromURL");
+
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:fileURL options:nil];
     NSString *tracksKey = @"tracks";
-	
-    [asset loadValuesAsynchronouslyForKeys:[NSArray arrayWithObject:tracksKey] completionHandler:
+	    [asset loadValuesAsynchronouslyForKeys:[NSArray arrayWithObject:tracksKey] completionHandler:
      ^{
 		 NSError *error = nil;
 		 AVKeyValueStatus status = [asset statusOfValueForKey:tracksKey error:&error];
-		 
+         NSLog(@"AVPlayerViewController - loadValuesAsynchronouslyForKeys - completionHandler");
 		 if (status == AVKeyValueStatusLoaded) {
-			
+             
+             
+             NSLog(@"completionHandler: AVKeyValueStatusLoaded");
+             
+             dispatch_async(dispatch_get_main_queue(),
+            ^{
+                AVPlayerLayer *layer = (AVPlayerLayer *)[(AVPlayerDemoPlaybackView *)self.view layer];
+                [layer addObserver:self forKeyPath:@"readyForDisplay" options:0 context:AVPlayerViewControllerReadyForDisplayObservationContext];
+                
+                AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
+                
+                [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
+                
+                self.player = [AVPlayer playerWithPlayerItem:playerItem];
+                //			 [self.player addObserver:self forKeyPath:@"rate" options:0 context:AVPlayerViewControllerRateObservationContext];
+                
+                [(AVPlayerDemoPlaybackView *)self.view setPlayer:self.player];
+                [self.player play];
+            });
 			 
-			 AVPlayerLayer *layer = (AVPlayerLayer *)[(AVPlayerDemoPlaybackView *)self.view layer];
-			 [layer addObserver:self forKeyPath:@"readyForDisplay" options:0 context:AVPlayerViewControllerReadyForDisplayObservationContext];
 			 
-			 AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:asset];
-
-			[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerItemDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:playerItem];
-			
-			 			 self.player = [AVPlayer playerWithPlayerItem:playerItem];
-//			 [self.player addObserver:self forKeyPath:@"rate" options:0 context:AVPlayerViewControllerRateObservationContext];
-			 
-			 [(AVPlayerDemoPlaybackView *)self.view setPlayer:self.player];
-			 [self.player play];
 		 }
 		 else {
 			 // Deal with the error appropriately.
@@ -104,6 +112,8 @@ static NSString* const AVPlayerViewControllerReadyForDisplayObservationContext =
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
                         change:(NSDictionary *)change context:(void *)context {
+    
+    NSLog(@"observeValueForKeyPath: %@", keyPath);
 	
     if (context == AVPlayerViewControllerReadyForDisplayObservationContext) {
 		dispatch_async(dispatch_get_main_queue(),
